@@ -24,7 +24,7 @@
 <meta name="author" content="Steve Cline" />
 
 
-<meta name="date" content="2021-04-13" />
+<meta name="date" content="2021-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -613,14 +613,14 @@ You will also need to use Microsoft Excel which is installed on your PC.</li>
 <p><u>Part One - Setting Up the Data</u></p>
 <ul>
 <li>Create a new project in ArcGIS Pro named, “Census Data”.</li>
-<li>Using the TIGER/Line website listed above, find the most recent county level shapefile of any state of your choice in the United States. Extract the shapefile into the project folder you just created.</li>
+<li>Using the TIGER/Line website listed above, find the most recent county level shapefile for the United States. Extract the shapefile into the project folder you just created.</li>
 <li>Open the shapefile from the catalog in ArcGIS Pro to make sure everything worked.</li>
-<li>Dowload the same geography from the American FactFinder website above. Pick any topic you like but make sure it meets these requirements:
+<li>Pick any state you wish and dowload the county level geography from the American FactFinder website above. Pick any topic you like but make sure it meets these requirements:
 <ul>
 <li>The data are quantitative in nature.</li>
 <li>The most recent 5-year estimates are used.</li>
 <li>The data geography matches the shapefile geography.</li>
-<li>Columns and rows are transposed so that the each rown is a county and each column is an attribute.</li>
+<li>Columns and rows are transposed so that the each row is a county and each column is an attribute.</li>
 <li>There are metadata included in the download.</li>
 </ul></li>
 <li>Extract the zipped folder with these data into the project folder you created above.</li>
@@ -628,7 +628,73 @@ You will also need to use Microsoft Excel which is installed on your PC.</li>
 <li>Check to be sure that data are visible in the catalog pane of ArcGIS Pro.</li>
 </ul>
 <p><u>Part Two - Merging geometry with information</u></p>
-<p><i>These instructions will be released next class.</i></p>
+<ul>
+<li>Open the file explorer location for the project you created above so that we can modify the CSV file that contains the data you are using for this project.</li>
+<li>Open the file that contains the data from AFF in Microsoft Excel.</li>
+<li>Spend some time deciding which data you would like to keep. You may use the second row as a simple metadata indicator of that attribute. If that description is difficult to read, refer to the CSV file with “metadata” in the title for an easier to read description.</li>
+<li>Once you have decided which attributes you are keeping, delete all other columns except the “NAME” and “GEO_ID” columns. Feel free to keep as many columns as you would like.
+<ul>
+<li>In order to delete a column, it is not enough to just press the delete button.<br />
+</li>
+<li>Right click on the column, or columns and select “delete” from the menu.</li>
+</ul></li>
+<li>Now we need to split the “NAME” column to make it more useable in ArcGIS Pro.</li>
+<li>Right-Click the letter of the column to the right of the “NAME” column and select insert. This will insert an empty column to the left of it and to the right of the “NAME” column.</li>
+<li>Click the letter of the column above the top row where it says “NAME” (Probably letter B).</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/column.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click the “Data” ribbon and select “Text to Columns”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/text2col.PNG?raw=true" width="900"></p>
+<ul>
+<li>Be sure “Delimited” is selected in the first window of the wizard.</li>
+<li>Click “Next”.</li>
+<li>Select “Comma” as the delimiter.</li>
+<li>Click “Finish”</li>
+<li>At this point we can delete the column to the right of the “NAME” column.</li>
+<li>Finally, let’s clean up the header rows since there can be only one. We will keep the top row which contains the codes, not the descriptive metadata. Right click the second row and delete.</li>
+<li>Click the “File” ribbon and choose “Save As”. Change the name of the file so that it is descriptive and you can remember it later. Be sure to save it as a CSV file and IN THE PROJECT FOLDER OF THE ARCGIS PROJECT WE ARE WORKING ON.</li>
+<li>Go to the Catalog pane in your project and make sure that the new table appears. You will need to “Refresh” your project folder first. If so, close the CSV file in Excel and add it to your map.</li>
+<li>If you have not already, add the county shapefile to the map.</li>
+<li>Now we will join the shapefile to the CSV data. Right-click the shapefile in the table of contents and select “Join” and then “Add Join”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/join.PNG?raw=true" width="600"></p>
+<ul>
+<li>In the window be sure to set it up like this:</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/join_wizard.PNG?raw=true" width="600"></p>
+<ul>
+<li>For the last part of this process we need to export only those features (counties) from the shapefile that are also in the table. There are many ways to do this but in this example we will select only the features that have the correct FIPS state code. This is a two digit number assigned to each state. Find your state in this <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code" target = "_blank">Wikipedia Article</a> and note the numeric code.</li>
+<li>In ArcGIS Pro in the “Map” ribbon, click “Select by Attributes” in the “Selection” group.</li>
+<li>Configure the selection wizard as below but change the value in the right pulldown to your state.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/select_by.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click OK. Now all of the counties in your state should be selected.</li>
+<li>Right-click the shapefile. Choose “Data” and “Export Features”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/export.PNG?raw=true" width="600"></p>
+<ul>
+<li>In the Export Window make sure that the shapefile is the input features and that the output location is your project geodatabase. Give the output a descriptive name so you can find it easily.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/export_wizard.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click OK.<br />
+</li>
+<li>Turn off the original shapefile containing all US counties. Add the new layer if it is not already in the table of contents. Check the attribute table to make sure the attributes from the AFF file are there.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/state.PNG?raw=true" width="600"></p>
+<ul>
+<li>Use your skills in symbolizing the map to create a map that shows quantitative variation along one attribute by county in your state. Make sure you also do the following:
+<ul>
+<li>Remove the original shapefile and CSV file used to create the join.</li>
+<li>Choose an appropriate color scheme for the data you are using.</li>
+<li>Modify the names of the layer and the attribute you are showing in the table of contents so that the names are more readible.</li>
+<li>Choose a good basemap for the color scheme and type of data you are using. (Topographic is not really appropriate for Census data)</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a> Name it Census Data <your last name>.</li>
+</ul></li>
+</ul>
 
 </div>
 </div>
