@@ -146,6 +146,7 @@
 <li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
 <li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
 <li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#excercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Excercise: Building a Data Collection Map</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
@@ -238,14 +239,82 @@
 <p><strong>Heads-up digitizing</strong>, the second manual data capture method, is referred to as “on-screen” digitizing. Heads-up digitizing can be used on either paper maps or existing digital files. In the case of a paper map, the map must first be scanned into the computer at a high enough resolution that will allow all pertinent features to be resolved. Second, the now-digital image must be registered so the map will conform to an existing coordinate system. To do this, the user can enter control points on the screen and transform, or “rubber-sheet,” the scanned image into real world coordinates. Finally, the user simply zooms to specific areas on the map and traces the points, lines, and/or polygons, similar to the tablet digitization example. Heads-up digitizing is particularly simple when existing GIS files, satellite images, or aerial photographs are used as a baseline. For example, if a user plans to digitize the boundary of a lake as seen from a georeferenced satellite image, the steps of scanning and registering can be skipped, and projection information from the originating image can simply be copied over to the digitized file.</p>
 <p>The third, automated method of secondary data capture requires the user to scan a paper map and vectorize the information therein. This <strong>vectorization</strong> method typically requires a specific software package that can convert a raster scan to vector lines. This requires a very high-resolution, clean scan. If the image is not clean, all the imperfections on the map will likely be converted to false points/lines/polygons in the digital version. If a clean scan is not available, it is often faster to use a manual digitization methodology. Regardless, this method is much quicker than the aforementioned manual methods and may be the best option if multiple maps must be digitized and/or if time is a limiting factor. Often, a semiautomatic approach is employed whereby a map is scanned and vectorized, followed by a heads-up digitizing session to edit and repair any errors that occurred during automation.</p>
 <p>The final secondary data capture method worth noting is the use of information from <strong>reports and documents</strong>. Via this method, one enters information from reports and documents into the attribute table of an existing, digital GIS file that contains all the pertinent points, lines, and polygons. For example, new information specific to census tracts may become available following a scientific study. The GIS user simply needs to download the existing GIS file of census tracts and begin entering the study’s report/document information directly into the attribute table. If the data tables are available digitally, the use of the “join” and “relate” functions in a GIS (Section 5.2.2 “Joins and Relates”) are often extremely helpful as they will automate much of the data entry effort.</p>
-<!-- ### Excercise: Mapping ____ at WHS -->
-<!-- For this activity you will get to leave the lab and do some real mapping.  We will create a feature layer of WHS of _____ features.  These data will be useful in creating a web map for students to use later.  The steps we will follow on this exercise are: -->
-<!-- 1. Create a feature layer on ArcGIS Pro which includes point features and domains for data collection.  Include a feature service for storing attachments when needed. -->
-<!-- 2. Publish that feature layer to ArcGIS Online for use in web maps -->
-<!-- 3. Collect data for that layer using our cell phones and Collector for ArcGIS -->
-<!-- 4. Post-process the data to clean up any errors and make additions to the data -->
-<!-- 5. Create a web map using selected student crowdsourced data -->
-<!-- 6. Publish a web application that utilizes these data -->
+</div>
+<div id="excercise-building-a-data-collection-map" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Excercise: Building a Data Collection Map</h3>
+<p>For this activity you will get to leave the lab and do some real mapping. We will create a feature layers upon which you will add your own features. These data will be useful in creating a web map for students to use later. The steps we will follow on this exercise are:</p>
+<ol style="list-style-type: decimal">
+<li>Decide where your collection site will be and what types of features you will collect.</li>
+<li>Create a feature layer on ArcGIS Pro which includes features and domains for data collection. Include a feature service for storing attachments when needed.
+<ul>
+<li>Open ArcGIS Pro and create a new project. Name it according to what you data you are collecting.</li>
+<li>Select a basemap that is appropriate for your project.</li>
+<li>Right-Click the feature database for your project. Choose “New” &gt; “Feature Class”.</li>
+</ul></li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/New_FC.PNG?raw=true" width="500"></p>
+<ul>
+<li>Define your feature class.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Define.PNG?raw=true" width="500"></p>
+<ul>
+<li><p>Create Fields. While you can add more fields later, it is a good idea to think about what you want ahead of time. Required Fields are as follows:</p>
+<pre><code>- Date Collected
+- Type of feature (or some other field you may create domains for)
+- Description</code></pre></li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Fields.PNG?raw=true" width="500"></p>
+<ul>
+<li>Leave the Spatial Reference as “WGS 1984 Web Mercator (Auxiliary Sphere)”
+<ul>
+<li>Click “Finish”</li>
+<li>Ensure that your feature layer has been added to the map. If not, add it.</li>
+<li>In the “Tools” menu, find “Enable Attachments” and run it on your newly created layer.</li>
+<li>Open the attribute table for the layer. Select the “Table View” ribbon.</li>
+</ul></li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Table_View.PNG?raw=true" width="500"></p>
+<ul>
+<li>In the “Fields” tab, find the field for which you will create domains. In the “Domain” column of that field, select “<Add New Domain>”. Name your domain and create several domains.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/domains.PNG?raw=true" width="900"></p>
+<ul>
+<li>In the “Domains” ribbon, click “Save”.
+<ul>
+<li>Select the Fields tab to activate the “Fields” ribbon. Click “Save” in that ribbon.</li>
+<li>Save the project.</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Publish that feature layer to ArcGIS Online for use in web maps.
+<ul>
+<li>In the “Share” ribbon, select “Web Map”.</li>
+</ul></li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/web_map.PNG?raw=true" width="900"></p>
+<ul>
+<li>Configure the Web Map. Ensure that the configuration is set to “Editable”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Share.PNG?raw=true" width="500"></p>
+<ul>
+<li>Click “Analyze”. Fix any errors. Warnings are ok.
+<ul>
+<li>Click “Share”.</li>
+<li>After it is done, find the web map on ArcGIS Online and open it in Field Maps on your phone.</li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Collect data for that layer using our cell phones and Collector for ArcGIS.
+<ul>
+<li>Go to the study area and collect features. Be sure to take photos of the features as you go.</li>
+</ul></li>
+<li>Post-process the data to clean up any errors and make additions to the data.
+<ul>
+<li>Check for any errors in the data when you can. By activating the “Edit” function on the web map, you can move features and edit attribute data.</li>
+<li>Change symbology to make features stand out on the map.</li>
+</ul></li>
+<li>When you are done save the map as Data Collection Exercise and share it with the “Digital Earth 2021” Group.</li>
+</ol>
 </div>
 </div>
 <div id="single-layer-analysis" class="section level2">
