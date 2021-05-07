@@ -24,7 +24,7 @@
 <meta name="author" content="Steve Cline" />
 
 
-<meta name="date" content="2021-05-06" />
+<meta name="date" content="2021-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,7 +146,7 @@
 <li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
 <li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
 <li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
-<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#excercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Excercise: Building a Data Collection Map</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
 <li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
@@ -240,9 +240,28 @@
 <p>The third, automated method of secondary data capture requires the user to scan a paper map and vectorize the information therein. This <strong>vectorization</strong> method typically requires a specific software package that can convert a raster scan to vector lines. This requires a very high-resolution, clean scan. If the image is not clean, all the imperfections on the map will likely be converted to false points/lines/polygons in the digital version. If a clean scan is not available, it is often faster to use a manual digitization methodology. Regardless, this method is much quicker than the aforementioned manual methods and may be the best option if multiple maps must be digitized and/or if time is a limiting factor. Often, a semiautomatic approach is employed whereby a map is scanned and vectorized, followed by a heads-up digitizing session to edit and repair any errors that occurred during automation.</p>
 <p>The final secondary data capture method worth noting is the use of information from <strong>reports and documents</strong>. Via this method, one enters information from reports and documents into the attribute table of an existing, digital GIS file that contains all the pertinent points, lines, and polygons. For example, new information specific to census tracts may become available following a scientific study. The GIS user simply needs to download the existing GIS file of census tracts and begin entering the study’s report/document information directly into the attribute table. If the data tables are available digitally, the use of the “join” and “relate” functions in a GIS (Section 5.2.2 “Joins and Relates”) are often extremely helpful as they will automate much of the data entry effort.</p>
 </div>
-<div id="excercise-building-a-data-collection-map" class="section level3">
-<h3><span class="header-section-number">5.1.5</span> Excercise: Building a Data Collection Map</h3>
-<p>For this activity you will get to leave the lab and do some real mapping. We will create a feature layers upon which you will add your own features. These data will be useful in creating a web map for students to use later. The steps we will follow on this exercise are:</p>
+<div id="exercise-building-a-data-collection-map" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Exercise: Building a Data Collection Map</h3>
+<p>For this activity you will get to leave the lab and do some real mapping. We will create a feature layers upon which you will add your own features. These data will be useful in creating a web map for students to use later.</p>
+<p>Requirements for the Assignment:</p>
+<ol style="list-style-type: decimal">
+<li>A web map is published to ArcGIS Online and shared with the Digital Earth 2021 group.</li>
+</ol>
+<ul>
+<li>At least one of the feature layers contains AT LEAST the following fields:
+<ul>
+<li>Date field</li>
+<li>A field that utilizes domains</li>
+<li>Another field of your choice</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>A service definition for storing attachments is used.</li>
+<li>The field work area is NOT at WHS.</li>
+<li>At least 20 features (with photos of the features) are collected.</li>
+<li>You may work by yourself or with one partner on this project. If you work with someone else the number of features required is doubled.</li>
+</ol>
+<p>The steps we will follow on this exercise are:</p>
 <ol style="list-style-type: decimal">
 <li>Decide where your collection site will be and what types of features you will collect.</li>
 <li>Create a feature layer on ArcGIS Pro which includes features and domains for data collection. Include a feature service for storing attachments when needed.
@@ -254,7 +273,9 @@
 </ol>
 <p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/New_FC.PNG?raw=true" width="500"></p>
 <ul>
-<li>Define your feature class.</li>
+<li>
+Define your feature class.
+</li>
 </ul>
 <p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Define.PNG?raw=true" width="500"></p>
 <ul>
@@ -304,7 +325,7 @@
 </ul></li>
 </ul>
 <ol start="3" style="list-style-type: decimal">
-<li>Collect data for that layer using our cell phones and Collector for ArcGIS.
+<li>Collect data for that layer using your cell phone and Field Maps for ArcGIS.
 <ul>
 <li>Go to the study area and collect features. Be sure to take photos of the features as you go.</li>
 </ul></li>
