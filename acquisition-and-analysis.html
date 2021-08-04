@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Acquisition and Analysis | Digital Earth: An Introductory GIS Course</title>
+  <meta name="description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Acquisition and Analysis | Digital Earth: An Introductory GIS Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Acquisition and Analysis | Digital Earth: An Introductory GIS Course" />
+  
+  <meta name="twitter:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  
+
+<meta name="author" content="Steve Cline" />
+
+
+<meta name="date" content="2021-05-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="data-models-for-gis.html"/>
+<link rel="next" href="appendix.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+
+<img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/earth_logo.png" width="250">
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i><b>1.1</b> Preface</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stuff-happens"><i class="fa fa-check"></i><b>1.2</b> Stuff Happens…</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#spatial-thinking"><i class="fa fa-check"></i><b>1.3</b> Spatial Thinking</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#mental-maps"><i class="fa fa-check"></i><b>1.3.1</b> Mental Maps</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#asking-geographic-questions"><i class="fa fa-check"></i><b>1.3.2</b> Asking Geographic Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#geographic-concepts"><i class="fa fa-check"></i><b>1.4</b> Geographic Concepts</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#location"><i class="fa fa-check"></i><b>1.4.1</b> Location</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#direction"><i class="fa fa-check"></i><b>1.4.2</b> Direction</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#distance"><i class="fa fa-check"></i><b>1.4.3</b> Distance</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#space"><i class="fa fa-check"></i><b>1.4.4</b> Space</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#navigation"><i class="fa fa-check"></i><b>1.4.5</b> Navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#geographic-information-systems-for-today-and-beyond"><i class="fa fa-check"></i><b>1.5</b> Geographic Information Systems for Today and Beyond</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#gis-defined"><i class="fa fa-check"></i><b>1.5.1</b> GIS Defined</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#three-approaches-to-giss"><i class="fa fa-check"></i><b>1.5.2</b> Three Approaches to GISs</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#gis-futures"><i class="fa fa-check"></i><b>1.5.3</b> GIS Futures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-anatomy.html"><a href="map-anatomy.html"><i class="fa fa-check"></i><b>2</b> Map Anatomy</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#maps-and-map-types"><i class="fa fa-check"></i><b>2.1</b> Maps and Map Types</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-anatomy.html"><a href="map-anatomy.html#reference-maps"><i class="fa fa-check"></i><b>2.1.1</b> Reference Maps</a></li>
+<li class="chapter" data-level="2.1.2" data-path="map-anatomy.html"><a href="map-anatomy.html#thematic-maps"><i class="fa fa-check"></i><b>2.1.2</b> Thematic Maps</a></li>
+<li class="chapter" data-level="2.1.3" data-path="map-anatomy.html"><a href="map-anatomy.html#dynamic-maps"><i class="fa fa-check"></i><b>2.1.3</b> Dynamic Maps</a></li>
+<li class="chapter" data-level="2.1.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-exploring-gis-maps"><i class="fa fa-check"></i><b>2.1.4</b> Exercise: Exploring GIS Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale-coordinate-systems-and-map-projections"><i class="fa fa-check"></i><b>2.2</b> Map Scale, Coordinate Systems, and Map Projections</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale"><i class="fa fa-check"></i><b>2.2.1</b> Map Scale</a></li>
+<li class="chapter" data-level="2.2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#coordinate-systems"><i class="fa fa-check"></i><b>2.2.2</b> Coordinate Systems</a></li>
+<li class="chapter" data-level="2.2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-projections"><i class="fa fa-check"></i><b>2.2.3</b> Map Projections</a></li>
+<li class="chapter" data-level="2.2.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-basics-of-geographic-coordinate-systems"><i class="fa fa-check"></i><b>2.2.4</b> Exercise: Basics of Geographic Coordinate Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-abstraction"><i class="fa fa-check"></i><b>2.3</b> Map Abstraction</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="map-anatomy.html"><a href="map-anatomy.html#what-is-a-forest"><i class="fa fa-check"></i><b>2.3.1</b> What Is a Forest?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-content-and-generalization"><i class="fa fa-check"></i><b>2.3.2</b> Map Content and Generalization</a></li>
+<li class="chapter" data-level="2.3.3" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-symbolizing-map-layers"><i class="fa fa-check"></i><b>2.3.3</b> Exercise: Symbolizing Map Layers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-and-information"><i class="fa fa-check"></i><b>3.1</b> Data and Information</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#of-files-and-formats"><i class="fa fa-check"></i><b>3.1.1</b> Of Files and Formats…</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#exercise-introduction-to-spatial-data"><i class="fa fa-check"></i><b>3.1.2</b> Exercise: Introduction to Spatial Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#data-about-data"><i class="fa fa-check"></i><b>3.2</b> Data about Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#exercise-mapping-addresses-and-places"><i class="fa fa-check"></i><b>3.2.1</b> Exercise: Mapping Addresses and Places</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#finding-data"><i class="fa fa-check"></i><b>3.3</b> Finding Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#exercise-mapping-census-data"><i class="fa fa-check"></i><b>3.3.1</b> Exercise: Mapping Census Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html"><i class="fa fa-check"></i><b>4</b> Data Models for GIS</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#raster-data-models"><i class="fa fa-check"></i><b>4.1</b> Raster Data Models</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-raster-model"><i class="fa fa-check"></i><b>4.1.1</b> Advantages/Disadvantages of the Raster Model</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-performing-supervised-pixel-based-image-classification"><i class="fa fa-check"></i><b>4.1.2</b> Exercise: Performing Supervised Pixel-Based Image Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models"><i class="fa fa-check"></i><b>4.2</b> Vector Data Models</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models-structures"><i class="fa fa-check"></i><b>4.2.1</b> Vector Data Models Structures</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-vector-model"><i class="fa fa-check"></i><b>4.2.2</b> Advantages/Disadvantages of the Vector Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-creating-vector-tiles-in-arcgis-pro"><i class="fa fa-check"></i><b>4.2.3</b> Exercise: Creating Vector Tiles in ArcGIS Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery-and-aerial-photography"><i class="fa fa-check"></i><b>4.3</b> Satellite Imagery and Aerial Photography</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery"><i class="fa fa-check"></i><b>4.3.1</b> Satellite Imagery</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#aerial-photography"><i class="fa fa-check"></i><b>4.3.2</b> Aerial Photography</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-change-detection-using-imagery"><i class="fa fa-check"></i><b>4.3.3</b> Exercise: Change Detection Using Imagery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html"><i class="fa fa-check"></i><b>5</b> Acquisition and Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geographic-data-acquisition"><i class="fa fa-check"></i><b>5.1</b> Geographic Data Acquisition</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#data-types"><i class="fa fa-check"></i><b>5.1.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
+<li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
+<li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
+<li class="chapter" data-level="5.2.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geoprocessing-operations"><i class="fa fa-check"></i><b>5.2.2</b> Geoprocessing Operations</a></li>
+<li class="chapter" data-level="5.2.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-proximity-analysis"><i class="fa fa-check"></i><b>5.2.3</b> Exercise: Introduction to Proximity Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#multiple-layer-analysis"><i class="fa fa-check"></i><b>5.3</b> Multiple Layer Analysis</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-operations"><i class="fa fa-check"></i><b>5.3.1</b> Overlay Operations</a></li>
+<li class="chapter" data-level="5.3.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#other-multilayer-geoprocessing-options"><i class="fa fa-check"></i><b>5.3.2</b> Other Multilayer Geoprocessing Options</a></li>
+<li class="chapter" data-level="5.3.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#spatial-join"><i class="fa fa-check"></i><b>5.3.3</b> Spatial Join</a></li>
+<li class="chapter" data-level="5.3.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-errors"><i class="fa fa-check"></i><b>5.3.4</b> Overlay Errors</a></li>
+<li class="chapter" data-level="5.3.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-overlay-analysis"><i class="fa fa-check"></i><b>5.3.5</b> Exercise: Introduction to Overlay Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#course-lecture-notes"><i class="fa fa-check"></i><b>6.1</b> Course Lecture Notes</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#final-project-option"><i class="fa fa-check"></i><b>6.2</b> Final Project Option</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="appendix.html"><a href="appendix.html#project-requirements"><i class="fa fa-check"></i><b>6.2.1</b> Project Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="appendix.html"><a href="appendix.html#submitting-map-packages"><i class="fa fa-check"></i><b>6.3</b> Submitting Map Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix.html"><a href="appendix.html#esri-virtual-campus-records"><i class="fa fa-check"></i><b>6.4</b> ESRI Virtual Campus Records</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix.html"><a href="appendix.html#related-media"><i class="fa fa-check"></i><b>6.5</b> Related Media</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Earth: An Introductory GIS Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="acquisition-and-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Acquisition and Analysis</h1>
+<p>Every user of geospatial data has experienced the challenge of obtaining, organizing, storing, sharing, and visualizing their data. The variety of formats and data structures, as well as the disparate quality, of geospatial data can result in a dizzying accumulation of useful and useless pieces of spatially explicit information that must be poked, prodded, and wrangled into a single, unified dataset. This chapter addresses the basic concerns related to data acquisition and management of the various formats and qualities of geospatial data currently available for use in modern geographic information system (GIS) projects.</p>
+<p>In addition to acquisisition we will begin to learn about some basic GIS analysis tools. Spatial analysis is a fundamental component of a GIS that allows for an in-depth study of the topological and geometric properties of a dataset or datasets. In this chapter, we discuss the basic spatial analysis techniques for vector datasets.</p>
+<div id="geographic-data-acquisition" class="section level2">
+<h2><span class="header-section-number">5.1</span> Geographic Data Acquisition</h2>
+<blockquote>
+<p>The objective of this section is to introduce different data types, measurement scales, and data capture methods.</p>
+</blockquote>
+<p>Acquiring geographic data is an important factor in any geographic information system (GIS) effort. It has been estimated that data acquisition typically consumes 60 to 80 percent of the time and money spent on any given project. Therefore, care must be taken to ensure that GIS projects remain mindful of their stated goals so the collection of spatial data proceeds in an efficient and effective manner as possible. This chapter outlines the many forms and sources of geospatial data available for use in a GIS.</p>
+<div id="data-types" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Data Types</h3>
+<p>The type of data that we employ to help us understand a given entity is determined by (1) what we are examining, (2) what we want to know about that entity, and (3) our ability to measure that entity at a desired scale. The most common types of data available for use in a GIS are alphanumeric strings, numbers, Boolean values, dates, and binaries.</p>
+<p>An <strong>alphanumeric string</strong>, or text, data type is any simple combination of letters and numbers that may or may not form coherent words. The <strong>number</strong> data type can be subcategorized as either floating-point or integer. A <strong>floating-point</strong> is any data value that contains decimal digits, while an <strong>integer</strong> is any data value that does not contain decimal digits. Integers can be short or long depending on the amount of significant digits in that number. Also, they are based on the concept of the “bit” in a computer. As you may recall, a bit is the most basic unit of information in a computer and stores values in one of two states: 1 or 0. Therefore, an 8-bit attribute would consist of eight 1s or 0s in any combination (e.g., 10010011, 00011011, 11100111).</p>
+<p><strong>Short integers</strong> are 16-bit values and therefore can be used to characterize numbers ranging either from −32,768 to 32,767 or from 0 to 65,535 depending on whether the number is signed or unsigned (i.e., contains a + or − sign). <strong>Long integers</strong>, alternatively, are 32-bit values and therefore can characterize numbers ranging either from −2,147,483,648 to 2,147,483,647 or from 0 to 4,294,967,295.</p>
+<p>A <strong>single precision floating-point</strong> value occupies 32 bits, like the long integer. However, this data type provides for a value of up to 7 bits to the left of the decimal (a maximum value of 128, or 127 if signed) and up to 23-bit values to the right of the decimal point (approximately 7 decimal digits). A <strong>double precision floating-point</strong> value essentially stores two 32-bit values as a single value. Double precision floats, then, can represent a value with up to 11 bits to the left of the decimal point and values with up to 52 bits to the right of the decimal (approximately 16 decimal digits) (Figure 5.1 “Double Precision Floating-Point (64-Bit Value), as Stored in a Computer”).</p>
+<p><i>Figure 5.1 Double Precision Floating-Point (64-Bit Value), as Stored in a Computer</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig5-1.jpg" width="500"></p>
+<p>Boolean, date, and binary values are less complex. <strong>Boolean</strong> values are simply those values that are deemed true or false based on the application of a Boolean operator such as AND, OR, and NOT. The <strong>date</strong> data type is presumably self-explanatory, while the <strong>binary</strong> data type represents attributes whose values are either 1 or 0.</p>
+</div>
+<div id="measurement-scale" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Measurement Scale</h3>
+<p>In addition to defining data by type, a measurement scale acts to group data according to level of complexity (Stevens 1946).Stevens, S. S. 1946. “On the Theory of Scales of Measurement.” Science 103 (2684): 677–80. For the purposes of GIS analyses, measurement scales can be grouped in to two general categories. Nominal and ordinal data represent <strong>categorical data</strong>; interval and ratio data represent <strong>numeric data</strong>.</p>
+<p>The most simple data measurement scale is the <strong>nominal</strong>, or named, scale. The nominal scale makes statements about what to call data points but does not allow for scalar comparisons between one object and another. For example, the attribution of nominal information to a set of points that represent cities will describe whether the given locale is “Los Angeles” or “New York.” However, no further denotations, such as population or voting history, can be made about those locales. Other examples of nominal data include last name, eye color, land-use type, ethnicity, and gender.</p>
+<p><strong>Ordinal data</strong> places attribute information into ranks and therefore yields more precisely scaled information than nominal data. Ordinal data describes the position in which data occur, such as first, second, third, and so forth. These scales may also take on names, such as “very unsatisfied,” “unsatisfied,” “satisfied,” and “very satisfied.” Although this measurement scale indicates the ranking of each data point relative to other data points, the ordinal scale does not explicitly denote the exact quantitative difference between these rankings. For example, if an ordinal attribute represents which runner came in first, second, or third place, it does not state by how much time the winning runner beat the second place runner. Therefore, one cannot undertake arithmetic operations with ordinal data. Only sequence is explicit.</p>
+<p>A measurement scale that does allow precise quantitative statements to be made about attributes is <strong>interval data</strong>. Interval data are measured along a scale in which each position is equidistant to one another. Elevation and temperature readings are common representations of interval data. For example, it can be determined through this scale that 30 ºF is 5 ºF warmer than 25 ºF. A notable property of the interval scale is that zero is not a meaningful value in the sense that zero does not represent nothingness, or the absence of a value. Indeed, 0 ºF does not indicate that no temperature exists. Similarly, an elevation of 0 feet does not indicate a lack of elevation; rather, it indicates mean sea level.</p>
+<p><strong>Ratio data</strong> are similar to the interval measurement scale; however, it is based around a meaningful zero value. Population density is an example of ratio data whereby a 0 population density indicates that no people live in the area of interest. Similarly, the Kelvin temperature scale is a ratio scale as 0 K does imply that no heat (temperature) is measurable within the given attribute.</p>
+<p>Specific to numeric datasets, data values also can be considered to be discrete or continuous. <strong>Discrete data</strong> are those that maintain a finite number of possible values, while <strong>continuous data</strong> can be represented by an infinite number of values. For example, the number of mature trees on a small property will necessarily be between one and one hundred (for argument’s sake). However, the height of those trees represents a continuous data value as there are an infinite number of potential values (e.g., one tree may be 20 feet tall, 20.1 feet, or 20.15 feet, 20.157 feet, and so forth).</p>
+</div>
+<div id="primary-data-capture" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Primary Data Capture</h3>
+<p>Now that we have a sense of the different data types and measurement scales available for use in a GIS, we must direct our thoughts to how this data can be acquired. <strong>Primary data capture</strong> is a direct data acquisition methodology that is usually associated with some type of in-the-field effort. In the case of vector data, directly captured data commonly comes from a global positioning system (GPS) or other types of surveying equipment such as a total station (Figure 5.2 “GPS Unit (left) and Total Station (right)”). Total stations are specialized, primary data capture instruments that combine a theodolite (or transit), which measures horizontal and vertical angles, with a tool to measure the slope distance from the unit to an observed point. Use of a total station allows field crews to quickly and accurately derive the topography for a particular landscape.</p>
+<p><i>Figure 5.2 GPS Unit (left) and Total Station (right)</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig5-2.jpg" width="500"></p>
+<p>In the case of GPS, handheld units access positional data from satellites and log the information for subsequent retrieval. A network of twenty-four navigation satellites is situated around the globe and provides precise coordinate information for any point on the earth’s surface (Figure 5.3 “Earth Imaging Satellite Capturing Primary Data”). Maintaining a line of sight to four or more of these satellites provides the user with reasonably accurate location information. These locations can be collected as individual points or can be linked together to form lines or polygons depending on user preference. Attribute data such as land-use type, telephone pole number, and river name can be simultaneously entered by the user. This location and attribute data can then be uploaded to the GIS for visualization. Depending on the GPS make and model, this upload often requires some type of intermediate file conversion via software provided by the manufacturer of the GPS unit. However, there are some free online resources that can convert GPS data from one format to another. GPSBabel is an example of such an online resource (<a href="http://www.gpsvisualizer.com/gpsbabel" class="uri">http://www.gpsvisualizer.com/gpsbabel</a>).</p>
+<p>In addition to the typical GPS unit shown in Figure 5.2 “GPS Unit (left) and Total Station (right)”, GPS is becoming increasingly incorporated into other new technologies. For example, smartphones now embed GPS capabilities as a standard technological component. These phone/GPS units maintain comparable accuracy to similarly priced stand-alone GPS units and are largely responsible for a renaissance in facilitating portable, real-time data capture and sharing to the masses. The ubiquity of this technology led to a proliferation of crowdsourced data acquisition alternatives. <strong>Crowdsourcing</strong> is a data collection method whereby users contribute freely to building spatial databases. This rapidly expanding methodology is utilized in such applications as TomTom’s MapShare application, Google Earth, Bing Maps, and ArcGIS.</p>
+<p>Raster data obtained via direct capture comes more commonly from remotely sensed sources (Figure 5.3 “Earth Imaging Satellite Capturing Primary Data”). Remotely sensed data offers the advantage of obviating the need for physical access to the area being imaged. In addition, huge tracts of land can be characterized with little to no additional time and labor by the researcher. On the other hand, validation is required for remotely sensed data to ensure that the sensor is not only operating correctly but properly calibrated to collect the desired information. Satellites and aerial cameras provide the most ubiquitous sources of direct-capture raster data (Chapter 4 “Data Models for GIS”, Section 4.3.1 “Satellite Imagery”).</p>
+<p><i>Figure 5.3 Earth Imaging Satellite Capturing Primary Data</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig5-2.jpg" width="500"></p>
+</div>
+<div id="secondary-data-capture" class="section level3">
+<h3><span class="header-section-number">5.1.4</span> Secondary Data Capture</h3>
+<p><strong>Secondary data capture</strong> is an indirect methodology that utilizes the vast amount of existing geospatial data available in both digital and hard-copy formats. Prior to initiating any GIS effort, it is always wise to mine online resources for existing GIS data that may fulfill your mapping needs without the potentially intensive step of creating the data from scratch. Such digital GIS data are available from a variety of sources including international agencies (CGIAR, CIESIN, United Nations, World Bank, etc.); federal governments (USGS, USDA, NOAA, USFWS, NASA, EPA, US Census, etc.); state governments (CDFG, Teale Data Center, INGIS, MARIS, NH GIS Resources, etc.); local governments (SANDAG, RCLIS, etc.); university websites (UCLA, Duke, Stanford, University of Chicago, Indiana Spatial Data Portal, etc.); and commercial websites (ESRI, GeoEye, Geocomm, etc.). These secondary data are available in a wide assortment of file types, extents, and sizes but is ready-made to be used in most GIS software packages. Often these data are free, but many sites will charge a fee for access to the proprietary information they have developed.</p>
+<p>Although these data sources are all cases where the information has been converted to digital format and properly projected for use in a GIS, there is also a great deal of spatial information that can be gleaned from existing, nondigital sources. Paper maps, for example, may contain current or historic information on a locale that cannot be found in digital format. In this case, the process of <strong>digitization</strong> can be used to create digital files from the original paper copy. Three primary methods exist for digitizing spatial information: two are manual, and one is automated.</p>
+<p><strong>Tablet digitizing</strong> is a manual data capture method whereby a user enters coordinate information into a computer through the use of a digitizing tablet and a digitizing puck. To begin, a paper map is secured to a back-lit digitizing tablet. The backlight allows all features on the map to be easily observed, which reduces eyestrain. The coordinates of the point, line, and/or polygon features on the paper map are then entered into a digital file as the user employs a puck, which is similar to a multibutton mouse with a crosshair, to “click” their way around the vertices of each desired feature. The resulting digital file will need to be properly georeferenced following completion of the digitization task to ensure that this information will properly align with existing datasets.</p>
+<p><strong>Heads-up digitizing</strong>, the second manual data capture method, is referred to as “on-screen” digitizing. Heads-up digitizing can be used on either paper maps or existing digital files. In the case of a paper map, the map must first be scanned into the computer at a high enough resolution that will allow all pertinent features to be resolved. Second, the now-digital image must be registered so the map will conform to an existing coordinate system. To do this, the user can enter control points on the screen and transform, or “rubber-sheet,” the scanned image into real world coordinates. Finally, the user simply zooms to specific areas on the map and traces the points, lines, and/or polygons, similar to the tablet digitization example. Heads-up digitizing is particularly simple when existing GIS files, satellite images, or aerial photographs are used as a baseline. For example, if a user plans to digitize the boundary of a lake as seen from a georeferenced satellite image, the steps of scanning and registering can be skipped, and projection information from the originating image can simply be copied over to the digitized file.</p>
+<p>The third, automated method of secondary data capture requires the user to scan a paper map and vectorize the information therein. This <strong>vectorization</strong> method typically requires a specific software package that can convert a raster scan to vector lines. This requires a very high-resolution, clean scan. If the image is not clean, all the imperfections on the map will likely be converted to false points/lines/polygons in the digital version. If a clean scan is not available, it is often faster to use a manual digitization methodology. Regardless, this method is much quicker than the aforementioned manual methods and may be the best option if multiple maps must be digitized and/or if time is a limiting factor. Often, a semiautomatic approach is employed whereby a map is scanned and vectorized, followed by a heads-up digitizing session to edit and repair any errors that occurred during automation.</p>
+<p>The final secondary data capture method worth noting is the use of information from <strong>reports and documents</strong>. Via this method, one enters information from reports and documents into the attribute table of an existing, digital GIS file that contains all the pertinent points, lines, and polygons. For example, new information specific to census tracts may become available following a scientific study. The GIS user simply needs to download the existing GIS file of census tracts and begin entering the study’s report/document information directly into the attribute table. If the data tables are available digitally, the use of the “join” and “relate” functions in a GIS (Section 5.2.2 “Joins and Relates”) are often extremely helpful as they will automate much of the data entry effort.</p>
+</div>
+<div id="exercise-building-a-data-collection-map" class="section level3">
+<h3><span class="header-section-number">5.1.5</span> Exercise: Building a Data Collection Map</h3>
+<p>For this activity you will get to leave the lab and do some real mapping. We will create a feature layers upon which you will add your own features. These data will be useful in creating a web map for students to use later.</p>
+<p>Requirements for the Assignment:</p>
+<ol style="list-style-type: decimal">
+<li>A web map is published to ArcGIS Online and shared with the Digital Earth 2021 group.</li>
+</ol>
+<ul>
+<li>At least one of the feature layers contains AT LEAST the following fields:
+<ul>
+<li>Date field</li>
+<li>A field that utilizes domains</li>
+<li>Another field of your choice</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>A service definition for storing attachments is used.</li>
+<li>The field work area is NOT at WHS.</li>
+<li>At least 20 features (with photos of the features) are collected.</li>
+<li>You may work by yourself or with one partner on this project. If you work with someone else the number of features required is doubled.</li>
+</ol>
+<p>The steps we will follow on this exercise are:</p>
+<ol style="list-style-type: decimal">
+<li>Decide where your collection site will be and what types of features you will collect.</li>
+<li>Create a feature layer on ArcGIS Pro which includes features and domains for data collection. Include a feature service for storing attachments when needed.
+<ul>
+<li>Open ArcGIS Pro and create a new project. Name it according to what you data you are collecting.</li>
+<li>Select a basemap that is appropriate for your project.</li>
+<li>Right-Click the feature database for your project. Choose “New” &gt; “Feature Class”.</li>
+</ul></li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/New_FC.PNG?raw=true" width="500"></p>
+<ul>
+<li>
+Define your feature class.
+</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Define.PNG?raw=true" width="500"></p>
+<ul>
+<li><p>Create Fields. While you can add more fields later, it is a good idea to think about what you want ahead of time. Required Fields are as follows:</p>
+<pre><code>- Date Collected
+- Type of feature (or some other field you may create domains for)
+- Description</code></pre></li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Fields.PNG?raw=true" width="500"></p>
+<ul>
+<li>Leave the Spatial Reference as “WGS 1984 Web Mercator (Auxiliary Sphere)”
+<ul>
+<li>Click “Finish”</li>
+<li>Ensure that your feature layer has been added to the map. If not, add it.</li>
+<li>In the “Tools” menu, find “Enable Attachments” and run it on your newly created layer.</li>
+<li>Open the attribute table for the layer. Select the “Table View” ribbon.</li>
+</ul></li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Table_View.PNG?raw=true" width="500"></p>
+<ul>
+<li>In the “Fields” tab, find the field for which you will create domains. In the “Domain” column of that field, select “<Add New Domain>”. Name your domain and create several domains.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/domains.PNG?raw=true" width="900"></p>
+<ul>
+<li>In the “Domains” ribbon, click “Save”.
+<ul>
+<li>Select the Fields tab to activate the “Fields” ribbon. Click “Save” in that ribbon.</li>
+<li>Save the project.</li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Publish that feature layer to ArcGIS Online for use in web maps.
+<ul>
+<li>In the “Share” ribbon, select “Web Map”.</li>
+</ul></li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/web_map.PNG?raw=true" width="900"></p>
+<ul>
+<li>Configure the Web Map. Ensure that the configuration is set to “Editable”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/Data_Collection/Share.PNG?raw=true" width="500"></p>
+<ul>
+<li>Click “Analyze”. Fix any errors. Warnings are ok.
+<ul>
+<li>Click “Share”.</li>
+<li>After it is done, find the web map on ArcGIS Online and open it in Field Maps on your phone.</li>
+</ul></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Collect data for that layer using your cell phone and Field Maps for ArcGIS.
+<ul>
+<li>Go to the study area and collect features. Be sure to take photos of the features as you go.</li>
+</ul></li>
+<li>Post-process the data to clean up any errors and make additions to the data.
+<ul>
+<li>Check for any errors in the data when you can. By activating the “Edit” function on the web map, you can move features and edit attribute data.</li>
+<li>Change symbology to make features stand out on the map.</li>
+</ul></li>
+<li>When you are done save the map as Data Collection Exercise and share it with the “Digital Earth 2021” Group.</li>
+</ol>
+</div>
+</div>
+<div id="single-layer-analysis" class="section level2">
+<h2><span class="header-section-number">5.2</span> Single Layer Analysis</h2>
+<blockquote>
+<p>The objective of this section is to become familiar with concepts and terms related to the variety of single overlay analysis techniques available to analyze and manipulate the spatial attributes of a vector feature dataset.</p>
+</blockquote>
+<p>As the name suggests, single layer analyses are those that are undertaken on an individual feature dataset. <strong>Buffering</strong> is the process of creating an output polygon layer containing a zone (or zones) of a specified width around an input point, line, or polygon feature. Buffers are particularly suited for determining the area of influence around features of interest. <strong>Geoprocessing</strong> is a suite of tools provided by many geographic information system (GIS) software packages that allow the user to automate many of the mundane tasks associated with manipulating GIS data. Geoprocessing usually involves the input of one or more feature datasets, followed by a spatially explicit analysis, and resulting in an output feature dataset.</p>
+<div id="buffering" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Buffering</h3>
+<p>Buffers are common vector analysis tools used to address questions of proximity in a GIS and can be used on points, lines, or polygons (Figure 7.1 “Buffers around Red Point, Line, and Polygon Features”). For instance, suppose that a natural resource manager wants to ensure that no areas are disturbed within 1,000 feet of breeding habitat for the federally endangered Delhi Sands flower-loving fly (Rhaphiomidas terminatus abdominalis). This species is found only in the few remaining Delhi Sands soil formations of the western United States. To accomplish this task, a 1,000-foot protection zone (buffer) could be created around all the observed point locations of the species. Alternatively, the manager may decide that there is not enough point-specific location information related to this rare species and decide to protect all Delhi Sands soil formations. In this case, he or she could create a 1,000-foot buffer around all polygons labeled as “Delhi Sands” on a soil formations dataset. In either case, the use of buffers provides a quick-and-easy tool for determining which areas are to be maintained as preserved habitat for the endangered fly.</p>
+<p><i>Figure 7.1 Buffers around Red Point, Line, and Polygon Features</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-1.jpg" width="500"></p>
+<p>Several buffering options are available to refine the output. For example, the buffer tool will typically buffer only selected features. If no features are selected, all features will be buffered. Two primary types of buffers are available to the GIS users: constant width and variable width. <strong>Constant width buffers</strong> require users to input a value by which features are buffered (Figure 7.1 “Buffers around Red Point, Line, and Polygon Features”), such as is seen in the examples in the preceding paragraph. <strong>Variable width buffers</strong>, on the other hand, call on a premade buffer field within the attribute table to determine the buffer width for each specific feature in the dataset (Figure 7.2 “Additional Buffer Options around Red Features: (a) Variable Width Buffers, (b) Multiple Ring Buffers, (c) Doughnut Buffer, (d) Setback Buffer, (e) Nondissolved Buffer, (f) Dissolved Buffer”).</p>
+<p>In addition, users can choose to dissolve or not dissolve the boundaries between overlapping, coincident buffer areas. <strong>Multiple ring buffers</strong> can be made such that a series of concentric buffer zones (much like an archery target) are created around the originating feature at user-specified distances (Figure 7.2 “Additional Buffer Options around Red Features: (a) Variable Width Buffers, (b) Multiple Ring Buffers, (c) Doughnut Buffer, (d) Setback Buffer, (e) Nondissolved Buffer, (f) Dissolved Buffer”). In the case of polygon layers, buffers can be created that include the originating polygon feature as part of the buffer or they be created as a <strong>doughnut buffer</strong> that excludes the input polygon area. <strong>Setback buffers</strong> are similar to doughnut buffers; however, they only buffer the area inside of the polygon boundary. Linear features can be buffered on both sides of the line, only on the left, or only on the right. Linear features can also be buffered so that the end points of the line are rounded (ending in a half-circle) or flat (ending in a rectangle).</p>
+<p><i>Figure 7.2 Additional Buffer Options around Red Features: (a) Variable Width Buffers, (b) Multiple Ring Buffers, (c) Doughnut Buffer, (d) Setback Buffer, (e) Nondissolved Buffer, (f) Dissolved Buffer</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-2.jpg" width="500"></p>
+</div>
+<div id="geoprocessing-operations" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Geoprocessing Operations</h3>
+<p>“Geoprocessing” is a loaded term in the field of GIS. The term can (and should) be widely applied to any attempt to manipulate GIS data. However, the term came into common usage due to its application to a somewhat arbitrary suite of single layer and multiple layer analytical techniques in the Geoprocessing Wizard of ESRI’s ArcView software package in the mid-1990s. Regardless, the suite of geoprocessing tools available in a GIS greatly expand and simplify many of the management and manipulation processes associated with vector feature datasets. The primary use of these tools is to automate the repetitive preprocessing needs of typical spatial analyses and to assemble exact graphical representations for subsequent analysis and/or inclusion in presentations and final mapping products. The union, intersect, symmetrical difference, and identity overlay methods discussed in Section 7.2.2 “Other Multilayer Geoprocessing Options” are often used in conjunction with these geoprocessing tools. The following represents the most common geoprocessing tools.</p>
+<p>The <strong>dissolve</strong> operation combines adjacent polygon features in a single feature dataset based on a single predetermined attribute. For example, part (a) of Figure 7.3 “Single Layer Geoprocessing Functions” shows the boundaries of seven different parcels of land, owned by four different families (labeled 1 through 4). The dissolve tool automatically combines all adjacent features with the same attribute values. The result is an output layer with the same extent as the original but without all of the unnecessary, intervening line segments. The dissolved output layer is much easier to visually interpret when the map is classified according to the dissolved field.</p>
+<p>The <strong>append</strong> operation creates an output polygon layer by combining the spatial extent of two or more layers (part (d) of Figure 7.3 “Single Layer Geoprocessing Functions”). For use with point, line, and polygon datasets, the output layer will be the same feature type as the input layers (which must each be the same feature type as well). Unlike the dissolve tool, append does not remove the boundary lines between appended layers (in the case of lines and polygons). Therefore, it is often useful to perform a dissolve after the use of the append tool to remove these potentially unnecessary dividing lines. Append is frequently used to mosaic data layers, such as digital US Geological Survey (USGS) 7.5-minute topographic maps, to create a single map for analysis and/or display.</p>
+<p>The <strong>select</strong> operation creates an output layer based on a user-defined query that selects particular features from the input layer (part (f) of Figure 7.3 “Single Layer Geoprocessing Functions”). The output layer contains only those features that are selected during the query. For example, a city planner may choose to perform a select on all areas that are zoned “residential” so he or she can quickly assess which areas in town are suitable for a proposed housing development.</p>
+<p>Finally, the <strong>merge</strong> operation combines features within a point, line, or polygon layer into a single feature with identical attribute information. Often, the original features will have different values for a given attribute. In this case, the first attribute encountered is carried over into the attribute table, and the remaining attributes are lost. This operation is particularly useful when polygons are found to be unintentionally overlapping. Merge will conveniently combine these features into a single entity.</p>
+<p><i>Figure 7.3 Single Layer Geoprocessing Functions</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-3.jpg" width="650"></p>
+</div>
+<div id="exercise-introduction-to-proximity-analysis" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Exercise: Introduction to Proximity Analysis</h3>
+<p>Proximity analysis helps you answer questions that require an understanding of the proximity of features. In this course, you will discover how proximity analysis fits into the spatial analysis workflow and learn about proximity analysis methods. You will also use proximity analysis to answer spatial questions about a fictitious scenario.</p>
+<p><a href="https://www.esri.com/training/catalog/5f170c5c9a0e6512bd2bf913/introduction-to-proximity-analysis/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational Account and download the data to a location on your computer that you will be able to easily find and maintain for future coursework.</i></p>
+<p><i>Make sure you are using the same version of ArcGIS Pro as the one you select at the beginning of the course.</i></p>
+</div>
+</div>
+<div id="multiple-layer-analysis" class="section level2">
+<h2><span class="header-section-number">5.3</span> Multiple Layer Analysis</h2>
+<blockquote>
+<p>The objective of this section is to become familiar with concepts and terms related to the implementation of basic multiple layer operations and methodologies used on vector feature datasets.</p>
+</blockquote>
+<p>Among the most powerful and commonly used tools in a geographic information system (GIS) is the overlay of cartographic information. In a GIS, an <strong>overlay</strong> is the process of taking two or more different thematic maps of the same area and placing them on top of one another to form a new map (Figure 7.4 “A Map Overlay Combining Information from Point, Line, and Polygon Vector Layers, as Well as Raster Layers”). Inherent in this process, the overlay function combines not only the spatial features of the dataset but also the attribute information as well.</p>
+<p><i>Figure 7.4 A Map Overlay Combining Information from Point, Line, and Polygon Vector Layers, as Well as Raster Layers</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-4.jpg" width="500"></p>
+<p>A common example used to illustrate the overlay process is, “Where is the best place to put a mall?” Imagine you are a corporate bigwig and are tasked with determining where your company’s next shopping mall will be placed. How would you attack this problem? With a GIS at your command, answering such spatial questions begins with amassing and overlaying pertinent spatial data layers. For example, you may first want to determine what areas can support the mall by accumulating information on which land parcels are for sale and which are zoned for commercial development. After collecting and overlaying the baseline information on available development zones, you can begin to determine which areas offer the most economic opportunity by collecting regional information on average household income, population density, location of proximal shopping centers, local buying habits, and more. Next, you may want to collect information on restrictions or roadblocks to development such as the cost of land, cost to develop the land, community response to development, adequacy of transportation corridors to and from the proposed mall, tax rates, and so forth. Indeed, simply collecting and overlaying spatial datasets provides a valuable tool for visualizing and selecting the optimal site for such a business endeavor.</p>
+<div id="overlay-operations" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Overlay Operations</h3>
+<p>Several basic overlay processes are available in a GIS for vector datasets: point-in-polygon, polygon-on-point, line-on-line, line-in-polygon, polygon-on-line, and polygon-on-polygon. As you may be able to divine from the names, one of the overlay dataset must always be a line or polygon layer, while the second may be point, line, or polygon. The new layer produced following the overlay operation is termed the “output” layer.</p>
+<p>The <strong>point-in-polygon overlay</strong> operation requires a point input layer and a polygon overlay layer. Upon performing this operation, a new output point layer is returned that includes all the points that occur within the spatial extent of the overlay (Figure 7.4 “A Map Overlay Combining Information from Point, Line, and Polygon Vector Layers, as Well as Raster Layers”). In addition, all the points in the output layer contain their original attribute information as well as the attribute information from the overlay. For example, suppose you were tasked with determining if an endangered species residing in a national park was found primarily in a particular vegetation community. The first step would be to acquire the point occurrence locales for the species in question, plus a polygon overlay layer showing the vegetation communities within the national park boundary. Upon performing the point-in-polygon overlay operation, a new point file is created that contains all the points that occur within the national park. The attribute table of this output point file would also contain information about the vegetation communities being utilized by the species at the time of observation. A quick scan of this output layer and its attribute table would allow you to determine where the species was found in the park and to review the vegetation communities in which it occurred. This process would enable park employees to make informed management decisions regarding which onsite habitats to protect to ensure continued site utilization by the species.</p>
+<p><i>Figure 7.5 Point-in-Polygon Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-5.jpg" width="500"></p>
+<p>As its name suggests, the <strong>polygon-on-point overlay</strong> operation is the opposite of the point-in-polygon operation. In this case, the polygon layer is the input, while the point layer is the overlay. The polygon features that overlay these points are selected and subsequently preserved in the output layer. For example, given a point dataset containing the locales of some type of crime and a polygon dataset representing city blocks, a polygon-on-point overlay operation would allow police to select the city blocks in which crimes have been known to occur and hence determine those locations where an increased police presence may be warranted.</p>
+<p><i>Figure 7.6 Polygon-on-Point Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-6.jpg" width="500"></p>
+<p>A <strong>line-on-line overlay</strong> operation requires line features for both the input and overlay layer. The output from this operation is a point or points located precisely at the intersection(s) of the two linear datasets (Figure 7.7 “Line-on-Line Overlay”). For example, a linear feature dataset containing railroad tracks may be overlain on linear road network. The resulting point dataset contains all the locales of the railroad crossings over a town’s road network. The attribute table for this railroad crossing point dataset would contain information on both the railroad and the road over which it passed.</p>
+<p><i>Figure 7.7 Line-on-Line Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-7.jpg" width="500"></p>
+<p>The <strong>line-in-polygon overlay</strong> operation is similar to the point-in-polygon overlay, with that obvious exception that a line input layer is used instead of a point input layer. In this case, each line that has any part of its extent within the overlay polygon layer will be included in the output line layer, although these lines will be truncated at the boundary of the overlay (Figure 7.9 “Polygon-on-Line Overlay”). For example, a line-in-polygon overlay can take an input layer of interstate line segments and a polygon overlay representing city boundaries and produce a linear output layer of highway segments that fall within the city boundary. The attribute table for the output interstate line segment will contain information on the interstate name as well as the city through which they pass.</p>
+<p><i>Figure 7.8 Line-in-Polygon Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-8.jpg" width="500"></p>
+<p>The <strong>polygon-on-line overlay</strong> operation is the opposite of the line-in-polygon operation. In this case, the polygon layer is the input, while the line layer is the overlay. The polygon features that overlay these lines are selected and subsequently preserved in the output layer. For example, given a layer containing the path of a series of telephone poles/wires and a polygon map contain city parcels, a polygon-on-line overlay operation would allow a land assessor to select those parcels containing overhead telephone wires.</p>
+<p><i>Figure 7.9 Polygon-on-Line Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-9.jpg" width="500"></p>
+<p>Finally, the <strong>polygon-in-polygon overlay</strong> operation employs a polygon input and a polygon overlay. This is the most commonly used overlay operation. Using this method, the polygon input and overlay layers are combined to create an output polygon layer with the extent of the overlay. The attribute table will contain spatial data and attribute information from both the input and overlay layers (Figure 7.10 “Polygon-in-Polygon Overlay”). For example, you may choose an input polygon layer of soil types with an overlay of agricultural fields within a given county. The output polygon layer would contain information on both the location of agricultural fields and soil types throughout the county.</p>
+<p><i>Figure 7.10 Polygon-in-Polygon Overlay</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-10.jpg" width="500"></p>
+<p>The overlay operations discussed previously assume that the user desires the overlain layers to be combined. This is not always the case. Overlay methods can be more complex than that and therefore employ the basic Boolean operators: AND, OR, and XOR (see Section 6.1.2 “Measures of Central Tendency”). Depending on which operator(s) are utilized, the overlay method employed will result in an intersection, union, symmetrical difference, or identity.</p>
+<p>Specifically, the <strong>union</strong> overlay method employs the OR operator. A union can be used only in the case of two polygon input layers. It preserves all features, attribute information, and spatial extents from both input layers (part (a) of Figure 7.11 “Vector Overlay Methods”). This overlay method is based on the polygon-in-polygon operation described in Section 7.1.1 “Buffering”.</p>
+<p>Alternatively, the <strong>intersection</strong> overlay method employs the AND operator. An intersection requires a polygon overlay, but can accept a point, line, or polygon input. The output layer covers the spatial extent of the overlay and contains features and attributes from both the input and overlay (part (b) of Figure 7.11 “Vector Overlay Methods”).</p>
+<p>The <strong>symmetrical difference</strong> overlay method employs the XOR operator, which results in the opposite output as an intersection. This method requires both input layers to be polygons. The output polygon layer produced by the symmetrical difference method represents those areas common to only one of the feature datasets (part (c) of Figure 7.11 “Vector Overlay Methods”).</p>
+<p>In addition to these simple operations, the <strong>identity</strong> (also referred to as “minus”) overlay method creates an output layer with the spatial extent of the input layer (part (d) of Figure 7.11 “Vector Overlay Methods”) but includes attribute information from the overlay (referred to as the “identity” layer, in this case). The input layer can be points, lines, or polygons. The identity layer must be a polygon dataset.</p>
+<p><i>Figure 7.11 Vector Overlay Methods</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-11.jpg" width="700"></p>
+</div>
+<div id="other-multilayer-geoprocessing-options" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Other Multilayer Geoprocessing Options</h3>
+<p>In addition to the aforementioned vector overlay methods, other common multiple layer geoprocessing options are available to the user. These included the clip, erase, and split tools. The <strong>clip</strong> geoprocessing operation is used to extract those features from an input point, line, or polygon layer that falls within the spatial extent of the clip layer (part (e) of Figure 7.11 “Vector Overlay Methods”). Following the clip, all attributes from the preserved portion of the input layer are included in the output. If any features are selected during this process, only those selected features within the clip boundary will be included in the output. For example, the clip tool could be used to clip the extent of a river floodplain by the extent of a county boundary. This would provide county managers with insight into which portions of the floodplain they are responsible to maintain. This is similar to the intersect overlay method; however, the attribute information associated with the clip layer is not carried into the output layer following the overlay.</p>
+<p>The <strong>erase</strong> geoprocessing operation is essentially the opposite of a clip. Whereas the clip tool preserves areas within an input layer, the erase tool preserves only those areas outside the extent of the analogous erase layer (part (f) of Figure 7.11 “Vector Overlay Methods”). While the input layer can be a point, line, or polygon dataset, the erase layer must be a polygon dataset. Continuing with our clip example, county managers could then use the erase tool to erase the areas of private ownership within the county floodplain area. Officials could then focus specifically on public reaches of the countywide floodplain for their upkeep and maintenance responsibilities.</p>
+<p>The <strong>split</strong> geoprocessing operation is used to divide an input layer into two or more layers based on a split layer (part (g) of Figure 7.11 “Vector Overlay Methods”). The split layer must be a polygon, while the input layers can be point, line, or polygon. For example, a homeowner’s association may choose to split up a countywide soil series map by parcel boundaries so each homeowner has a specific soil map for their own parcel.</p>
+</div>
+<div id="spatial-join" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Spatial Join</h3>
+<p>A spatial join is a hybrid between an attribute operation and a vector overlay operation. Like the “join” attribute operation described in Section 5.2.2 “Joins and Relates”, a spatial join results in the combination of two feature dataset tables by a common attribute field. Unlike the attribute operation, a spatial join determines which fields from a source layer’s attribute table are appended to the destination layer’s attribute table based on the relative locations of selected features. This relationship is explicitly based on the property of proximity or containment between the source and destination layers, rather than the primary or secondary keys. The proximity option is used when the source layer is a point or line feature dataset, while the containment option is used when the source layer is a polygon feature dataset.</p>
+<p>When employing the proximity (or “nearest”) option, a record for each feature in the source layer’s attribute table is appended to the closest given feature in the destination layer’s attribute table. The proximity option will typically add a numerical field to the destination layer attribute table, called “Distance,” within which the measured distance between the source and destination feature is placed. For example, suppose a city agency had a point dataset showing all known polluters in town and a line dataset of all the river segments within the municipal boundary. This agency could then perform a proximity-based spatial join to determine the nearest river segment that would most likely be affected by each polluter.</p>
+<p>When using the containment (or “inside”) option, a record for each feature in the polygon source layer’s attribute table is appended to the record in the destination layer’s attribute table that it contains. If a destination layer feature (point, line, or polygon) is not completely contained within a source polygon, no value will be appended. For example, suppose a pool cleaning business wanted to hone its marketing services by providing flyers only to homes that owned a pool. They could obtain a point dataset containing the location of every pool in the county and a polygon parcel map for that same area. That business could then conduct a spatial join to append the parcel information to the pool locales. This would provide them with information on the each land parcel that contained a pool and they could subsequently send their mailers only to those homes.</p>
+</div>
+<div id="overlay-errors" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Overlay Errors</h3>
+<p>Although overlays are one of the most important tools in a GIS analyst’s toolbox, there are some problems that can arise when using this methodology. In particular, <strong>slivers</strong> are a common error produced when two slightly misaligned vector layers are overlain (Figure 7.12 “Slivers”). This misalignment can come from several sources including digitization errors, interpretation errors, or source map errors (Chang 2008).Chang, K. 2008. Introduction to Geographic Information Systems. New York: McGraw-Hill. For example, most vegetation and soil maps are created from field survey data, satellite images, and aerial photography. While you can imagine that the boundaries of soils and vegetation frequently coincide, the fact that they were most likely created by different researchers at different times suggests that their boundaries will not perfectly overlap. To ameliorate this problem, GIS software incorporates a <strong>cluster tolerance</strong> option that forces nearby lines to be snapped together if they fall within a user-specified distance. Care must be taken when assigning cluster tolerance. Too strict a setting will not snap shared boundaries, while too lenient a setting will snap unintended, neighboring boundaries together (Wang and Donaghy 1995).Wang, F., and P. Donaghy. 1995. “A Study of the Impact of Automated Editing on Polygon Overlay Analysis Accuracy.” Computers and Geosciences 21: 1177–85.</p>
+<p><i>Figure 7.12 Slivers</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig7-12.jpg" width="700"></p>
+<p>A second potential source of error associated with the overlay process is error propagation. <strong>Error propagation</strong> arises when inaccuracies are present in the original input and overlay layers and are propagated through to the output layer (MacDougall 1975).MacDougall, E. 1975. “The Accuracy of Map Overlays.” Landscape Planning 2: 23–30. These errors can be related to positional inaccuracies of the points, lines, or polygons. Alternatively, they can arise from attribute errors in the original data table(s). Regardless of the source, error propagation represents a common problem in overlay analysis, the impact of which depends largely on the accuracy and precision requirements of the project at hand.</p>
+</div>
+<div id="exercise-introduction-to-overlay-analysis" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Exercise: Introduction to Overlay Analysis</h3>
+<p>Proximity analysis helps you answer questions that require an understanding of the proximity of features. In this course, you will discover how proximity analysis fits into the spatial analysis workflow and learn about proximity analysis methods. You will also use proximity analysis to answer spatial questions about a fictitious scenario.</p>
+<p><a href="https://www.esri.com/training/catalog/5f98b45242708d58e8ca7587/introduction-to-overlay-analysis/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational Account and download the data to a location on your computer that you will be able to easily find and maintain for future coursework.</i></p>
+<p><i>Make sure you are using the same version of ArcGIS Pro as the one you select at the beginning of the course.</i></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-models-for-gis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

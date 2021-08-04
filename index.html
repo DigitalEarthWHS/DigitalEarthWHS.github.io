@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Digital Earth: An Introductory GIS Course</title>
+  <meta name="description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Digital Earth: An Introductory GIS Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Digital Earth: An Introductory GIS Course" />
+  
+  <meta name="twitter:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  
+
+<meta name="author" content="Steve Cline" />
+
+
+<meta name="date" content="2021-05-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="map-anatomy.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+
+<img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/earth_logo.png" width="250">
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i><b>1.1</b> Preface</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stuff-happens"><i class="fa fa-check"></i><b>1.2</b> Stuff Happens…</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#spatial-thinking"><i class="fa fa-check"></i><b>1.3</b> Spatial Thinking</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#mental-maps"><i class="fa fa-check"></i><b>1.3.1</b> Mental Maps</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#asking-geographic-questions"><i class="fa fa-check"></i><b>1.3.2</b> Asking Geographic Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#geographic-concepts"><i class="fa fa-check"></i><b>1.4</b> Geographic Concepts</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#location"><i class="fa fa-check"></i><b>1.4.1</b> Location</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#direction"><i class="fa fa-check"></i><b>1.4.2</b> Direction</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#distance"><i class="fa fa-check"></i><b>1.4.3</b> Distance</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#space"><i class="fa fa-check"></i><b>1.4.4</b> Space</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#navigation"><i class="fa fa-check"></i><b>1.4.5</b> Navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#geographic-information-systems-for-today-and-beyond"><i class="fa fa-check"></i><b>1.5</b> Geographic Information Systems for Today and Beyond</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#gis-defined"><i class="fa fa-check"></i><b>1.5.1</b> GIS Defined</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#three-approaches-to-giss"><i class="fa fa-check"></i><b>1.5.2</b> Three Approaches to GISs</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#gis-futures"><i class="fa fa-check"></i><b>1.5.3</b> GIS Futures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-anatomy.html"><a href="map-anatomy.html"><i class="fa fa-check"></i><b>2</b> Map Anatomy</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#maps-and-map-types"><i class="fa fa-check"></i><b>2.1</b> Maps and Map Types</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-anatomy.html"><a href="map-anatomy.html#reference-maps"><i class="fa fa-check"></i><b>2.1.1</b> Reference Maps</a></li>
+<li class="chapter" data-level="2.1.2" data-path="map-anatomy.html"><a href="map-anatomy.html#thematic-maps"><i class="fa fa-check"></i><b>2.1.2</b> Thematic Maps</a></li>
+<li class="chapter" data-level="2.1.3" data-path="map-anatomy.html"><a href="map-anatomy.html#dynamic-maps"><i class="fa fa-check"></i><b>2.1.3</b> Dynamic Maps</a></li>
+<li class="chapter" data-level="2.1.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-exploring-gis-maps"><i class="fa fa-check"></i><b>2.1.4</b> Exercise: Exploring GIS Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale-coordinate-systems-and-map-projections"><i class="fa fa-check"></i><b>2.2</b> Map Scale, Coordinate Systems, and Map Projections</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale"><i class="fa fa-check"></i><b>2.2.1</b> Map Scale</a></li>
+<li class="chapter" data-level="2.2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#coordinate-systems"><i class="fa fa-check"></i><b>2.2.2</b> Coordinate Systems</a></li>
+<li class="chapter" data-level="2.2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-projections"><i class="fa fa-check"></i><b>2.2.3</b> Map Projections</a></li>
+<li class="chapter" data-level="2.2.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-basics-of-geographic-coordinate-systems"><i class="fa fa-check"></i><b>2.2.4</b> Exercise: Basics of Geographic Coordinate Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-abstraction"><i class="fa fa-check"></i><b>2.3</b> Map Abstraction</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="map-anatomy.html"><a href="map-anatomy.html#what-is-a-forest"><i class="fa fa-check"></i><b>2.3.1</b> What Is a Forest?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-content-and-generalization"><i class="fa fa-check"></i><b>2.3.2</b> Map Content and Generalization</a></li>
+<li class="chapter" data-level="2.3.3" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-symbolizing-map-layers"><i class="fa fa-check"></i><b>2.3.3</b> Exercise: Symbolizing Map Layers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-and-information"><i class="fa fa-check"></i><b>3.1</b> Data and Information</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#of-files-and-formats"><i class="fa fa-check"></i><b>3.1.1</b> Of Files and Formats…</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#exercise-introduction-to-spatial-data"><i class="fa fa-check"></i><b>3.1.2</b> Exercise: Introduction to Spatial Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#data-about-data"><i class="fa fa-check"></i><b>3.2</b> Data about Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#exercise-mapping-addresses-and-places"><i class="fa fa-check"></i><b>3.2.1</b> Exercise: Mapping Addresses and Places</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#finding-data"><i class="fa fa-check"></i><b>3.3</b> Finding Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#exercise-mapping-census-data"><i class="fa fa-check"></i><b>3.3.1</b> Exercise: Mapping Census Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html"><i class="fa fa-check"></i><b>4</b> Data Models for GIS</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#raster-data-models"><i class="fa fa-check"></i><b>4.1</b> Raster Data Models</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-raster-model"><i class="fa fa-check"></i><b>4.1.1</b> Advantages/Disadvantages of the Raster Model</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-performing-supervised-pixel-based-image-classification"><i class="fa fa-check"></i><b>4.1.2</b> Exercise: Performing Supervised Pixel-Based Image Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models"><i class="fa fa-check"></i><b>4.2</b> Vector Data Models</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models-structures"><i class="fa fa-check"></i><b>4.2.1</b> Vector Data Models Structures</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-vector-model"><i class="fa fa-check"></i><b>4.2.2</b> Advantages/Disadvantages of the Vector Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-creating-vector-tiles-in-arcgis-pro"><i class="fa fa-check"></i><b>4.2.3</b> Exercise: Creating Vector Tiles in ArcGIS Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery-and-aerial-photography"><i class="fa fa-check"></i><b>4.3</b> Satellite Imagery and Aerial Photography</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery"><i class="fa fa-check"></i><b>4.3.1</b> Satellite Imagery</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#aerial-photography"><i class="fa fa-check"></i><b>4.3.2</b> Aerial Photography</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-change-detection-using-imagery"><i class="fa fa-check"></i><b>4.3.3</b> Exercise: Change Detection Using Imagery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html"><i class="fa fa-check"></i><b>5</b> Acquisition and Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geographic-data-acquisition"><i class="fa fa-check"></i><b>5.1</b> Geographic Data Acquisition</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#data-types"><i class="fa fa-check"></i><b>5.1.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
+<li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
+<li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
+<li class="chapter" data-level="5.2.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geoprocessing-operations"><i class="fa fa-check"></i><b>5.2.2</b> Geoprocessing Operations</a></li>
+<li class="chapter" data-level="5.2.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-proximity-analysis"><i class="fa fa-check"></i><b>5.2.3</b> Exercise: Introduction to Proximity Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#multiple-layer-analysis"><i class="fa fa-check"></i><b>5.3</b> Multiple Layer Analysis</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-operations"><i class="fa fa-check"></i><b>5.3.1</b> Overlay Operations</a></li>
+<li class="chapter" data-level="5.3.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#other-multilayer-geoprocessing-options"><i class="fa fa-check"></i><b>5.3.2</b> Other Multilayer Geoprocessing Options</a></li>
+<li class="chapter" data-level="5.3.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#spatial-join"><i class="fa fa-check"></i><b>5.3.3</b> Spatial Join</a></li>
+<li class="chapter" data-level="5.3.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-errors"><i class="fa fa-check"></i><b>5.3.4</b> Overlay Errors</a></li>
+<li class="chapter" data-level="5.3.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-overlay-analysis"><i class="fa fa-check"></i><b>5.3.5</b> Exercise: Introduction to Overlay Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#course-lecture-notes"><i class="fa fa-check"></i><b>6.1</b> Course Lecture Notes</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#final-project-option"><i class="fa fa-check"></i><b>6.2</b> Final Project Option</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="appendix.html"><a href="appendix.html#project-requirements"><i class="fa fa-check"></i><b>6.2.1</b> Project Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="appendix.html"><a href="appendix.html#submitting-map-packages"><i class="fa fa-check"></i><b>6.3</b> Submitting Map Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix.html"><a href="appendix.html#esri-virtual-campus-records"><i class="fa fa-check"></i><b>6.4</b> ESRI Virtual Campus Records</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix.html"><a href="appendix.html#related-media"><i class="fa fa-check"></i><b>6.5</b> Related Media</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Earth: An Introductory GIS Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Digital Earth: An Introductory GIS Course</h1>
+<p class="author"><em>Steve Cline</em></p>
+<p class="date"><em>2021-05-14</em></p>
+</div>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<div id="preface" class="section level2">
+<h2><span class="header-section-number">1.1</span> Preface</h2>
+<p>Maps are everywhere—on the Internet, in your car, and even on your mobile phone. Moreover, maps of the twenty-first century are not just paper diagrams folded like an accordion. Maps today are colorful, searchable, interactive, and shared. This transformation of the static map into dynamic and interactive multimedia reflects the integration of technological innovation and vast amounts of geographic data. The key technology behind this integration, and subsequently the maps of the twenty-first century, is geographic information systems or GIS.</p>
+<p>Put simply, GIS is a special type of information technology that integrates data and information from various sources as maps. It is through this integration and mapping that the question of “where” has taken on new meaning. From getting directions to a new restaurant in San Francisco on your mobile device to exploring what will happen to coastal cities like Venice if oceans were to rise due to global warming, GIS provides insights into daily tasks and the big challenges of the future.</p>
+<p>This course integrates key concepts behind the technology with practical concerns and real-world applications. Recognizing that many potential GIS users are nonspecialists or may only need a few maps, this book is designed to be accessible, pragmatic, and concise. <i>Digital Earth: An Introductory GIS Course</i> also illustrates how GIS is used to ask questions, inform choices, and guide policy. From the melting of the polar ice caps to privacy issues associated with mapping, this book provides a gentle, yet substantive, introduction to the use and application of digital maps, mapping, and GIS.</p>
+<p>The course readings here are heavily taken from Saylor University’s text <i>Essentials of Geographic Information Systems</i>. This course does not delve in to every area of that open-source text. If one would like to explore more of that curriculum it may be found <a href="https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/index.html" target ="_blank">here</a>.</p>
+<p>In order to complete the exercises in this course one must have an ArcGIS account with ESRI access. More information about this may be found <a href="https://doc.arcgis.com/en/arcgis-online/reference/faq.htm#anchor9" target= "_blank">here</a>.</p>
+</div>
+<div id="stuff-happens" class="section level2">
+<h2><span class="header-section-number">1.2</span> Stuff Happens…</h2>
+<p>What’s more is that stuff happens somewhere. Knowing something about where something happens can help us to understand what happened, when it happened, how it happened, and why it happened. Whether it is an outbreak of a highly contagious disease, the discovery of a new frog species, the path of a deadly tornado, or the nearest location of a supermarket, knowing something about where things happen is important to how we understand and relate to our local environment and to the world at large.</p>
+<p>A geographic information system—or GIS—is a special type of information technology that can help us understand and relate to the “what,” “when,” “how,” and “why” of the world by answering “where.” Geographic information systems are indeed about maps, but they are also about much, much more.</p>
+<p>A GIS is used to organize, analyze, visualize, and share all kinds of data and information from different historical periods and at various scales of analysis. From climatologists trying to understand the causes and consequences of global warming, to epidemiologists locating ground zero of a virulent disease outbreak, to archaeologists reconstructing ancient Rome, to political consultants developing campaign strategies for the next presidential election, GIS is a very powerful tool.</p>
+<p>More important, GIS is about geography and learning about the world in which we live. As GIS technology develops, as society becomes ever more geospatially enabled, and as more and more people rediscover geography and the power of maps, the future uses and applications of GIS are unlimited.</p>
+<p>To take full advantage of the benefits of GIS and related geospatial technology both now and in the future, it is useful to take stock of the ways in which we already think spatially with respect to the world in which we live. In other words, by recognizing and increasing our geographical awareness about how we relate to our local environment and the world at large, we will benefit more from our use and application of GIS.</p>
+<p>The purpose of this chapter is to increase our geographical awareness and to refine our spatial thinking. First, a simple mental mapping exercise is used to highlight our geographical knowledge and spatial awareness, or lack thereof. Second, fundamental concepts and terms that are central to geographic information systems, and more generally geography, are identified, defined, and explained. This chapter concludes with a description of the frameworks that guide the use and application of GIS, as well as its future development.</p>
+<p>There will be no virtual campus lab for this chapter, unlike the remaining chapters. Instead, you will set up your computer and become familiar with how to access the course data and other tools of our GIS course. Finally, you will tak an open-note quiz over the remaining content of this chapter.</p>
+</div>
+<div id="spatial-thinking" class="section level2">
+<h2><span class="header-section-number">1.3</span> Spatial Thinking</h2>
+<!-- figure out how to use CSS with these text blocks -->
+<blockquote>
+<p>The objective of this section is to illustrate how we think geographically every day with mental maps and to highlight the importance of asking geographic questions.</p>
+</blockquote>
+<p>At no other time in the history of the world has it been easier to create or to acquire a map of nearly anything. Maps and mapping technology are literally and virtually everywhere. Though the modes and means of making and distributing maps have been revolutionized with recent advances in computing like the Internet, the art and science of map making date back centuries. This is because humans are inherently spatial organisms, and in order for us to live in the world, we must first somehow relate to it. Enter the mental map.</p>
+<div id="mental-maps" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Mental Maps</h3>
+<p>Mental or cognitive maps are psychological tools that we all use every day. As the name suggests, mental maps are maps of our environment that are stored in our brain. We rely on our mental maps to get from one place to another, to plan our daily activities, or to understand and situate events that we hear about from our friends, family, or the news. <strong>Mental maps</strong> also reflect the amount and extent of geographic knowledge and spatial awareness that we possess. To illustrate this point, pretend that a friend is visiting you from out of town for the first time. Using a blank sheet of paper, take five to ten minutes to draw a map from memory of your hometown that will help your friend get around.</p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/MentalMaps.jpg" width="300"></p>
+<p>What did you choose to draw on your map? Is your house or where you work on the map? What about streets, restaurants, malls, museums, or other points of interest? How did you draw objects on your map? Did you use symbols, lines, and shapes? Are places labeled? Why did you choose to include certain places and features on your map but not others? What limitations did you encounter when making your map?</p>
+<p>This simple exercise is instructive for several reasons. First, it illustrates what you know about where you live. Your simple map is a rough approximation of your local geographic knowledge and mental map. Second, it highlights the way in which you relate to your local environment. What you choose to include and exclude on your map provides insights about what places you think are important and how you move through your place or residence. Third, if we were to compare your mental map to someone else’s from the same place, certain similarities emerge that shed light upon how we as humans tend to think spatially and organize geographical information in our minds. Fourth, this exercise reveals something about your artistic, creative, and cartographic abilities. In this respect, not only are mental maps unique, but also the way in which such maps are drawn or represented on the page is unique too.</p>
+<p>To reinforce these points, consider the series of mental maps of Los Angeles provided in <u>Figure 1.1 “Mental Map of Los Angeles A”</u>.</p>
+<p><i>Figure 1.1 Mental Map of Los Angeles A</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-1.jpg" width="500"></p>
+<p><i>Figure 1.2 Mental Map of Los Angeles B</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-2.jpg" width="500"></p>
+<p><i>Figure 1.3 Mental Map of Los Angeles C</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-3.jpg" width="700"></p>
+<p><strong>Take a moment to look at each map and compare the maps with the following questions in mind:</strong></p>
+<ul>
+<li>What similarities are there on each map?</li>
+<li>What are some of the differences?</li>
+<li>Which places or features are illustrated on the map?</li>
+<li>From what you know about Los Angeles, what is included or excluded on the maps?</li>
+<li>What assumptions are made in each map?</li>
+<li>At what scale is the map drawn?</li>
+</ul>
+<p>Each map is probably an imperfect representation of one’s mental map, but we can see some similarities and differences that provide insights into how people relate to Los Angeles, maps, and more generally, the world. First, all maps are oriented so that north is up. Though only one of the maps contains a north arrow that explicitly informs viewers the geographic orientation of the map, we are accustomed to most maps having north at the top of the page. Second, all but the first map identify some prominent features and landmarks in the Los Angeles area. For instance, Los Angeles International Airport (LAX) appears on two of these maps, as do the Santa Monica Mountains. How the airport is represented or portrayed on the map, for instance, as text, an abbreviation, or symbol, also speaks to our experience using and understanding maps. Third, two of the maps depict a portion of the freeway network in Los Angeles, and one also highlights the Los Angeles River and Ballona Creek. In a city where the “car is king,” how can any map omit the freeways?</p>
+<p>What you include and omit on your map, by choice or not, speaks volumes about your geographical knowledge and spatial awareness—or lack thereof. Recognizing and identifying what we do not know is an important part of learning. It is only when we identify the unknown that we are able to ask questions, collect information to answer those questions, develop knowledge through answers, and begin to understand the world where we live.</p>
+</div>
+<div id="asking-geographic-questions" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Asking Geographic Questions</h3>
+<p>Filling in the gaps in our mental maps and, more generally, the gaps in our geographic knowledge requires us to ask questions about the world where we live and how we relate to it. Such questions can be simple with a local focus (e.g., “Which way is the nearest hospital?”) or more complex with a more global perspective (e.g., “How is urbanization impacting biodiversity hotspots around the world?”). The thread that unifies such questions is geography. For instance, the question of “where?” is an essential part of the questions “Where is the nearest hospital?” and “Where are the biodiversity hotspots in relation to cities?” Being able to articulate questions clearly and to break them into manageable pieces are very valuable skills when using and applying a geographic information system (GIS).</p>
+<p>Though there may be no such thing as a “dumb” question, some questions are indeed better than others. Learning how to ask the right question takes practice and is often more difficult than finding the answer itself. However, when we ask the right question, problems are more easily solved and our understanding of the world is improved. There are five general types of geographic questions that we can ask and that GIS can help us to answer. Each type of question is listed here and is also followed by a few examples (Nyerges 1991).Nyerges, T. 1991. “Analytical Map Use.” Cartography and Geographic Information Systems (formerly The American Cartographer) 18: 11–22.</p>
+<p>Questions about <strong>geographic location:</strong></p>
+<ul>
+<li>Where is it?</li>
+<li>Why is it here or there?</li>
+<li>How much of it is here or there?</li>
+</ul>
+<p>Questions about <strong>geographic distribution:</strong></p>
+<ul>
+<li>Is it distributed locally or globally?</li>
+<li>Is it spatially clustered or dispersed?</li>
+<li>Where are the boundaries?</li>
+</ul>
+<p>Questions about <strong>geographic association:</strong></p>
+<ul>
+<li>What else is near it?</li>
+<li>What else occurs with it?</li>
+<li>What is absent in its presence?</li>
+</ul>
+<p>Questions about <strong>geographic interaction:</strong></p>
+<ul>
+<li>Is it linked to something else?</li>
+<li>What is the nature of this association?</li>
+<li>How much interaction occurs between the locations?</li>
+</ul>
+<p>Questions about <strong>geographic change:</strong></p>
+<ul>
+<li>Has it always been here?</li>
+<li>How has it changed over time and space?</li>
+<li>What causes its diffusion or contraction?</li>
+</ul>
+<p>These and related geographic questions are frequently asked by people from various areas of expertise, industries, and professions. For instance, urban planners, traffic engineers, and demographers may be interested in understanding the commuting patterns between cities and suburbs (geographic interaction). Biologists and botanists may be curious about why one animal or plant species flourishes in one place and not another (geographic location/distribution). Epidemiologists and public health officials are certainly interested in where disease outbreaks occur and how, why, and where they spread (geographic change/interaction/location).</p>
+<p>A GIS can assist in answering all these questions and many more. Furthermore, a GIS often opens up additional avenues of inquiry when searching for answers to geographic questions. Herein is one of the greatest strengths of the GIS. While a GIS can be used to answer specific questions or to solve particular problems, it often unearths even more interesting questions and presents more problems to be solved in the future.</p>
+</div>
+</div>
+<div id="geographic-concepts" class="section level2">
+<h2><span class="header-section-number">1.4</span> Geographic Concepts</h2>
+<blockquote>
+<p>The objective of this section is to introduce and explain how the key concepts of location, direction, distance, space, and navigation are relevant to geography and geographic information systems (GISs).</p>
+</blockquote>
+<p>Before we can learn “how to do” a geographic information system (GIS), it is first necessary to review and reconsider a few key geographic concepts that are often taken for granted. For instance, what is a location and how can it be defined? At what distance does a location become “nearby”? Or what do we mean when we say that someone has a “good sense of direction”? By answering these and related questions, we establish a framework that will help us to learn and to apply a GIS. This framework will also permit us to share and communicate geographic information with others, which can facilitate collaboration, problem solving, and decision making.</p>
+<div id="location" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Location</h3>
+<p>The one concept that distinguishes geography from other fields is location, which is central to a GIS. <strong>Location</strong> is simply a position on the surface of the earth. What is more, nearly everything can be assigned a geographic location. Once we know the location of something, we can a put it on a map, for example, with a GIS.</p>
+<p>Generally, we tend to define and describe locations in nominal or absolute terms. In the case of the former, locations are simply defined and described by name. For example, city names such as New York, Tokyo, or London refer to nominal locations. Toponymy, or the study of place names and their respective history and meanings, is concerned with such nominal locations (Monmonier 1996, 2006).Monmonier, M. 1996. How to Lie with Maps. Chicago: University of Chicago Press., ———. 2006. From Squaw Tit to Whorehouse Meadow: How Maps Name, Claim, and Inflame. Chicago: University of Chicago Press. Though we tend to associate the notion of location with particular points on the surface of the earth, locations can also refer to geographic features (e.g., Rocky Mountains) or large areas (e.g., Siberia). The United States Board on Geographic Names (<a href="http://geonames.usgs.gov" class="uri">http://geonames.usgs.gov</a>) maintains geographic naming standards and keeps track of such names through the Geographic Names Information Systems (GNIS; <a href="http://geonames.usgs.gov/pls/gnispublic" class="uri">http://geonames.usgs.gov/pls/gnispublic</a>). The GNIS database also provides information about which state and county the feature is located as well as its geographic coordinates.</p>
+<p>Contrasting nominal locations are absolute locations that use some type of reference system to define positions on the earth’s surface. For instance, defining a location on the surface of the earth using latitude and longitude is an example of absolute location. Postal codes and street addresses are other examples of absolute location that usually follow some form of local logic. Though there is no global standard when it comes to street addresses, we can determine the geographic coordinates (i.e., latitude and longitude) of particular street addresses, zip codes, place names, and other geographic data through a process called <strong>geocoding</strong>. There are several free online geocoders (e.g., <a href="http://worldkit.org/geocoder" class="uri">http://worldkit.org/geocoder</a>) that return the latitude and longitude for various locations and addresses around the world.</p>
+<p>With the advent of the <strong>global positioning system (GPS)</strong> (see also <a href="http://www.gps.gov" class="uri">http://www.gps.gov</a>), determining the location of nearly any object on the surface of the earth is a relatively simple and straightforward exercise. GPS technology consists of a constellation of twenty-four satellites that are orbiting the earth and constantly transmitting time signals (see Figure 1.4 “Constellation of Global Positioning System (GPS) Satellites”). To determine a position, earth-based GPS units (e.g., handheld devices, car navigation systems, mobile phones) receive the signals from at least three of these satellites and use this information to triangulate a location. All GPS units use the geographic coordinate system (GCS) to report location. Originally developed by the United States Department of Defense for military purposes, there are now a wide range of commercial and scientific uses of a GPS.</p>
+<p><i>Figure 1.4 Constellation of Global Positioning System (GPS) Satellites</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-4.jpg" width="500"></p>
+<p>Location can also be defined in relative terms. Relative location refers to defining and describing places in relation to other known locations. For instance, Cairo, Egypt, is north of Johannesburg, South Africa; New Zealand is southeast of Australia; and Kabul, Afghanistan, is northwest of Lahore, Pakistan. Unlike nominal or absolute locations that define single points, relative locations provide a bit more information and situate one place in relation to another.</p>
+</div>
+<div id="direction" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Direction</h3>
+<p>Like location, the concept of direction is central to geography and GISs. <strong>Direction</strong> refers to the position of something relative to something else usually along a line. In order to determine direction, a reference point or benchmark from which direction will be measured needs to be established. One of the most common benchmarks used to determine direction is ourselves. Egocentric direction refers to when we use ourselves as a directional benchmark. Describing something as “to my left,” “behind me,” or “next to me” are examples of egocentric direction.</p>
+<p>As the name suggests, landmark direction uses a known landmark or geographic feature as a benchmark to determine direction. Such landmarks may be a busy intersection of a city, a prominent point of interest like the Colosseum in Rome, or some other feature like a mountain range or river. The important thing to remember about landmark direction, especially when providing directions, is that the landmark should be relatively well-known.</p>
+<p>In geography and GISs, there are three more standard benchmarks that are used to define the directions of true north, magnetic north, and grid north. True north is based on the point at which the axis of the earth’s rotation intersects the earth’s surface. In this respect the North and South Poles serve as the geographic benchmarks for determining direction. Magnetic north (and south) refers to the point on the surface of the earth where the earth’s magnetic fields converge. This is also the point to which magnetic compasses point. Note that magnetic north falls somewhere in northern Canada and is not geographically coincident with true north or the North Pole. Grid north simply refers to the northward direction that the grid lines of latitude and longitude on a map, called a graticule, point to.</p>
+<p><i>Figure 1.5 The Three Norths: True, Magnetic, and Grid</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-5.jpg" width="500"></p>
+<p>Source: <a href="https://www.fws.gov/uploadedFiles/Region_7/NWRS/Zone_2/Kenai/Sections/What_We_Do/In_The_Community/Refuge_Notebooks/2004_Articles/Refuge_Notebook_v6_n35.pdf" class="uri">https://www.fws.gov/uploadedFiles/Region_7/NWRS/Zone_2/Kenai/Sections/What_We_Do/In_The_Community/Refuge_Notebooks/2004_Articles/Refuge_Notebook_v6_n35.pdf</a></p>
+</div>
+<div id="distance" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Distance</h3>
+<p>Complementing the concepts of location and direction is distance. <strong>Distance</strong> refers to the degree or amount of separation between locations and can be measured in nominal or absolute terms with various units. We can describe the distances between locations nominally as “large” or “small,” or we can describe two or more locations as “near” or “far apart.” Absolute distance is measured or calculated using a standard metric. The formula for the distance between two points on a planar (i.e., flat) surface is the following:</p>
+<p>Calculating the distance between two locations on the surface of the earth, however, is a bit more involved because we are dealing with a three-dimensional object. Moving from the three-dimensional earth to two-dimensional maps on paper, computer screens, and mobile devices is not a trivial matter and is discussed in greater detail in Chapter 2 “Map Anatomy”.</p>
+<p>We also use a variety of units to measure distance. For instance, the distance between London and Singapore can be measured in miles, kilometers, flight time on a jumbo jet, or days on a cargo ship. Whether or not such distances make London and Singapore “near” or “far” from each other is a matter of opinion, experience, and patience. Hence the use of absolute distance metrics, such as that derived from the distance formula, provide a standardized method to measure how far away or how near locations are from each other.</p>
+</div>
+<div id="space" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Space</h3>
+<p>Where distance suggests a measurable quantity in terms of how far apart locations are situated, <strong>space</strong> is a more abstract concept that is more commonly described rather than measured. For example, space can be described as “empty,” “public,” or “private.”</p>
+<p>Within the scope of a GIS, we are interested in space, and in particular, we are interested in what fills particular spaces and how and why things are distributed across space. In this sense, space is a somewhat ambiguous and generic term that is used to denote the general geographic area of interest.</p>
+<p>One kind of space that is of particular relevance to a GIS is topological space. Simply put, topological space is concerned with the nature of relationships and the connectivity of locations within a given space. What is important within topological space are (1) how locations are (or are not) related or connected to each other and (2) the rules that govern such geographic relationships.</p>
+<p>Transportation maps such as those for subways provide some of the best illustrations of topological spaces (see Figure 1.6 “Metro Map from London” and Figure 1.7 “Metro Map from Moscow”). When using such maps, we are primarily concerned with how to get from one stop to another along a transportation network. Certain rules also govern how we can travel along the network (e.g., transferring lines is possible only at a few key stops; we can travel only one direction on a particular line). Such maps may be of little use when traveling around a city by car or foot, but they show the local transportation network and how locations are linked together in an effective and efficient manner.</p>
+<p><i>Figure 1.6 Metro Map from London</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-6.jpg" width="500"></p>
+<p><i>Figure 1.7 Metro Map from Moscow</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-7.jpg" width="500"></p>
+</div>
+<div id="navigation" class="section level3">
+<h3><span class="header-section-number">1.4.5</span> Navigation</h3>
+<p>Transportation maps like those discussed previously illustrate how we move through the environments where we live, work, and play. This movement and, in particular, destination-oriented travel are generally referred to as <strong>navigation</strong>. How we navigate through space is a complex process that blends together our various motor skills; technology; mental maps; and awareness of locations, distances, directions, and the space where we live (Golledge and Stimson 1997).Golledge, R., and R. Stimson. 1997. Spatial Behavior: A Geographic Perspective. New York: Guilford. What is more, our geographical knowledge and spatial awareness is continuously updated and changed as we move from one location to another.</p>
+<p>The acquisition of geographic knowledge is a lifelong endeavor. Though several factors influence the nature of such knowledge, we tend to rely on the three following types of geographic knowledge when navigating through space:</p>
+<ol style="list-style-type: decimal">
+<li>Landmark knowledge refers to our ability to locate and identify unique points, patterns, or features (e.g., landmarks) in space.</li>
+<li>Route knowledge permits us to connect and travel between landmarks by moving through space.</li>
+<li>Survey knowledge enables us to understand where landmarks are in relation to each other and to take shortcuts.</li>
+</ol>
+<p>Each type of geographic knowledge is acquired in stages, one after the other. For instance, when we find ourselves in a new or an unfamiliar location, we usually identify a few unique points of interest (e.g., hotel, building, fountain) to orient ourselves. We are in essence building up our landmark knowledge. Using and traveling between these landmarks develops our route knowledge and reinforces our landmark knowledge and our overall geographical awareness. Survey knowledge develops once we begin to understand how routes connect landmarks together and how various locations are situated in space. It is at this point, when we are somewhat comfortable with our survey knowledge, that we are able to take shortcuts from one location to another. Though there is no guarantee that a shortcut will be successful, if we get lost, we are at least expanding our local geographic knowledge.</p>
+<p>Landmark, route, and survey knowledge are the cornerstones of having a sense of direction and frame our geographical learning and awareness. While some would argue that they are born with a good sense of direction, others admit to always getting lost. The popularity of personal navigation devices and online mapping services speaks to the overwhelming desire to know and to situate where we are in the world. Though developing and maintaining a keen sense of direction presumably matters less and less as such devices and services continue to develop and spread, it can also be argued that the more we know about where we are in the world, the more we will want to learn about it.</p>
+<p>This section covers concepts essential to geography, GISs, and many other fields of interest. Understanding how location, direction, and distance can be defined and described provides an important foundation for the successful use and implementation of a GIS. Thinking about space and how we navigate through it also serves to improve and own geographic knowledge and spatial awareness.</p>
+</div>
+</div>
+<div id="geographic-information-systems-for-today-and-beyond" class="section level2">
+<h2><span class="header-section-number">1.5</span> Geographic Information Systems for Today and Beyond</h2>
+<blockquote>
+<p>The objective of this section is to define and describe how a geographic information system (GIS) is applied, its development, and its future.</p>
+</blockquote>
+<p>Up to this point, the primary concern of this chapter was to introduce concepts essential to geography that are also relevant to geographic information systems (GISs). Furthermore, the introduction of these concepts was prefaced by an overview of how we think spatially and the nature of geographic inquiry. This final section is concerned with defining a GIS, describing its use, and exploring its future.</p>
+<div id="gis-defined" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> GIS Defined</h3>
+<p>So what exactly is a GIS? Is it computer software? Is it a collection of computer hardware? Is it a service that is distributed and accessed via the Internet? Is it a tool? Is it a system? Is it a science? The answer to all these questions is, “GIS is all of the above—and more.”</p>
+<p>From a software perspective, a GIS consists of a special type of computer program capable of storing, editing, processing, and presenting geographic data and information as maps. There are several GIS software providers, such as Environmental Systems Research Institute Inc. (<a href="http://www.esri.com" class="uri">http://www.esri.com</a>), which distributes ArcGIS, and PitneyBowes (<a href="http://www.pbinsight.com" class="uri">http://www.pbinsight.com</a>), which distributes MapInfo GIS. Though online mapping services and interfaces are provided by companies like Google, Yahoo!, and Microsoft, such services are not (yet) considered fully fledged GIS platforms. There are also open-source GIS options, such as GRASS (<a href="http://grass.itc.it" class="uri">http://grass.itc.it</a>), which is freely distributed and maintained by the open-source community. All GIS software, regardless of vendor, consists of a database management system that is capable of handling and integrating two types of data: spatial data and attribute data.</p>
+<p><strong>Spatial data</strong> refer to the real-world geographic objects of interest, such as streets, buildings, lakes, and countries, and their respective locations. In addition to location, each of these objects also possesses certain traits of interest, or <strong>attributes</strong>, such as a name, number of stories, depth, or population. GIS software keeps track of both the spatial and attribute data and permits us to link the two types of data together to create information and facilitate analysis. One popular way to describe and to visualize a GIS is picturing it as a cake with many layers. Each layer of the cake represents a different geographic theme, such as water features, buildings, and roads, and each layer is stacked one on top of another (see Figure 1.8 “A GIS as a Layered Cake”).</p>
+<p><i>Figure 1.8 A GIS as a Layered Cake</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig1-8.jpg" width="400"></p>
+<p>As hardware, a GIS consists of a computer, memory, storage devices, scanners, printers, global positioning system (GPS) units, and other physical components. If the computer is situated on a network, the network can also be considered an integral component of the GIS because it enables us to share data and information that the GIS uses as inputs and creates as outputs.</p>
+<p>As a tool, a GIS permits us to maintain, analyze, and share a wealth of data and information. From the relatively simple task of mapping the path of a hurricane to the more complex task of determining the most efficient garbage collection routes in a city, a GIS is used across the public and private sectors. Online and mobile mapping, navigation, and location-based services are also personalizing and democratizing GISs by bringing maps and mapping to the masses.</p>
+<p>These are just a few definitions of a GIS. Like several of the geographic concepts discussed previously, there is no single or universally accepted definition of a GIS. There are probably just as many definitions of GISs as there are people who use GISs. In this regard, it is the people like you who are learning, applying, developing, and studying GISs in new and compelling ways that unifies it.</p>
+</div>
+<div id="three-approaches-to-giss" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Three Approaches to GISs</h3>
+<p>In addition to recognizing the many definitions of a GIS, it is also constructive to identify three general and overlapping approaches to understanding GISs—the application approach, the developer approach, and the science approach. Though most GIS users would probably identify with one approach more than another, they are not mutually exclusive. Moreover, as GISs and, more generally, information technology advance, the following categories will be transformed and reshaped accordingly.</p>
+<p>The application approach to GISs considers a GIS primarily to be a tool. This is also perhaps the most common view of a GIS. From this perspective, a GIS is used to answer questions, support decision making, maintain an inventory of geographic data and information, and, of course, make maps. As a tool, there are arguably certain skills that should be acquired and required in order to use and apply a GIS properly. The application approach to a GIS is more concerned with using and applying GISs to solve problems than the GIS itself.</p>
+<p>For instance, suppose we want to determine the best location for a new supermarket. What factors are important behind making this decision? Information about neighborhood demographics, existing supermarkets, the location of suppliers, zoning regulations, and available real estate are all critical to this decision. A GIS platform can integrate such information that is obtained from the census bureau, realtors, the local zoning agency, and even the Internet. A suitability analysis can then be carried out with the GIS, the output of which will show the best locations for the supermarket given the various local geographic opportunities (e.g., demographics/consumers) and constraints (e.g., supply chain, zoning, and real estate limitations) that exist.</p>
+<p>There are several professional communities and organizations concerned with the use and application of a GIS, such as the Urban and Regional Information Systems Association (<a href="http://urisa.org" class="uri">http://urisa.org</a>) and the Global Spatial Data Infrastructure Association (<a href="http://www.gsdi.org" class="uri">http://www.gsdi.org</a>).</p>
+<p>Unlike the previous example in which a GIS is applied to answer or solve a particular question, the developer approach to GISs is concerned with the development of the GIS as a software or technology platform. Rather than focusing on how a GIS is used and applied, the developer approach is concerned with improving, refining, and extending the tool and technology itself and is largely in the realm of computer programmers and software developers.</p>
+<p>The ongoing integration and evolution of GISs, maps, the Internet, and web-based mapping can be considered an outcome of the developer approach to GISs. In this regard, delivering maps, navigation tools, and user-friendly GISs to people via the Internet is the central challenge at hand. The underlying, and to a large extent hidden, logic and computer code that permit us to ask questions about how to get from point A to point B on a navigation website or to see where a new restaurant or open house is located on a web-based map are for the most part the domain of GIS programmers and developers. The Open Source Geospatial Foundation (<a href="http://www.osgeo.org" class="uri">http://www.osgeo.org</a>) is another example of a community of GIS developers working to build and distribute open-source GIS software.</p>
+<p>It is the developer approach to GISs that drives and introduces innovation and is informed and guided by the existing needs and future demands of the application approach. As such, it is indeed on the cutting edge, it is dynamic, and it represents an area for considerable growth in the future.</p>
+<p>The science approach to GISs not only dovetails with the applications and developer approaches but also is more concerned with broader questions and how geography, cognition, map interpretation, and other geospatial issues such as accuracy and errors are relevant to GISs and vice versa (see Longley et al. 2005).Longley, P., M. Goodchild, D. Maguire, and D. Rhind. 2005. Geographic Information Systems and Science. 2nd ed. West Sussex, England: John Wiley. This particular approach is often referred to as <strong>geographic information science (GIScience)</strong>, and it is also interested in the social consequences and implications of the use and diffusion of GIS technology. From exploring the propagation of error to examining how privacy is being redefined by GISs and related technology, GIScience is at the same time an agent of change as well as one of understanding.</p>
+<p>In light of the rapid rate of technological and GIS innovation, in conjunction with the widespread application of GISs, new questions about GIS technology and its use are continually emerging. One of the most discussed topics concerns privacy, and in particular, what is referred to as locational privacy. In other words, who has the right to view or determine your geographic location at any given time? Your parents? Your school? Your employer? Your cell phone carrier? The government or police? When are you willing to divulge your location? Is there a time or place where you prefer to be “off the grid” or not locatable? Such questions concerning locational privacy were of relatively little concern a few years ago. However, with the advent of GPS and its integration into cars and other mobile devices, questions, debates, and even lawsuits concerning locational privacy and who has the right to such information are rapidly emerging.</p>
+<p>As the name suggests, the developer approach to GISs is concerned with the development of GISs. Rather than focusing on how a GIS is used and applied, the developer approach is concerned with improving, refining, and extending the tool itself and is largely in the realm of computer programmers and software developers. For instance, the advent of web-based mapping is an outcome of the developer approach to GISs. In this regard, the challenge was how to bring GISs to people via the Internet and not necessarily how people would use web-based GISs. The developer approach to GISs drives and introduces innovation and is guided by the needs of the application approach. As such, it is indeed on the cutting edge, it is dynamic, and it represents an area for considerable growth in the future.</p>
+</div>
+<div id="gis-futures" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> GIS Futures</h3>
+<p>The definitions and approaches to GISs described previously illustrate the scope and breadth of this special type of information technology. Furthermore, as GISs become more accessible and widely distributed, there will always be new questions to be answered, new applications to be developed, and innovative technologies to integrate.</p>
+<p>One notable development is the emergence of what is called the geospatial web. The geospatial web or geoweb refers to the integration of the vast amounts of content available on the Internet (e.g., text, photographs, video, and music) with geographic information, such as location. Adding such geographic information to such content is called geotagging and is similar to geocoding. The integration of geographic information with such content opens up new ways to access, search, organize, share, and distribute information.</p>
+<p>Mapping mashups, or web-based applications that combine data and information from one source and map it with online mapping applications, are an example of the geoweb at work. There are mashups for nearly everything that can be assigned a location, from restaurants and music festivals to your photographs and favorite hikes. Several examples of such mapping mashups can be found on the Internet at sites such as <a href="http://googlemapsmania.blogspot.com" class="uri">http://googlemapsmania.blogspot.com</a>.</p>
+<p>Though the geoweb may not necessarily be considered a GIS, it certainly draws upon the same concepts and ideas of geography and may someday encompass GISs. Perhaps more important, the diffusion of GISs and the emergence of the geoweb have increased geographic awareness by lowering the barriers of viewing, using, and even creating maps and related geographic data and information. Though there are several benefits to this democratization of GISs, and more generally information and technology, it should also be recognized that there are also consequences and implications.</p>
+<p>As with any other technology, great care must be taken in the use and application of GISs. For instance, when was the last time you questioned what appeared on a map? For better or worse, maps are among the most authoritative forms of information and are the subject of Chapter 2 “Map Anatomy”. As tomorrow’s GIS practitioners, you will have the ability to influence greatly how decisions are made and how others view and relate to the world with the maps that you create in a GIS environment. What and how you choose to map is therefore a nontrivial exercise. Becoming more aware of our biases, limitations, and preferences permits us to take full advantage of geographic information systems with confidence.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="map-anatomy.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

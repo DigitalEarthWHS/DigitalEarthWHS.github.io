@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Map Anatomy | Digital Earth: An Introductory GIS Course</title>
+  <meta name="description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Map Anatomy | Digital Earth: An Introductory GIS Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Map Anatomy | Digital Earth: An Introductory GIS Course" />
+  
+  <meta name="twitter:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  
+
+<meta name="author" content="Steve Cline" />
+
+
+<meta name="date" content="2021-05-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="data.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+
+<img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/earth_logo.png" width="250">
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i><b>1.1</b> Preface</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stuff-happens"><i class="fa fa-check"></i><b>1.2</b> Stuff Happens…</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#spatial-thinking"><i class="fa fa-check"></i><b>1.3</b> Spatial Thinking</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#mental-maps"><i class="fa fa-check"></i><b>1.3.1</b> Mental Maps</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#asking-geographic-questions"><i class="fa fa-check"></i><b>1.3.2</b> Asking Geographic Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#geographic-concepts"><i class="fa fa-check"></i><b>1.4</b> Geographic Concepts</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#location"><i class="fa fa-check"></i><b>1.4.1</b> Location</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#direction"><i class="fa fa-check"></i><b>1.4.2</b> Direction</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#distance"><i class="fa fa-check"></i><b>1.4.3</b> Distance</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#space"><i class="fa fa-check"></i><b>1.4.4</b> Space</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#navigation"><i class="fa fa-check"></i><b>1.4.5</b> Navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#geographic-information-systems-for-today-and-beyond"><i class="fa fa-check"></i><b>1.5</b> Geographic Information Systems for Today and Beyond</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#gis-defined"><i class="fa fa-check"></i><b>1.5.1</b> GIS Defined</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#three-approaches-to-giss"><i class="fa fa-check"></i><b>1.5.2</b> Three Approaches to GISs</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#gis-futures"><i class="fa fa-check"></i><b>1.5.3</b> GIS Futures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-anatomy.html"><a href="map-anatomy.html"><i class="fa fa-check"></i><b>2</b> Map Anatomy</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#maps-and-map-types"><i class="fa fa-check"></i><b>2.1</b> Maps and Map Types</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-anatomy.html"><a href="map-anatomy.html#reference-maps"><i class="fa fa-check"></i><b>2.1.1</b> Reference Maps</a></li>
+<li class="chapter" data-level="2.1.2" data-path="map-anatomy.html"><a href="map-anatomy.html#thematic-maps"><i class="fa fa-check"></i><b>2.1.2</b> Thematic Maps</a></li>
+<li class="chapter" data-level="2.1.3" data-path="map-anatomy.html"><a href="map-anatomy.html#dynamic-maps"><i class="fa fa-check"></i><b>2.1.3</b> Dynamic Maps</a></li>
+<li class="chapter" data-level="2.1.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-exploring-gis-maps"><i class="fa fa-check"></i><b>2.1.4</b> Exercise: Exploring GIS Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale-coordinate-systems-and-map-projections"><i class="fa fa-check"></i><b>2.2</b> Map Scale, Coordinate Systems, and Map Projections</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale"><i class="fa fa-check"></i><b>2.2.1</b> Map Scale</a></li>
+<li class="chapter" data-level="2.2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#coordinate-systems"><i class="fa fa-check"></i><b>2.2.2</b> Coordinate Systems</a></li>
+<li class="chapter" data-level="2.2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-projections"><i class="fa fa-check"></i><b>2.2.3</b> Map Projections</a></li>
+<li class="chapter" data-level="2.2.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-basics-of-geographic-coordinate-systems"><i class="fa fa-check"></i><b>2.2.4</b> Exercise: Basics of Geographic Coordinate Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-abstraction"><i class="fa fa-check"></i><b>2.3</b> Map Abstraction</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="map-anatomy.html"><a href="map-anatomy.html#what-is-a-forest"><i class="fa fa-check"></i><b>2.3.1</b> What Is a Forest?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-content-and-generalization"><i class="fa fa-check"></i><b>2.3.2</b> Map Content and Generalization</a></li>
+<li class="chapter" data-level="2.3.3" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-symbolizing-map-layers"><i class="fa fa-check"></i><b>2.3.3</b> Exercise: Symbolizing Map Layers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-and-information"><i class="fa fa-check"></i><b>3.1</b> Data and Information</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#of-files-and-formats"><i class="fa fa-check"></i><b>3.1.1</b> Of Files and Formats…</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#exercise-introduction-to-spatial-data"><i class="fa fa-check"></i><b>3.1.2</b> Exercise: Introduction to Spatial Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#data-about-data"><i class="fa fa-check"></i><b>3.2</b> Data about Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#exercise-mapping-addresses-and-places"><i class="fa fa-check"></i><b>3.2.1</b> Exercise: Mapping Addresses and Places</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#finding-data"><i class="fa fa-check"></i><b>3.3</b> Finding Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#exercise-mapping-census-data"><i class="fa fa-check"></i><b>3.3.1</b> Exercise: Mapping Census Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html"><i class="fa fa-check"></i><b>4</b> Data Models for GIS</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#raster-data-models"><i class="fa fa-check"></i><b>4.1</b> Raster Data Models</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-raster-model"><i class="fa fa-check"></i><b>4.1.1</b> Advantages/Disadvantages of the Raster Model</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-performing-supervised-pixel-based-image-classification"><i class="fa fa-check"></i><b>4.1.2</b> Exercise: Performing Supervised Pixel-Based Image Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models"><i class="fa fa-check"></i><b>4.2</b> Vector Data Models</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models-structures"><i class="fa fa-check"></i><b>4.2.1</b> Vector Data Models Structures</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-vector-model"><i class="fa fa-check"></i><b>4.2.2</b> Advantages/Disadvantages of the Vector Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-creating-vector-tiles-in-arcgis-pro"><i class="fa fa-check"></i><b>4.2.3</b> Exercise: Creating Vector Tiles in ArcGIS Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery-and-aerial-photography"><i class="fa fa-check"></i><b>4.3</b> Satellite Imagery and Aerial Photography</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery"><i class="fa fa-check"></i><b>4.3.1</b> Satellite Imagery</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#aerial-photography"><i class="fa fa-check"></i><b>4.3.2</b> Aerial Photography</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-change-detection-using-imagery"><i class="fa fa-check"></i><b>4.3.3</b> Exercise: Change Detection Using Imagery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html"><i class="fa fa-check"></i><b>5</b> Acquisition and Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geographic-data-acquisition"><i class="fa fa-check"></i><b>5.1</b> Geographic Data Acquisition</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#data-types"><i class="fa fa-check"></i><b>5.1.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
+<li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
+<li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
+<li class="chapter" data-level="5.2.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geoprocessing-operations"><i class="fa fa-check"></i><b>5.2.2</b> Geoprocessing Operations</a></li>
+<li class="chapter" data-level="5.2.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-proximity-analysis"><i class="fa fa-check"></i><b>5.2.3</b> Exercise: Introduction to Proximity Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#multiple-layer-analysis"><i class="fa fa-check"></i><b>5.3</b> Multiple Layer Analysis</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-operations"><i class="fa fa-check"></i><b>5.3.1</b> Overlay Operations</a></li>
+<li class="chapter" data-level="5.3.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#other-multilayer-geoprocessing-options"><i class="fa fa-check"></i><b>5.3.2</b> Other Multilayer Geoprocessing Options</a></li>
+<li class="chapter" data-level="5.3.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#spatial-join"><i class="fa fa-check"></i><b>5.3.3</b> Spatial Join</a></li>
+<li class="chapter" data-level="5.3.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-errors"><i class="fa fa-check"></i><b>5.3.4</b> Overlay Errors</a></li>
+<li class="chapter" data-level="5.3.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-overlay-analysis"><i class="fa fa-check"></i><b>5.3.5</b> Exercise: Introduction to Overlay Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#course-lecture-notes"><i class="fa fa-check"></i><b>6.1</b> Course Lecture Notes</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#final-project-option"><i class="fa fa-check"></i><b>6.2</b> Final Project Option</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="appendix.html"><a href="appendix.html#project-requirements"><i class="fa fa-check"></i><b>6.2.1</b> Project Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="appendix.html"><a href="appendix.html#submitting-map-packages"><i class="fa fa-check"></i><b>6.3</b> Submitting Map Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix.html"><a href="appendix.html#esri-virtual-campus-records"><i class="fa fa-check"></i><b>6.4</b> ESRI Virtual Campus Records</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix.html"><a href="appendix.html#related-media"><i class="fa fa-check"></i><b>6.5</b> Related Media</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Earth: An Introductory GIS Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="map-anatomy" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Map Anatomy</h1>
+<p>Maps and mapping are essential components of any and all geographic information systems (GISs). For instance, maps constitute both the input and output of a GIS. Hence a GIS utilizes many concepts and themes from <strong>cartography</strong>, the formal study of maps and mapping. Therefore, in order for us to become proficient with GISs, we need to learn more about cartography, maps, and mapping. The first part of this chapter defines what a map is and describes a few key map types. Next, cartographic or mapping conventions are discussed with particular emphasis placed upon map scale, coordinate systems, and map projections. The chapter concludes with a discussion of the process of map abstraction as it relates to GISs. This chapter provides the foundations for working with, integrating, and making maps with GISs.</p>
+<div id="maps-and-map-types" class="section level2">
+<h2><span class="header-section-number">2.1</span> Maps and Map Types</h2>
+<blockquote>
+<p>The objective of this section is to define what a map is and to describe reference, thematic, and dynamic maps.</p>
+</blockquote>
+<p>Maps are among the most compelling forms of information for several reasons. Maps are artistic. Maps are scientific. Maps preserve history. Maps clarify. Maps reveal the invisible. Maps inform the future. Regardless of the reason, maps capture the imagination of people around the world. As one of the most trusted forms of information, map makers and geographic information system (GIS) practitioners hold a considerable amount of power and influence (Wood 1992; Monmonier 1996).Wood, D. 1992. The Power of Maps. New York: Guilford., Monmonier, M. 1996. How to Lie with Maps. Chicago: University of Chicago Press. Therefore, understanding and appreciating maps and how maps convey information are important aspects of GISs. The appreciation of maps begins with exploring various map types.</p>
+<p>So what exactly is a map? Like GISs, there are probably just as many definitions of maps as there are people who use and make them (see Muehrcke and Muehrcke 1998).Muehrcke, P., and J. Muehrcke. 1998. Map Use. Madison, WI: JP Publications. For starters, we can define a map simply as a representation of the world. Such maps can be stored in our brain (i.e., mental maps), they can be printed on paper, or they can appear online. Notwithstanding the actual medium of the map (e.g., our fleeting thoughts, paper, or digital display), maps represent and describe various aspects of the world. For purposes of clarity, the three types of maps are the reference map, the thematic map, and the dynamic map.</p>
+<div id="reference-maps" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Reference Maps</h3>
+<p>The primary purpose of a <em>reference map</em> is to deliver location information to the map user. Geographic features and map elements on a reference map tend to be treated and represented equally. In other words, no single aspect of a reference map takes precedent over any other aspect. Moreover, reference maps generally represent geographic reality accurately. Examples of some common types of reference maps include topographic maps such as those created by the United States Geological Survey (USGS; see <a href="http://topomaps.usgs.gov" class="uri">http://topomaps.usgs.gov</a>) and image maps obtained from satellites or aircraft that are available through online mapping services.</p>
+<p><i>Figure 2.1 USGS Topographic Map of Boulder, CO</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-1.jpg" width="500"></p>
+<p><i>Figure 2.2 Image Map of Palm Island, Dubai, from NASA</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-2.jpg" width="500"></p>
+<p>The accuracy of a given reference map is indeed critical to many users. For instance, local governments need accurate reference maps for land use, zoning, and tax purposes. National governments need accurate reference maps for political, infrastructure, and military purposes. People who depend on navigation devices like global positioning system (GPS) units also need accurate and up-to-date reference maps in order to arrive at their desired destinations.</p>
+</div>
+<div id="thematic-maps" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Thematic Maps</h3>
+<p>Contrasting the reference map are thematic maps. As the name suggests, <strong>thematic maps</strong> are concerned with a particular theme or topic of interest. While reference maps emphasize the location of geographic features, thematic maps are more concerned with how things are distributed across space. Such things are often abstract concepts such as life expectancy around the world, per capita gross domestic product (GDP) in Europe, or literacy rates across India. One of the strengths of mapping, and in particular of thematic mapping, is that it can make such abstract and invisible concepts visible and comparable on a map.</p>
+<p><i>Figure 2.3 World Life Expectancies</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-3.jpg" width="500"></p>
+<p><i>Figure 2.4 European GDP</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-4.jpg" width="500"></p>
+<p><i>Figure 2.5 Indian Literacy Rates</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-5.jpg" width="500"></p>
+<p>It is important to note that reference and thematic maps are not mutually exclusive. In other words, thematic maps often contain and combine geographical reference information, and conversely, reference maps may contain thematic information. What is more, when used in conjunction, thematic and reference maps often complement each other.</p>
+<p>For example, public health officials in a city may be interested in providing equal access to emergency rooms to the city’s residents. Insights into this and related questions can be obtained through visual comparisons of a reference map that shows the locations of emergency rooms across the city to thematic maps of various segments of the population (e.g., households below poverty, percent elderly, underrepresented groups).</p>
+<p>Within the context of a GIS, we can <strong>overlay</strong> the reference map of emergency rooms directly on top of the population maps to see whether or not access is uniform across neighborhood types. Clearly, there are other factors to consider when looking at emergency room access (e.g., access to transport), but through such map overlays, underserved neighborhoods can be identified.</p>
+<p><i>Figure 2.6 Map Overlay Process</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-6.jpg" width="400"></p>
+<p>When presented in hardcopy format, both reference and thematic maps are static or fixed representations of reality. Such permanence on the page suggests that geography and the things that we map are also in many ways fixed or constant. This is far from reality. The integration of GISs with other forms of information technology like the Internet and mobile telecommunications is rapidly changing this view of maps and mapping, as well as geography at large.</p>
+</div>
+<div id="dynamic-maps" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Dynamic Maps</h3>
+<p>The diffusion of GISs and the popularity of online mapping tools and applications speak to this shift in thinking about maps and map use. In this regard, it is worthwhile to discuss the diffusion of dynamic maps. Dynamic maps are simply changeable or interactive representations of the earth. <em>Dynamic mapping</em> refers more to how maps are used and delivered to the map user today (e.g., online, via mobile phone) than to the content of the map itself. Both reference and thematic maps can be dynamic in nature, and such maps are an integral component to any GIS. The key point about dynamic maps is that more and more people, not just GIS professionals, have access to such maps.</p>
+<p>Unlike a hardcopy map that has features and elements users cannot modify or change, dynamic maps encourage and sometimes require user interaction. Such interaction can include changing the scale or visible area by zooming in or zooming out, selecting which features or layers to include or to remove from a map (e.g., roads, imagery), or even starting and stopping a map animation.</p>
+<p><i>Figure 2.7 Google Maps on an iPhone</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-7.jpg" width="500"></p>
+<p><i>Figure 2.8 Polar Ice Cap</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/Fig2-8.jpg" width="500"></p>
+<p>To see the animation, go to <a href="https://climate.nasa.gov/vital-signs/arctic-sea-ice/" class="uri">https://climate.nasa.gov/vital-signs/arctic-sea-ice/</a>.</p>
+<p>Just as dynamic maps will continue to evolve and require more user interaction in the future, map users will demand more interactive map features and controls. As this democratization of maps and mapping continues, the geographic awareness and map appreciation of map users will also increase. Therefore, it is of critical importance to understand the nature, form, and content of maps to support the changing needs, demands, and expectations of map users in the future.</p>
+</div>
+<div id="exercise-exploring-gis-maps" class="section level3">
+<h3><span class="header-section-number">2.1.4</span> Exercise: Exploring GIS Maps</h3>
+<p>Have you ever taken a bus across town, shopped at a store, or wanted to locate a nearby skate park? Did you know that you can use GIS to plan bus routes, locate stores near customers, find schools and other places, and do hundreds of other tasks? In other words, the maps and tools of GIS help you understand the world, perform critical tasks, and make smarter decisions.</p>
+<p>In this course, you will learn basic facts about GIS and use GIS maps to explore the world and make your first map. You will use a web-based GIS called ArcGIS Online.</p>
+<p><a href="https://www.esri.com/training/catalog/57630432851d31e02a43ee86/exploring-gis-maps/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational Account</i></p>
+<blockquote>
+<p><strong>Submission Requirements</strong></p>
+<p>After completing the training course online check to see that you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Work through all of the course content on the training site.</li>
+<li>Complete the exercise titled, “Make your first map” and save the web map as it says in the instructions to your ArcGIS Online account.</li>
+<li>Earn a passing score of at least 80% on the quiz at the end of the course. You will have a certificate of completion in <a href="https://my.esri.com/#/" target ="_blank">My Esri</a> once you are done with the course.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div id="map-scale-coordinate-systems-and-map-projections" class="section level2">
+<h2><span class="header-section-number">2.2</span> Map Scale, Coordinate Systems, and Map Projections</h2>
+<blockquote>
+<p>The objective of this section is to describe and discuss the concepts of map scale, coordinate systems, and map projections and explain why they are central to maps, mapping, and geographic information systems (GISs).</p>
+</blockquote>
+<p>All map users and map viewers have certain expectations about what is contained on a map. Such expectations are formed and learned from previous experience by working with maps. It is important to note that such expectations also change with increased exposure to maps. Understanding and meeting the expectations of map viewers is a challenging but necessary task because such expectations provide a starting point for the creation of any map.</p>
+<p>The central purpose of a map is to provide relevant and useful information to the map user. In order for a map to be of value, it must convey information effectively and efficiently. Mapping conventions facilitate the delivery of information in such a manner by recognizing and managing the expectations of map users. Generally speaking, mapping or cartographic conventions refer to the accepted rules, norms, and practices behind the making of maps. One of the most recognized mapping conventions is that “north is up” on most maps. Though this may not always be the case, many map users expect north to be oriented or to coincide with the top edge of a map or viewing device like a computer monitor.</p>
+<p>Several other formal and informal mapping conventions and characteristics, many of which are taken for granted, can be identified. Among the most important cartographic considerations are map scale, coordinate systems, and map projections. Map scale is concerned with reducing geographical features of interest to manageable proportions, coordinate systems help us define the positions of features on the surface of the earth, and map projections are concerned with moving from the three-dimensional world to the two dimensions of a flat map or display, all of which are discussed in greater detail in this chapter.</p>
+<div id="map-scale" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Map Scale</h3>
+<p>The world is a big place…really big. One of the challenges behind mapping the world and its resident features, patterns, and processes is reducing it to a manageable size. What exactly is meant by “manageable” is open to discussion and largely depends on the purpose and needs of the map at hand. Nonetheless, all maps reduce or shrink the world and its geographic features of interest by some factor. <strong>Map scale</strong> refers to the factor of reduction of the world so it fits on a map.</p>
+<p>Map scale can be represented by text, a graphic, or some combination of the two. For example, it is common to see “one inch represents one kilometer” or something similar written on a map to give map users an idea of the scale of the map. Map scale can also be portrayed graphically with what is called a scale bar. Scale bars are usually used on reference maps and allow map users to approximate distances between locations and features on a map, as well as to get an overall idea of the scale of the map.</p>
+<p><i>Figure 2.9 Map Scale from a United States Geological Survey (USGS) Topographic Map</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-9.jpg" width="700"></p>
+<p>The <strong>representative fraction (RF)</strong> describes scale as a simple ratio. The numerator, which is always set to one (i.e., 1), denotes map distance and the denominator denotes ground or “real-world” distance. One of the benefits of using a representative fraction to describe scale is that it is unit neutral. In other words, any unit of measure can be used to interpret the map scale. Consider a map with an RF of 1:10,000. This means that one unit on the map represents 10,000 units on the ground. Such units could be inches, centimeters, or even pencil lengths; it really does not matter.</p>
+<p>Map scales can also be described as either “small” or “large.” Such descriptions are usually made in reference to representative fractions and the amount of detail represented on a map. For instance, a map with an RF of 1:1,000 is considered a large-scale map when compared to a map with an RF of 1:1,000,000 (i.e., 1:1,000 &gt; 1:1,000,000). Furthermore, while the large-scale map shows more detail and less area, the small-scale map shows more area but less detail. Clearly, determining the thresholds for small- or large-scale maps is largely a judgment call.</p>
+<p>All maps possess a scale, whether it is formally expressed or not. Though some say that online maps and GISs are “scaleless” because we can zoom in and out at will, it is probably more accurate to say that GISs and related mapping technology are multiscalar. Understanding map scale and its overall impact on how the earth and its features are represented is a critical part of both map making and GISs.</p>
+</div>
+<div id="coordinate-systems" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Coordinate Systems</h3>
+<p>Just as all maps have a map scale, all maps have locations, too. <strong>Coordinate systems</strong> are frameworks that are used to define unique positions. For instance, in geometry we use x (horizontal) and y (vertical) coordinates to define points on a two-dimensional plane. The coordinate system that is most commonly used to define locations on the three-dimensional earth is called the <strong>geographic coordinate system (GCS)</strong>, and it is based on a sphere or spheroid. A spheroid (a.k.a. ellipsoid) is simply a sphere that is slightly wider than it is tall and approximates more closely the true shape of the earth. Spheres are commonly used as models of the earth for simplicity.</p>
+<p>The unit of measure in the GCS is degrees, and locations are defined by their respective latitude and longitude within the GCS. Latitude is measured relative to the equator at zero degrees, with maxima of either ninety degrees north at the North Pole or ninety degrees south at the South Pole. Longitude is measured relative to the prime meridian at zero degrees, with maxima of 180 degrees west or 180 degrees east.</p>
+<p>Note that latitude and longitude can be expressed in degrees-minutes-seconds (DMS) or in decimal degrees (DD). When using decimal degrees, latitudes above the equator and longitudes east of the prime meridian are positive, and latitudes below the equator and longitudes west of the prime meridian are negative (see the following table for examples).</p>
+<table>
+<tr>
+<th>
+Nominal location
+</th>
+<th>
+Absolute location (DMS)
+</th>
+<th>
+Absolute location (DD)
+</th>
+</tr>
+<tr>
+<th>
+Los Angeles, USA
+</th>
+<th>
+34° 3′ North, 118° 15′ West
+</th>
+<th>
++34.05, –118.25
+</th>
+</tr>
+<tr>
+<th>
+Mumbai, India
+</th>
+<th>
+18° 58′ North, 72° 49′ East
+</th>
+<th>
++18.975, +72.8258
+</th>
+</tr>
+<tr>
+<th>
+Sydney, Australia
+</th>
+<th>
+33° 51′ South, 151° 12′ East
+</th>
+<th>
+–33.859, 151.211
+</th>
+</tr>
+<tr>
+<th>
+Sao Paolo, Brazil
+</th>
+<th>
+23° 33′ South, 46° 38′ West
+</th>
+<th>
+–23.550, –46.634
+</th>
+</table>
+<p>Converting from DMS to DD is a relatively straightforward exercise. For example, since there are sixty minutes in one degree, we can convert 118° 15 minutes to 118.25 (118 + 15/60). Note that an online search of the term “coordinate conversion” will return several coordinate conversion tools.</p>
+<p>When we want to map things like mountains, rivers, streets, and buildings, we need to define how the lines of latitude and longitude will be oriented and positioned on the sphere. A datum serves this purpose and specifies exactly the orientation and origins of the lines of latitude and longitude relative to the center of the earth or spheroid.</p>
+<p>Depending on the need, situation, and location, there are several datums to choose from. For instance, local datums try to match closely the spheroid to the earth’s surface in a local area and return accurate local coordinates. A common local datum used in the United States is called NAD83 (i.e., North American Datum of 1983). For locations in the United States and Canada, NAD83 returns relatively accurate positions, but positional accuracy deteriorates when outside of North America.</p>
+<p>The global WGS84 datum (i.e., World Geodetic System of 1984) uses the center of the earth as the origin of the GCS and is used for defining locations across the globe. Because the datum uses the center of the earth as its origin, locational measurements tend to be more consistent regardless where they are obtained on the earth, though they may be less accurate than those returned by a local datum. Note that switching between datums will alter the coordinates (i.e., latitude and longitude) for all locations of interest.</p>
+</div>
+<div id="map-projections" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Map Projections</h3>
+<p>Previously we noted that the earth is really big. Not only is it big, but it is a big round spherical shape called a spheroid. A globe is a very common and very good representation of the three-dimensional, spheroid earth. One of the problems with globes, however, is that they are not very portable (i.e., you cannot fold a globe and put in it in your pocket), and their small scale makes them of limited practical use (i.e., geographic detail is sacrificed). To overcome these issues, it is necessary to transform the three-dimensional shape of the earth to a two-dimensional surface like a flat piece of paper, computer screen, or mobile device display in order to obtain more useful map forms and map scales. Enter the map projection. (See:“Why all world maps are wrong” in the Appendix)</p>
+<p><strong>Map projections</strong> refer to the methods and procedures that are used to transform the spherical three-dimensional earth into two-dimensional planar surfaces. Specifically, map projections are mathematical formulas that are used to translate latitude and longitude on the surface of the earth to x and y coordinates on a plane. Since there are an infinite number of ways this translation can be performed, there are an infinite number of map projections. The mathematics behind map projections are beyond the scope of this introductory overview (but see Robinson et al. 1995; Muehrcke and Muehrcke 1998),Muehrcke, P., and J. Muehrcke. 1998. Map Use. Madison, WI: JP Publications. and for simplicity, the following discussion focuses on describing types of map projections, the distortions inherent to map projections, and the selection of appropriate map projections.</p>
+<p>To illustrate the concept of a map projection, imagine that we place a light bulb in the center of a translucent globe. On the globe are outlines of the continents and the lines of longitude and latitude called the graticule. When we turn the light bulb on, the outline of the continents and the graticule will be “projected” as shadows on the wall, ceiling, or any other nearby surface. This is what is meant by map “projection.”</p>
+<p><i>Figure 2.10 The Concept of Map “Projection”</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-10.jpg" width="500"></p>
+<p>Within the realm of maps and mapping, there are three surfaces used for map projections (i.e., surfaces on which we project the shadows of the graticule). These surfaces are the plane, the cylinder, and the cone. Referring again to the previous example of a light bulb in the center of a globe, note that during the projection process, we can situate each surface in any number of ways. For example, surfaces can be tangential to the globe along the equator or poles, they can pass through or intersect the surface, and they can be oriented at any number of angles.</p>
+<p><i>Figure 2.11 Map Projection Surfaces</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-11.jpg" width="500"></p>
+<p>In fact, naming conventions for many map projections include the surface as well as its orientation. For example, as the name suggests, “planar” projections use the plane, “cylindrical” projections use cylinders, and “conic” projections use the cone. For cylindrical projections, the “normal” or “standard” aspect refers to when the cylinder is tangential to the equator (i.e., the axis of the cylinder is oriented north–south). When the axis of the cylinder is perfectly oriented east–west, the aspect is called “transverse,” and all other orientations are referred to as “oblique.” Regardless the orientation or the surface on which a projection is based, a number of distortions will be introduced that will influence the choice of map projection.</p>
+<p>When moving from the three-dimensional surface of the earth to a two-dimensional plane, distortions are not only introduced but also inevitable. Generally, map projections introduce distortions in distance, angles, and areas. Depending on the purpose of the map, a series of trade-offs will need to be made with respect to such distortions.</p>
+<p>Map projections that accurately represent distances are referred to as equidistant projections. Note that distances are only correct in one direction, usually running north–south, and are not correct everywhere across the map. Equidistant maps are frequently used for small-scale maps that cover large areas because they do a good job of preserving the shape of geographic features such as continents.</p>
+<p>Maps that represent angles between locations, also referred to as bearings, are called conformal. Conformal map projections are used for navigational purposes due to the importance of maintaining a bearing or heading when traveling great distances. The cost of preserving bearings is that areas tend to be quite distorted in conformal map projections. Though shapes are more or less preserved over small areas, at small scales areas become wildly distorted. The Mercator projection is an example of a conformal projection and is famous for distorting Greenland.</p>
+<p>As the name indicates, equal area or equivalent projections preserve the quality of area. Such projections are of particular use when accurate measures or comparisons of geographical distributions are necessary (e.g., deforestation, wetlands). In an effort to maintain true proportions in the surface of the earth, features sometimes become compressed or stretched depending on the orientation of the projection. Moreover, such projections distort distances as well as angular relationships.</p>
+<p>As noted earlier, there are theoretically an infinite number of map projections to choose from. One of the key considerations behind the choice of map projection is to reduce the amount of distortion. The geographical object being mapped and the respective scale at which the map will be constructed are also important factors to think about. For instance, maps of the North and South Poles usually use planar or azimuthal projections, and conical projections are best suited for the middle latitude areas of the earth. Features that stretch east–west, such as the country of Russia, are represented well with the standard cylindrical projection, while countries oriented north–south (e.g., Chile, Norway) are better represented using a transverse projection.</p>
+<p>If a map projection is unknown, sometimes it can be identified by working backward and examining closely the nature and orientation of the graticule (i.e., grid of latitude and longitude), as well as the varying degrees of distortion. Clearly, there are trade-offs made with regard to distortion on every map. There are no hard-and-fast rules as to which distortions are more preferred over others. Therefore, the selection of map projection largely depends on the purpose of the map.</p>
+<p>Within the scope of GISs, knowing and understanding map projections are critical. For instance, in order to perform an overlay analysis like the one described earlier, all map layers need to be in the same projection. If they are not, geographical features will not be aligned properly, and any analyses performed will be inaccurate and incorrect. Most GISs include functions to assist in the identification of map projections, as well as to transform between projections in order to synchronize spatial data. Despite the capabilities of technology, an awareness of the potential and pitfalls that surround map projections is essential.</p>
+</div>
+<div id="exercise-basics-of-geographic-coordinate-systems" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> Exercise: Basics of Geographic Coordinate Systems</h3>
+<p>How do you accurately represent the location of features on the earth’s surface on paper or a computer screen? In a GIS, the answer starts with a geographic coordinate system. Learn the fundamental concepts of geographic coordinate systems.</p>
+<p><a href="https://www.esri.com/training/catalog/57630435851d31e02a43efe7/basics-of-geographic-coordinate-systems/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational account. The data for your projects in ArcGIS Pro have been pre-loaded on your computer at C: &gt; Users &gt; Public &gt; Public Documents &gt; GIS_Files.</i></p>
+<blockquote>
+<p><strong>Submission Requirements</strong></p>
+<p>After completing the training course online check to see that you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Work through all of the course content on the training site.</li>
+<li>Complete the exercise titled, “Examine spheroids” and save the ArcGIS Pro project.</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a></li>
+<li>Earn a passing score of at least 80% on the quiz at the end of the course. You will have a certificate of completion in <a href="https://my.esri.com/#/" target ="_blank">My Esri</a> once you are done with the course.</li>
+</ol>
+</blockquote>
+<p><i>Always use the same version of ArcGIS Pro as the one you select at the beginning of the course (2.7).</i></p>
+</div>
+</div>
+<div id="map-abstraction" class="section level2">
+<h2><span class="header-section-number">2.3</span> Map Abstraction</h2>
+<blockquote>
+<p>The objective of this section is to highlight the decision-making process behind maps and to underscore the need to be explicit and consistent when mapping and using geographic information systems (GISs).</p>
+</blockquote>
+<p>As previously discussed, maps are a representation of the earth. Central to this representation is the reduction of the earth and its features of interest to a manageable size (i.e., map scale) and its transformation into a useful two-dimensional form (i.e., map projection). The choice of both map scale and, to a lesser extent, map projection will influence the content and shape of the map.</p>
+<p>In addition to the seemingly objective decisions made behind the choices of map scale and map projection are those concerning what to include and what to omit from the map. The purpose of a map will certainly guide some of these decisions, but other choices may be based on factors such as space limitations, map complexity, and desired accuracy. Furthermore, decisions about how to classify, simplify, or exaggerate features and how to symbolize objects of interest simultaneously fall under the realms of art and science (Slocum et al. 2004).Slocum, T., R. McMaster, F. Kessler, and H. Hugh. 2008. Thematic Cartography and Geovisualization. Upper Saddle River, NJ: Prentice Hall.</p>
+<p>The process of moving from the “real world” to the world of maps is referred to as <strong>map abstraction</strong>. This process not only involves making choices about how to represent features but also, more important with regard to geographic information systems (GISs), requires us to be explicit, consistent, and precise in terms of defining and describing geographical features of interest. Failure to be explicit, consistent, and precise will return incorrect; inconsistent; and error-prone maps, analyses, and decisions based on such maps and GISs. This final section discusses map abstraction in terms of geographical features and their respective graphical representation.</p>
+<div id="what-is-a-forest" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> What Is a Forest?</h3>
+<p>One of the most pressing environmental issues facing the world is deforestation. Generally, deforestation refers to the reduction of forest area. This is an important issue because it has possible implications for climate change, global warming, biodiversity, and the water balance of the earth, among other things. In the last century, deforestation has increased at an alarming rate and is mostly attributed to human activity. Mapping forests regularly with a GIS is a logical way to monitor deforestation and has the potential to inform policies regarding forest conservation efforts. Easy enough, so let’s get started.</p>
+<p>So what exactly is a forest? How do we know where a forest begins and where it ends? How can naturally caused forest fires be differentiated from those started by humans? Can a forest exist in a swamp or wetland? For that matter, what is the difference between a swamp and wetland? Such questions are not trivial in the context of mapping and GISs. In fact, consistent and precise definitions of features like forests or swamps increase the reliability and efficiency of maps, mapping, and analysis with GISs.</p>
+<p><i>Figure 2.12 Deforestation in the Amazon: 2001</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-12.jpg" width="500"></p>
+<p><i>Figure 2.13 Deforestation in the Amazon: 2009</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-13.jpg" width="500"></p>
+<p>Within the realm of maps, cartography, and GISs, the world is made up of various features or entities. Such entities include but are not restricted to fire hydrants, caves, roads, rivers, lakes, hills, valleys, oceans, and the occasional barn. Moreover, such features have a form, and more precisely, a geometric form. For instance, fire hydrants and geysers are considered point-like features; rivers and streams are linear features; and lakes, countries, and forests are areal features.</p>
+<p>Features can also be categorized as either discrete or continuous. <strong>Discrete features</strong> are well defined and are easy to locate, measure, and count, and their edges or boundaries are readily defined. Examples of discrete features in a city include buildings, roads, traffic signals, and parks. <strong>Continuous features</strong>, on the other hand, are less well defined and exist across space. The most commonly cited examples of continuous features are temperature and elevation. Changes in both temperature and elevation tend to be gradual over relatively large areas.</p>
+<p>Geographical features also have several characteristics, traits, or attributes that may or may not be of interest. For instance, to continue the deforestation example, determining whether a forest is a rainforest or whether a forest is in a protected park may be important. More general attributes may include measurements such as tree density per acre, average canopy height in meters, or proportions like percent palm trees or invasive species per hectare in the forest.</p>
+<p>Notwithstanding the purpose of the map or GIS project at hand, it is critical that definitions of features are clear and remain consistent. Similarly, it is important that the attributes of features are also consistently defined, measured, and reported in order to generate accurate and effective maps in an efficient manner. Defining features and attributes of interest is often an iterative process of trial and error. Being able to associate a feature with a particular geometric form and to determine the feature type are central to map abstraction, facilitate mapping, and the application of GISs.</p>
+</div>
+<div id="map-content-and-generalization" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Map Content and Generalization</h3>
+<p>The shape and content of maps vary according to purpose, need, and resources, among other factors. What is common to most maps, and in particular to those within a GIS, is that they are graphical representations of reality. Put another way, various graphical symbols are used to represent geographical features or entities. Annotation or text is also commonly used on maps and facilitates map interpretation. Learning about map content and map generalization is important because they serve as the building blocks for spatial data that are used within a GIS.</p>
+<p>Building upon the previous discussion about the geometric form of geographic features, maps typically rely on three geometric objects: the point, the line, and the polygon or area. A point is defined by x and y coordinates, a line is defined by two points, and a polygon is defined by a minimum of three points. The important thing to note is that the definition of a point is analogous to a location that is defined by longitude and latitude. Furthermore, since lines and polygons are made up of points, location information (i.e., x and y, or longitude and latitude, coordinates) is intrinsic to points, lines, and polygons.</p>
+<p><i>Figure 2.14 Geographic Features as Points, Lines, and Polygons</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-14.jpg" width="500"></p>
+<p>Both simple and complex maps can be made using these three relatively simple geometric objects. Additionally, by changing the graphical characteristics of each object, an infinite number of mapping possibilities emerge. Such changes can be made to the respective size, shape, color, and patterns of points, lines, and polygons. For instance, different sized points can be used to reflect variations in population size, line color or line size (i.e., thickness) can be used to denote volume or the amount of interaction between locations, and different colors and shapes can be used to reflect different values of interest.</p>
+<p><i>Figure 2.15 Variations in the Graphical Parameters of Points, Lines, and Polygons</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-15.jpg" width="500"></p>
+<p><i>Figure 2.16</i></p>
+<p><img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-16.jpg" width="500"></p>
+<p>Complementing the graphical elements described previously is annotation or text. Annotation is used to identify particular geographic features, such as cities, states, bodies of water, or other points of interest. Like the graphical elements, text can be varied according to size, orientation, or color. There are also numerous text fonts and styles that are incorporated into maps. For example, bodies of water are often labeled in italics.</p>
+<p>Another map element that deserves to be mentioned and that combines both graphics and text is the <strong>map legend</strong> or map key. A map legend provides users information about the how geographic information is represented graphically. Legends usually consist of a title that describes the map, as well as the various symbols, colors, and patterns that are used on the map. Such information is often vital to the proper interpretation of a map.</p>
+<p>As more features and graphical elements are put on a given map, the need to generalize such features arises. <strong>Map generalization</strong> refers to the process of resolving conflicts associated with too much detail, too many features, or too much information to map. In particular, generalization can take several forms (Buttenfield and McMaster 1991):Buttenfield, B., and R. McMaster. 1991. Map Generalization. Harlow, England: Longman.</p>
+<ul>
+<li>The simplification or <strong>symbolization</strong> of features for emphasis</li>
+<li>The masking or displacement of detail to increase clarity or legibility</li>
+<li>The selection of detail for inclusion or omission from the map</li>
+<li>The exaggeration of features for emphasis</li>
+</ul>
+<p>Determining which aspects of generalization to use is largely a matter of personal preference, experience, map purpose, and trial and error. Though there are general guidelines about map generalization, there are no universal standards or requirements with regard to the generalization of maps and mapping. It is at this point that cartographic and artistic license, prejudices and biases, and creativity and design sense—or lack thereof—emerge to shape the map.</p>
+<p>Making a map and, more generally, the process of mapping involve a range of decisions and choices. From the selection of the appropriate map scale and map projection to deciding which features to map and to omit, mapping is a complex blend of art and science. In fact, many historical maps are indeed viewed like works of art, and rightly so. Learning about the scale, shape, and content of maps serves to increase our understanding of maps, as well as deepen our appreciation of maps and map making. Ultimately, this increased geographical awareness and appreciation of maps promotes the sound and effective use and application of a GIS.</p>
+</div>
+<div id="exercise-symbolizing-map-layers" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Exercise: Symbolizing Map Layers</h3>
+<p>Maps communicate important information about features on the earth. However, without good use of symbols, the maps will not be effective. This course teaches how to best symbolize your map data so that your audience gets the information that it needs.</p>
+<p><a href="https://www.esri.com/training/catalog/5ca28d18780a171ba3ec188a/symbolizing-map-layers/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational account. The data for your projects in ArcGIS Pro have been pre-loaded on your computer at C: &gt; Users &gt; Public &gt; Public Documents &gt; GIS_Files.</i></p>
+<blockquote>
+<p><strong>Submission Requirements</strong></p>
+<p>After completing the training course online check to see that you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Work through all of the course content on the training site.</li>
+<li>Complete the exercise titled, “Symbolizing Map Layers” (Two parts of the training course) and save the ArcGIS Pro project.</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a></li>
+<li>Earn a passing score of at least 80% on the quiz at the end of the course. You will have a certificate of completion in <a href="https://my.esri.com/#/" target ="_blank">My Esri</a> once you are done with the course.</li>
+</ol>
+</blockquote>
+<p><i>Always use the same version of ArcGIS Pro as the one you select at the beginning of the course (2.7).</i></p>
+<!-- Put this in a box -->
+<!-- ### More than Just Clouds and Weather -->
+<!-- Image maps, in large part derived from satellites, are ubiquitous. Such maps can be found on the news, the Internet, in your car, and on your mobile phone. What’s more is that such images are in living color and of very high resolution. Not long ago, such image maps from satellites were the sole domain of meteorologists, local weather forecasters, and various government agencies. Public access to such images was pretty much limited to the evening news. -->
+<!-- Technological advances in imaging technology, in conjunction with the commercialization of space flight, opened the door for companies like GeoEye (http://www.geoeye.com) and DigitalGlobe (http://www.digitalglobe.com) to provide satellite imagery and maps to the masses at the turn of the twenty-first century. With online mapping services such as Google Earth providing free and user-friendly access to such images, a revolution in maps and mapping was born. -->
+<!-- Image maps now provide geographic context for nightly news stories around the world, serve as a backdrop to local real estate searches and driving directions, and are also used for research purposes . The popularity and widespread use of such images speaks not only to recent technological advances and innovations but also, perhaps more important, to the geographer in us all. -->
+<!-- Figure 2.17 -->
+<!-- The Inauguration of Barack Obama from Space -->
+<!-- <img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/fig2-17.jpg" width="900"> -->
+<!-- GeoEye 2008. -->
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

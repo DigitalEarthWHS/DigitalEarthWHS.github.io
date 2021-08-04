@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Appendix | Digital Earth: An Introductory GIS Course</title>
+  <meta name="description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Appendix | Digital Earth: An Introductory GIS Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Appendix | Digital Earth: An Introductory GIS Course" />
+  
+  <meta name="twitter:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  
+
+<meta name="author" content="Steve Cline" />
+
+
+<meta name="date" content="2021-05-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="acquisition-and-analysis.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+
+<img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/earth_logo.png" width="250">
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i><b>1.1</b> Preface</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stuff-happens"><i class="fa fa-check"></i><b>1.2</b> Stuff Happens…</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#spatial-thinking"><i class="fa fa-check"></i><b>1.3</b> Spatial Thinking</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#mental-maps"><i class="fa fa-check"></i><b>1.3.1</b> Mental Maps</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#asking-geographic-questions"><i class="fa fa-check"></i><b>1.3.2</b> Asking Geographic Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#geographic-concepts"><i class="fa fa-check"></i><b>1.4</b> Geographic Concepts</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#location"><i class="fa fa-check"></i><b>1.4.1</b> Location</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#direction"><i class="fa fa-check"></i><b>1.4.2</b> Direction</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#distance"><i class="fa fa-check"></i><b>1.4.3</b> Distance</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#space"><i class="fa fa-check"></i><b>1.4.4</b> Space</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#navigation"><i class="fa fa-check"></i><b>1.4.5</b> Navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#geographic-information-systems-for-today-and-beyond"><i class="fa fa-check"></i><b>1.5</b> Geographic Information Systems for Today and Beyond</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#gis-defined"><i class="fa fa-check"></i><b>1.5.1</b> GIS Defined</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#three-approaches-to-giss"><i class="fa fa-check"></i><b>1.5.2</b> Three Approaches to GISs</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#gis-futures"><i class="fa fa-check"></i><b>1.5.3</b> GIS Futures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-anatomy.html"><a href="map-anatomy.html"><i class="fa fa-check"></i><b>2</b> Map Anatomy</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#maps-and-map-types"><i class="fa fa-check"></i><b>2.1</b> Maps and Map Types</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-anatomy.html"><a href="map-anatomy.html#reference-maps"><i class="fa fa-check"></i><b>2.1.1</b> Reference Maps</a></li>
+<li class="chapter" data-level="2.1.2" data-path="map-anatomy.html"><a href="map-anatomy.html#thematic-maps"><i class="fa fa-check"></i><b>2.1.2</b> Thematic Maps</a></li>
+<li class="chapter" data-level="2.1.3" data-path="map-anatomy.html"><a href="map-anatomy.html#dynamic-maps"><i class="fa fa-check"></i><b>2.1.3</b> Dynamic Maps</a></li>
+<li class="chapter" data-level="2.1.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-exploring-gis-maps"><i class="fa fa-check"></i><b>2.1.4</b> Exercise: Exploring GIS Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale-coordinate-systems-and-map-projections"><i class="fa fa-check"></i><b>2.2</b> Map Scale, Coordinate Systems, and Map Projections</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale"><i class="fa fa-check"></i><b>2.2.1</b> Map Scale</a></li>
+<li class="chapter" data-level="2.2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#coordinate-systems"><i class="fa fa-check"></i><b>2.2.2</b> Coordinate Systems</a></li>
+<li class="chapter" data-level="2.2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-projections"><i class="fa fa-check"></i><b>2.2.3</b> Map Projections</a></li>
+<li class="chapter" data-level="2.2.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-basics-of-geographic-coordinate-systems"><i class="fa fa-check"></i><b>2.2.4</b> Exercise: Basics of Geographic Coordinate Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-abstraction"><i class="fa fa-check"></i><b>2.3</b> Map Abstraction</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="map-anatomy.html"><a href="map-anatomy.html#what-is-a-forest"><i class="fa fa-check"></i><b>2.3.1</b> What Is a Forest?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-content-and-generalization"><i class="fa fa-check"></i><b>2.3.2</b> Map Content and Generalization</a></li>
+<li class="chapter" data-level="2.3.3" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-symbolizing-map-layers"><i class="fa fa-check"></i><b>2.3.3</b> Exercise: Symbolizing Map Layers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-and-information"><i class="fa fa-check"></i><b>3.1</b> Data and Information</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#of-files-and-formats"><i class="fa fa-check"></i><b>3.1.1</b> Of Files and Formats…</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#exercise-introduction-to-spatial-data"><i class="fa fa-check"></i><b>3.1.2</b> Exercise: Introduction to Spatial Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#data-about-data"><i class="fa fa-check"></i><b>3.2</b> Data about Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#exercise-mapping-addresses-and-places"><i class="fa fa-check"></i><b>3.2.1</b> Exercise: Mapping Addresses and Places</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#finding-data"><i class="fa fa-check"></i><b>3.3</b> Finding Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#exercise-mapping-census-data"><i class="fa fa-check"></i><b>3.3.1</b> Exercise: Mapping Census Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html"><i class="fa fa-check"></i><b>4</b> Data Models for GIS</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#raster-data-models"><i class="fa fa-check"></i><b>4.1</b> Raster Data Models</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-raster-model"><i class="fa fa-check"></i><b>4.1.1</b> Advantages/Disadvantages of the Raster Model</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-performing-supervised-pixel-based-image-classification"><i class="fa fa-check"></i><b>4.1.2</b> Exercise: Performing Supervised Pixel-Based Image Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models"><i class="fa fa-check"></i><b>4.2</b> Vector Data Models</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models-structures"><i class="fa fa-check"></i><b>4.2.1</b> Vector Data Models Structures</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-vector-model"><i class="fa fa-check"></i><b>4.2.2</b> Advantages/Disadvantages of the Vector Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-creating-vector-tiles-in-arcgis-pro"><i class="fa fa-check"></i><b>4.2.3</b> Exercise: Creating Vector Tiles in ArcGIS Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery-and-aerial-photography"><i class="fa fa-check"></i><b>4.3</b> Satellite Imagery and Aerial Photography</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery"><i class="fa fa-check"></i><b>4.3.1</b> Satellite Imagery</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#aerial-photography"><i class="fa fa-check"></i><b>4.3.2</b> Aerial Photography</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-change-detection-using-imagery"><i class="fa fa-check"></i><b>4.3.3</b> Exercise: Change Detection Using Imagery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html"><i class="fa fa-check"></i><b>5</b> Acquisition and Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geographic-data-acquisition"><i class="fa fa-check"></i><b>5.1</b> Geographic Data Acquisition</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#data-types"><i class="fa fa-check"></i><b>5.1.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
+<li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
+<li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
+<li class="chapter" data-level="5.2.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geoprocessing-operations"><i class="fa fa-check"></i><b>5.2.2</b> Geoprocessing Operations</a></li>
+<li class="chapter" data-level="5.2.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-proximity-analysis"><i class="fa fa-check"></i><b>5.2.3</b> Exercise: Introduction to Proximity Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#multiple-layer-analysis"><i class="fa fa-check"></i><b>5.3</b> Multiple Layer Analysis</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-operations"><i class="fa fa-check"></i><b>5.3.1</b> Overlay Operations</a></li>
+<li class="chapter" data-level="5.3.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#other-multilayer-geoprocessing-options"><i class="fa fa-check"></i><b>5.3.2</b> Other Multilayer Geoprocessing Options</a></li>
+<li class="chapter" data-level="5.3.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#spatial-join"><i class="fa fa-check"></i><b>5.3.3</b> Spatial Join</a></li>
+<li class="chapter" data-level="5.3.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-errors"><i class="fa fa-check"></i><b>5.3.4</b> Overlay Errors</a></li>
+<li class="chapter" data-level="5.3.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-overlay-analysis"><i class="fa fa-check"></i><b>5.3.5</b> Exercise: Introduction to Overlay Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#course-lecture-notes"><i class="fa fa-check"></i><b>6.1</b> Course Lecture Notes</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#final-project-option"><i class="fa fa-check"></i><b>6.2</b> Final Project Option</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="appendix.html"><a href="appendix.html#project-requirements"><i class="fa fa-check"></i><b>6.2.1</b> Project Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="appendix.html"><a href="appendix.html#submitting-map-packages"><i class="fa fa-check"></i><b>6.3</b> Submitting Map Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix.html"><a href="appendix.html#esri-virtual-campus-records"><i class="fa fa-check"></i><b>6.4</b> ESRI Virtual Campus Records</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix.html"><a href="appendix.html#related-media"><i class="fa fa-check"></i><b>6.5</b> Related Media</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Earth: An Introductory GIS Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="appendix" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Appendix</h1>
+<div id="course-lecture-notes" class="section level2">
+<h2><span class="header-section-number">6.1</span> Course Lecture Notes</h2>
+<p>All course lecture notes may be found below:</p>
+<p><strong>0.0 - Prerequisites</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTdjVuqa9meB1aj7PBD3IKUhhoTlSVZcziKkMwvdxYLPSWlPA-HorW7EX-FWsXloizkQObtr0V02qTR/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>1.1 - What is GIS?</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSiLfKZN_BJRvSTfox8n4HdIqSmjzmQ0Jcm8IDZarTFUk9_0SUFk0hdb9mL4HElRbiZYW_PE5g_XP1H/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>2.1 - Maps and Map Types</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS5U30UEbhZhKn_Urojc0KNqfvpKaGMIhQU3Av7MX9VmX4eb_3Fv57nKctiVxKK4m3dndgOSHSRfK72/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>2.2 - Map Scale, Coordinate Systems, and Map Projections</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vT5uplD-qqkKTSd8ua7hhT3jMKWHvART2SrGuFigUqE7jI4wyTzxxrs7fpLHzqyGNH37hkgVup8PCz1/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>2.3 - Map Abstraction</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTOyqqIjgqem6FwWOO6Ri7z5RH5BrAlw9kyn8hyZ0fHf-WLBym7S8xDs5Nx5DzI1OnlcBMIoymyumKS/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>3.1 - Data and Information</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSD1Iq5m_w3aNbyhnmzx8OkLkHluYjooyDN3Wq2L5UCDYwOpedKtf2Woqm3aUFX-l-n7VSgk1mgKxYA/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>3.2 - Data about Data</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQtGcb_8tE04Oj0n4NNkBkZvxzrK3aUmXNM5sjUxMJtMfsqZ4nXwfoa38fFMJNZQG9YC4g0O4GwDr0a/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>3.3 - Finding Data</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRODZO4KvrTKQvLnVueRbJLj-fEarGmD2FydHkiwCkTxQEo4Gn6ihfHhnkZRrlR83KGlXUibZg3Neri/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>4.1 - Raster Data Models</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSd0nzKzwjzS6l8uwYkijc3AWWyBzyU_IGWzuoGFmAqXyAFV09ID6eq2ABoA9g1qmFSMNQFe56_HcKX/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>4.2 - Vector Data Models</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRVhZuZTg6sC_7IR2Dd2HidVbm9B_rBjpzVBlIfV8lVzTm3L-j0kQ1uA_NX_7pJ5BFgnv3_t_VWJ8Pl/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>4.3 - Satellite Imagery and Aerial Photography</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSCwaS8cnu5zNuo25yZFxfQVkVk2sIUo5uS9oE7cdW4US0ILT8OBYex_WfGdCL0pxyeP1XspoRidPBr/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>5.1 - Geographic Data Acquisition</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQUi6-PsG9EjLfexd2akMwQ40tsH-wosfOWEGWH4VBQhRY-soyNfKJrJo6RzyzyL-LuHzwVsz_Kjvby/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>5.2 - Single Layer Analysis</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQZfASnYAxBIiEcuczmWWloR3urizh7VHSISKUVhTjE08WLNhLp2rlC_P7LtT5inaRqjfWIk7EFn1XX/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+<p><strong>5.3 - Multiple Layer Analysis</strong>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQV5Vv-unLtKgHryQt_oKseEqjPIXa6bWz70EmtpxiOH-A3OybbOrDKuoCgkdNatBmVCCzPeUXk9CC9/embed?start=false&loop=false&delayms=3000" frameborder="0" width="750" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></p>
+</div>
+<div id="final-project-option" class="section level2">
+<h2><span class="header-section-number">6.2</span> Final Project Option</h2>
+<p>You have two options for your final test grade in the class. You can, of course, take the final exam and accept the grade you earn there. If you are more interested in completing a project instead, that is completely acceptible. In order to do this, you must notify Mr. Cline of your intent to complete your final project, along with a brief explanation of what you plan to do no later than Wednesday, May 5th.</p>
+<div id="project-requirements" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Project Requirements</h3>
+<div id="overview" class="section level4">
+<h4><span class="header-section-number">6.2.1.1</span> Overview</h4>
+<p>The final project in Digital Earth will include the production of a map, either a print layout or an online map. Unacceptable formats for submission include the workspace used on ArcGIS Pro or ArcGIS Online to create the finished product. In short, your final project should be targeted at a non-GIS saavy audience.</p>
+</div>
+<div id="minimum-requirements" class="section level4">
+<h4><span class="header-section-number">6.2.1.2</span> Minimum Requirements</h4>
+<p>A final map that is either static or interactive.
+- Data: the underlying data used for the map is the result of your own primary or secondary research.
+- Data Processing: The geospatial data should be the result of accessing and processing qualitative or quantitative data. Use the tools you have learned this quarter to process the data into something more usable and finished.
+- Appearance: The map is designed with the idea of “WHAT ALL GOOD MAPS SHOULD (MUST) HAVE” in mind (See Below).</p>
+<div id="what-all-good-maps-should-must-have-for-static-maps-by-bach-freelan" class="section level5">
+<h5><span class="header-section-number">6.2.1.2.1</span> What All Good Maps Should (Must) Have for Static Maps (by Bach &amp; Freelan)</h5>
+<p>Regardless of the cartographic style or content, most [static] maps have the following common elements. These are the “Golden Rules of Cartography” – at least for beginner cartographers (though in truth there are no ‘rules’ in cartography).</p>
+<ol style="list-style-type: decimal">
+<li><p>TITLE: the title should be in a large font, easily identifiable as the title of the map and should include descriptive text as to the location and purpose of the map. If the map is thematic, the theme should be included in the title. For example: Corn Production in Washington, 1990. The title is usually the largest font size of all lettering on the layout, however, it should not dominate the map graphic itself. The title may or may not be in a box and does not need to be at the top of the page (though it often is). For published materials (e.g., books or articles) the title may be included in a figure caption.</p></li>
+<li><p>SCALE INDICATOR: the scale of the map is typically indicated by a graphic bar scale, a representative fraction or a verbal scale. The reader must be able to determine the relationship between a unit of measure on the map and a unit of measure in the real world.</p></li>
+<li><p>ORIENTATION: a map should indicate which way is north (and/or south, east and west). Commonly this is done by a north arrow or compass rose. Orientation may also be shown by graticule or grid marks (e.g. lines of latitude and longitude). By convention north is towards the top of the page (thus some maps do not have north arrows), but the orientation must still be given for a ‘proper’ map. North does not need to be at the top of the page and a north arrow is essential in maps where it is not.</p></li>
+<li><p>BORDER(s) (or Neatline): a map border identifies exactly where the mapped area stops and should be close to the edges of the mapped area. The distance between the map and it’s border should be the same on all sides (balanced). There should also be a border around the entire page or map layout (enclosing and grouping the title, legend, text boxes, etc.). Both of these borders are sometimes referred to as a ‘neatline.’ In addition, there is sometimes a thin additional line just outside of a border (accentuating it and ideally making it more visually appealing) that is also referred to as a neatline.</p></li>
+<li><p>LEGEND: required if the map uses symbols or colors (including shades of gray and patterns). Maps (and certain map features) do not need legends if the symbology is so common or simple as to be easily understood by the reader. However, it must be clear what each marker or line type, weight and pattern represents. The legend does not need to be labeled “Legend”.</p></li>
+<li><p>MAP CREDITS:</p>
+<ul>
+<li>SOURCE OF DATA (especially on thematic maps)</li>
+</ul></li>
+</ol>
+<ul>
+<li>NAME of the cartographer
+<ul>
+<li>DATE of the map creation/publication</li>
+<li>DATE of the map data</li>
+<li>Optional: PROJECTION of the map (especially for small-scale maps)</li>
+</ul></li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li>LOCATOR MAP (INSET): an inset Locator map is needed if the area of the map is not easily recognizable or is of large scale. For example, for a map of Whatcom County, there should be an inset map of Washington, showing the location of Whatcom County. Inset Detail map(s) may also be used to show an area of the map in greater detail (larger scale).</li>
+<li>EFFECTIVE GRAPHICAL DESIGN: the layout design is as important as effective sentence structure is to written text. Design refers to the planning and decision making processes involved in the visual display of the spatial data. You can achieve balance by rearranging the map elements (scale, north arrow, legend, title, etc.) and changing size of the text, border. etc. The map and map elements should be:</li>
+</ol>
+<ul>
+<li>Neat and clear
+<ul>
+<li>Appropriately and consistently generalized</li>
+<li>Symmetrically balanced (avoid crowding, no large blank areas)</li>
+<li>Without unnecessary clutter (keep it simple, be wary of ‘artistic’ details)</li>
+</ul></li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>VISUAL HIERARCHY: a hierarchy of symbology should be used for the lettering, line weights and shading. More important features are typically larger and/or darker, less important/background information should be smaller and/or lighter. At the same time, do not “over weight” or “under weight” features.</li>
+<li>PURPOSE: All maps have a purpose which influences every element of the map and the map layout. A cartographer should be able to clearly articulate the purpose of their map and should keep the audience (who the map is going to be used by) and the client (who the maps is being produced for) in mind.</li>
+</ol>
+</div>
+<div id="what-all-good-maps-should-must-have-for-dynamic-web-maps-adapted-from-bach-freelan" class="section level5">
+<h5><span class="header-section-number">6.2.1.2.2</span> What All Good Maps Should (Must) Have for Dynamic Web Maps (Adapted from Bach &amp; Freelan)</h5>
+<p>Regardless of the cartographic style or content, most dynamic web maps have the following common elements. These are good guidelines to follow but web maps have a great variation in style and effect.</p>
+<ol style="list-style-type: decimal">
+<li>TITLE: the title should be in a large font, easily identifiable as the title of the map and should include descriptive text as to the location and purpose of the map. If the map is thematic, the theme should be included in the title. For example: Corn Production in Washington, 1990. The title is usually the largest font size of all lettering on the layout, however, it should not dominate the map graphic itself. The title may or may not be in a box and does not need to be at the top of the page (though it often is). For published materials (e.g., books or articles) the title may be included in a figure caption.</li>
+<li>SCALE: if the message of the map needs to have a scale reference the scale of the map is typically indicated by a graphic bar scale, a representative fraction or a verbal scale. The reader must be able to determine the relationship between a unit of measure on the map and a unit of measure in the real world. If it is important to design different views based on scale, the cartographer should consider some method of dynamic scaling such as vector tiles.</li>
+<li>ORIENTATION: web maps almost never vary from a north is up orientation. In those unusual circumstances where that does happen, an indication of north should be present at minimum. Otherwise, this is not necessary.</li>
+<li>BORDER(s): a map border on a dynamic web map accentuates the overall style of the map. It should be designed to be integrated with the overall map effect.</li>
+<li>LEGEND: required if the map uses symbols or colors (including shades of gray and patterns). Maps (and certain map features) do not need legends if the symbology is so common or simple as to be easily understood by the reader. However, it must be clear what each marker or line type, weight and pattern represents. The legend does not need to be labeled “Legend”. On a dynamic web map, the legend should be edited to reflect thoughtful naming of layers and methods of valuing quantitative classes of data.</li>
+<li>MAP CREDITS: credit should be given to any authors of data used and be available for viewing on the web map. A “pop-up” or clickable credits window is a good option. Users should not have to dig into the data source to find data attribution though.</li>
+</ol>
+<ul>
+<li>SOURCE OF DATA (especially on thematic maps)
+<ul>
+<li>NAME of the cartographer</li>
+<li>DATE of the map creation/publication</li>
+<li>DATE of the map data</li>
+<li>Optional: PROJECTION of the map if using anything besides Web Mercator Auxillary Sphere</li>
+</ul></li>
+</ul>
+<ol start="7" style="list-style-type: decimal">
+<li>LOCATOR MAP (INSET): an inset Locator map is needed if the area of the map is not easily recognizable or is of large scale. For example, for a map of Whatcom County, there should be an inset map of Washington, showing the location of Whatcom County. Inset Detail map(s) may also be used to show an area of the map in greater detail (larger scale).</li>
+<li>EFFECTIVE GRAPHICAL DESIGN: the layout design is as important as effective sentence structure is to written text. Design refers to the planning and decision making processes involved in the visual display of the spatial data. You can achieve balance by rearranging the map elements (scale, north arrow, legend, title, etc.) and changing size of the text, border. etc. The map and map elements should be:</li>
+</ol>
+<ul>
+<li>Neat and clear
+<ul>
+<li>Appropriately and consistently generalized</li>
+<li>Symmetrically balanced (avoid crowding, no large blank areas)</li>
+<li>Without unnecessary clutter (keep it simple, be wary of ‘artistic’ details)</li>
+<li>Colors are chosen for visual messaging and are appropriate (trees are usually green, etc.)</li>
+</ul></li>
+</ul>
+<ol start="9" style="list-style-type: decimal">
+<li>VISUAL HIERARCHY: a hierarchy of symbology should be used for the lettering, line weights and shading. More important features are typically larger and/or darker, less important/background information should be smaller and/or lighter. At the same time, do not “over weight” or “under weight” features.</li>
+<li>PURPOSE: All maps have a purpose which influences every element of the map and the map layout. A cartographer should be able to clearly articulate the purpose of their map and should keep the audience (who the map is going to be used by) and the client (who the maps is being produced for) in mind.</li>
+</ol>
+</div>
+</div>
+<div id="acceptable-formats" class="section level4">
+<h4><span class="header-section-number">6.2.1.3</span> Acceptable Formats</h4>
+<p>Static Maps: Must be submitted as a pdf in order to be printed before the presentation. These maps should be either in poster layout, book format or other pre-approved format. Resulution should be high enough to make the final printed format clear and crisp (300 dpi is minimum but may need to be higher for larger formats)</p>
+<p>Interactive Maps: may be in any web format such as html or flash but must be complete two days prior to your presentation deadline. A working url must be provided. Acceptable format include, but are not limited to:</p>
+<ul>
+<li>An ESRI story map</li>
+<li>A Google Map API or ArcGIS API within a website</li>
+<li>An HTML file using an ArcGIS API</li>
+<li>other pre-approved format</li>
+</ul>
+<p>Any format other than these listed must be approved at least one week before the deadline or the submission will result in a zero.</p>
+</div>
+<div id="grading-criteria" class="section level4">
+<h4><span class="header-section-number">6.2.1.4</span> Grading Criteria</h4>
+<style type="text/css">
+    table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+    }
+    .tableizer-table th {
+        background-color: #104E8B; 
+        color: #FFF;
+        font-weight: bold;
+    }
+</style>
+<table class="tableizer-table">
+<thead>
+<tr class="tableizer-firstrow">
+<th>
+Category
+</th>
+<th>
+Requirement
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Appearance - 65%
+</td>
+<td>
+Adheres to the guidelines spelled out in the handout “WHAT ALL GOOD MAPS SHOULD (MUST) HAVE”. Special attention is paid to items 8, 9 and 10.
+</td>
+</tr>
+<tr>
+<td>
+Data - 35%
+</td>
+<td>
+Data source is cited so that it could be found easily. Data has been processed in ArcGIS to make it useful for the map design.
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="submitting-map-packages" class="section level2">
+<h2><span class="header-section-number">6.3</span> Submitting Map Packages</h2>
+<p>For some of the lab assignments in this course you will be required to submit a map package along with earning the course certificate. In order to do this, follow the steps outlined below:</p>
+<ol style="list-style-type: decimal">
+<li>Save the project in ArcGIS Pro as directed on the instructions.</li>
+<li>Click the “Project” Icon on the “Share” ribbon in ArcGIS Pro. (The Sharing Project Window will open.)</li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/share_ribbon.PNG?raw=true" width="800"></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Leave the “Start Packaging” selection as “Upload package to Online account”.</li>
+<li>Under “Item Details”, append the name in the box with your last name.</li>
+<li>In the “Summary” box include the assignment number from the online text.</li>
+<li>Create one or more tags which include the subject of the project.</li>
+<li>Uncheck “Include Toolboxes” and “Include History Items”.</li>
+<li>Under “Share with” choose “WHS Geospatial Studies”.</li>
+<li>In the “Groups” pulldown, choose “Digital Earth 2021”.</li>
+<li>Clich “Analize” and fix any errors. Warnings are OK.</li>
+<li>Click Package and wait for it to finish.</li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/package.PNG?raw=true"></p>
+<ol start="12" style="list-style-type: decimal">
+<li>Go to your ArcGIS Online account to make sure you see the package.</li>
+</ol>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/online_package.PNG?raw=true"></p>
+</div>
+<div id="esri-virtual-campus-records" class="section level2">
+<h2><span class="header-section-number">6.4</span> ESRI Virtual Campus Records</h2>
+<p>As you work through the lab assignments in this course, you will be using the <a href="https://www.esri.com/training/">ESRI Virtual Campus Training site</a>. In addition to the online resources you will use for this course, you have access to hundreds of other training modules while you are a student at WHS.</p>
+<p>There may come a time in the future when you need to access your training record to demonstrate competenecy in a certain GIS skill - say for an internship over the summer. If so, return to the trainging site and go to your <a href="https://www.esri.com/training/my-activity-record/">training activity record</a>. This will give you a list of every course you have started and/or completed includig a certificate of completion from ESRI to prove you learned the skill.</p>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/training.PNG?raw=true"></p>
+<p>Feel free to utilize this site at any time in the futre as well as an added benefit of this course.</p>
+</div>
+<div id="related-media" class="section level2">
+<h2><span class="header-section-number">6.5</span> Related Media</h2>
+<caption>
+<h3>
+Why all world maps are wrong
+</h3>
+</caption>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/kIID5FDi2JQ">
+</iframe>
+<p><br></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="acquisition-and-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

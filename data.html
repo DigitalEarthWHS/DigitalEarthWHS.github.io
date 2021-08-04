@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Data | Digital Earth: An Introductory GIS Course</title>
+  <meta name="description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Data | Digital Earth: An Introductory GIS Course" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Data | Digital Earth: An Introductory GIS Course" />
+  
+  <meta name="twitter:description" content="This course is intended as a brief introduction to Geographic Information Science." />
+  
+
+<meta name="author" content="Steve Cline" />
+
+
+<meta name="date" content="2021-05-14" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="map-anatomy.html"/>
+<link rel="next" href="data-models-for-gis.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+
+<img src="https://raw.githubusercontent.com/DigitalEarthWHS/DigitalEarthWHS.github.io/main/earth_logo.png" width="250">
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i><b>1.1</b> Preface</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#stuff-happens"><i class="fa fa-check"></i><b>1.2</b> Stuff Happens…</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#spatial-thinking"><i class="fa fa-check"></i><b>1.3</b> Spatial Thinking</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#mental-maps"><i class="fa fa-check"></i><b>1.3.1</b> Mental Maps</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#asking-geographic-questions"><i class="fa fa-check"></i><b>1.3.2</b> Asking Geographic Questions</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#geographic-concepts"><i class="fa fa-check"></i><b>1.4</b> Geographic Concepts</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#location"><i class="fa fa-check"></i><b>1.4.1</b> Location</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#direction"><i class="fa fa-check"></i><b>1.4.2</b> Direction</a></li>
+<li class="chapter" data-level="1.4.3" data-path="index.html"><a href="index.html#distance"><i class="fa fa-check"></i><b>1.4.3</b> Distance</a></li>
+<li class="chapter" data-level="1.4.4" data-path="index.html"><a href="index.html#space"><i class="fa fa-check"></i><b>1.4.4</b> Space</a></li>
+<li class="chapter" data-level="1.4.5" data-path="index.html"><a href="index.html#navigation"><i class="fa fa-check"></i><b>1.4.5</b> Navigation</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#geographic-information-systems-for-today-and-beyond"><i class="fa fa-check"></i><b>1.5</b> Geographic Information Systems for Today and Beyond</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#gis-defined"><i class="fa fa-check"></i><b>1.5.1</b> GIS Defined</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#three-approaches-to-giss"><i class="fa fa-check"></i><b>1.5.2</b> Three Approaches to GISs</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#gis-futures"><i class="fa fa-check"></i><b>1.5.3</b> GIS Futures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="map-anatomy.html"><a href="map-anatomy.html"><i class="fa fa-check"></i><b>2</b> Map Anatomy</a><ul>
+<li class="chapter" data-level="2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#maps-and-map-types"><i class="fa fa-check"></i><b>2.1</b> Maps and Map Types</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="map-anatomy.html"><a href="map-anatomy.html#reference-maps"><i class="fa fa-check"></i><b>2.1.1</b> Reference Maps</a></li>
+<li class="chapter" data-level="2.1.2" data-path="map-anatomy.html"><a href="map-anatomy.html#thematic-maps"><i class="fa fa-check"></i><b>2.1.2</b> Thematic Maps</a></li>
+<li class="chapter" data-level="2.1.3" data-path="map-anatomy.html"><a href="map-anatomy.html#dynamic-maps"><i class="fa fa-check"></i><b>2.1.3</b> Dynamic Maps</a></li>
+<li class="chapter" data-level="2.1.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-exploring-gis-maps"><i class="fa fa-check"></i><b>2.1.4</b> Exercise: Exploring GIS Maps</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale-coordinate-systems-and-map-projections"><i class="fa fa-check"></i><b>2.2</b> Map Scale, Coordinate Systems, and Map Projections</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="map-anatomy.html"><a href="map-anatomy.html#map-scale"><i class="fa fa-check"></i><b>2.2.1</b> Map Scale</a></li>
+<li class="chapter" data-level="2.2.2" data-path="map-anatomy.html"><a href="map-anatomy.html#coordinate-systems"><i class="fa fa-check"></i><b>2.2.2</b> Coordinate Systems</a></li>
+<li class="chapter" data-level="2.2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-projections"><i class="fa fa-check"></i><b>2.2.3</b> Map Projections</a></li>
+<li class="chapter" data-level="2.2.4" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-basics-of-geographic-coordinate-systems"><i class="fa fa-check"></i><b>2.2.4</b> Exercise: Basics of Geographic Coordinate Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="map-anatomy.html"><a href="map-anatomy.html#map-abstraction"><i class="fa fa-check"></i><b>2.3</b> Map Abstraction</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="map-anatomy.html"><a href="map-anatomy.html#what-is-a-forest"><i class="fa fa-check"></i><b>2.3.1</b> What Is a Forest?</a></li>
+<li class="chapter" data-level="2.3.2" data-path="map-anatomy.html"><a href="map-anatomy.html#map-content-and-generalization"><i class="fa fa-check"></i><b>2.3.2</b> Map Content and Generalization</a></li>
+<li class="chapter" data-level="2.3.3" data-path="map-anatomy.html"><a href="map-anatomy.html#exercise-symbolizing-map-layers"><i class="fa fa-check"></i><b>2.3.3</b> Exercise: Symbolizing Map Layers</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>3</b> Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="data.html"><a href="data.html#data-and-information"><i class="fa fa-check"></i><b>3.1</b> Data and Information</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data.html"><a href="data.html#of-files-and-formats"><i class="fa fa-check"></i><b>3.1.1</b> Of Files and Formats…</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data.html"><a href="data.html#exercise-introduction-to-spatial-data"><i class="fa fa-check"></i><b>3.1.2</b> Exercise: Introduction to Spatial Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data.html"><a href="data.html#data-about-data"><i class="fa fa-check"></i><b>3.2</b> Data about Data</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data.html"><a href="data.html#exercise-mapping-addresses-and-places"><i class="fa fa-check"></i><b>3.2.1</b> Exercise: Mapping Addresses and Places</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data.html"><a href="data.html#finding-data"><i class="fa fa-check"></i><b>3.3</b> Finding Data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data.html"><a href="data.html#exercise-mapping-census-data"><i class="fa fa-check"></i><b>3.3.1</b> Exercise: Mapping Census Data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html"><i class="fa fa-check"></i><b>4</b> Data Models for GIS</a><ul>
+<li class="chapter" data-level="4.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#raster-data-models"><i class="fa fa-check"></i><b>4.1</b> Raster Data Models</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-raster-model"><i class="fa fa-check"></i><b>4.1.1</b> Advantages/Disadvantages of the Raster Model</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-performing-supervised-pixel-based-image-classification"><i class="fa fa-check"></i><b>4.1.2</b> Exercise: Performing Supervised Pixel-Based Image Classification</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models"><i class="fa fa-check"></i><b>4.2</b> Vector Data Models</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#vector-data-models-structures"><i class="fa fa-check"></i><b>4.2.1</b> Vector Data Models Structures</a></li>
+<li class="chapter" data-level="4.2.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#advantagesdisadvantages-of-the-vector-model"><i class="fa fa-check"></i><b>4.2.2</b> Advantages/Disadvantages of the Vector Model</a></li>
+<li class="chapter" data-level="4.2.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-creating-vector-tiles-in-arcgis-pro"><i class="fa fa-check"></i><b>4.2.3</b> Exercise: Creating Vector Tiles in ArcGIS Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery-and-aerial-photography"><i class="fa fa-check"></i><b>4.3</b> Satellite Imagery and Aerial Photography</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#satellite-imagery"><i class="fa fa-check"></i><b>4.3.1</b> Satellite Imagery</a></li>
+<li class="chapter" data-level="4.3.2" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#aerial-photography"><i class="fa fa-check"></i><b>4.3.2</b> Aerial Photography</a></li>
+<li class="chapter" data-level="4.3.3" data-path="data-models-for-gis.html"><a href="data-models-for-gis.html#exercise-change-detection-using-imagery"><i class="fa fa-check"></i><b>4.3.3</b> Exercise: Change Detection Using Imagery</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html"><i class="fa fa-check"></i><b>5</b> Acquisition and Analysis</a><ul>
+<li class="chapter" data-level="5.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geographic-data-acquisition"><i class="fa fa-check"></i><b>5.1</b> Geographic Data Acquisition</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#data-types"><i class="fa fa-check"></i><b>5.1.1</b> Data Types</a></li>
+<li class="chapter" data-level="5.1.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#measurement-scale"><i class="fa fa-check"></i><b>5.1.2</b> Measurement Scale</a></li>
+<li class="chapter" data-level="5.1.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#primary-data-capture"><i class="fa fa-check"></i><b>5.1.3</b> Primary Data Capture</a></li>
+<li class="chapter" data-level="5.1.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#secondary-data-capture"><i class="fa fa-check"></i><b>5.1.4</b> Secondary Data Capture</a></li>
+<li class="chapter" data-level="5.1.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-building-a-data-collection-map"><i class="fa fa-check"></i><b>5.1.5</b> Exercise: Building a Data Collection Map</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#single-layer-analysis"><i class="fa fa-check"></i><b>5.2</b> Single Layer Analysis</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#buffering"><i class="fa fa-check"></i><b>5.2.1</b> Buffering</a></li>
+<li class="chapter" data-level="5.2.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#geoprocessing-operations"><i class="fa fa-check"></i><b>5.2.2</b> Geoprocessing Operations</a></li>
+<li class="chapter" data-level="5.2.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-proximity-analysis"><i class="fa fa-check"></i><b>5.2.3</b> Exercise: Introduction to Proximity Analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#multiple-layer-analysis"><i class="fa fa-check"></i><b>5.3</b> Multiple Layer Analysis</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-operations"><i class="fa fa-check"></i><b>5.3.1</b> Overlay Operations</a></li>
+<li class="chapter" data-level="5.3.2" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#other-multilayer-geoprocessing-options"><i class="fa fa-check"></i><b>5.3.2</b> Other Multilayer Geoprocessing Options</a></li>
+<li class="chapter" data-level="5.3.3" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#spatial-join"><i class="fa fa-check"></i><b>5.3.3</b> Spatial Join</a></li>
+<li class="chapter" data-level="5.3.4" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#overlay-errors"><i class="fa fa-check"></i><b>5.3.4</b> Overlay Errors</a></li>
+<li class="chapter" data-level="5.3.5" data-path="acquisition-and-analysis.html"><a href="acquisition-and-analysis.html#exercise-introduction-to-overlay-analysis"><i class="fa fa-check"></i><b>5.3.5</b> Exercise: Introduction to Overlay Analysis</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>6</b> Appendix</a><ul>
+<li class="chapter" data-level="6.1" data-path="appendix.html"><a href="appendix.html#course-lecture-notes"><i class="fa fa-check"></i><b>6.1</b> Course Lecture Notes</a></li>
+<li class="chapter" data-level="6.2" data-path="appendix.html"><a href="appendix.html#final-project-option"><i class="fa fa-check"></i><b>6.2</b> Final Project Option</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="appendix.html"><a href="appendix.html#project-requirements"><i class="fa fa-check"></i><b>6.2.1</b> Project Requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="appendix.html"><a href="appendix.html#submitting-map-packages"><i class="fa fa-check"></i><b>6.3</b> Submitting Map Packages</a></li>
+<li class="chapter" data-level="6.4" data-path="appendix.html"><a href="appendix.html#esri-virtual-campus-records"><i class="fa fa-check"></i><b>6.4</b> ESRI Virtual Campus Records</a></li>
+<li class="chapter" data-level="6.5" data-path="appendix.html"><a href="appendix.html#related-media"><i class="fa fa-check"></i><b>6.5</b> Related Media</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Digital Earth: An Introductory GIS Course</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Data</h1>
+<p>Maps are shared, available, and distributed unlike at any other time in history. What’s more is that the process of mapping has also been decentralized and democratized so that many more people not only have access to maps but also are enabled and empowered to create their own maps. This democratization of maps and mapping is in large part attributable to a shift to digital map production and consumption. Unlike analog or hardcopy maps that are static or fixed once they are printed onto paper, digital maps are highly changeable, exchangeable, and as noted in Chapter 2 “Map Anatomy”, dynamic in terms of scale, form, and content.</p>
+<p>To understand digital maps and mapping, it is necessary to put them into the context of computing and information technology. First, this chapter provides an introduction to the building blocks of digital maps and geographic information systems (GISs), with particular emphasis placed upon how data and information are stored as files on a computer. Second, key issues and considerations as they relate to data acquisition and data standards are presented. The chapter concludes with a discussion of where data for use with a GIS can be found. This chapter serves as the bridge between the conceptual materials presented in Chapter 1 “Introduction” and Chapter 2 “Map Anatomy” and the chapters that follow, which contain more formal discussions about the use and application of a GIS.</p>
+<div id="data-and-information" class="section level2">
+<h2><span class="header-section-number">3.1</span> Data and Information</h2>
+<blockquote>
+<p>The objective of this section is to define and describe data and information and how it is organized into files for use in a computing and geographic information system (GIS) environment.</p>
+</blockquote>
+<p>To understand how we get from analog to digital maps, let’s begin with the building blocks and foundations of the geographic information system (GIS)—namely, <strong>data</strong> and <strong>information</strong>. As already noted on several occasions, GIS stores, edits, processes, and presents data and information. But what exactly is data? And what exactly is information? For many, the terms “data” and “information” refer to the same thing. For our purposes, it is useful to make a distinction between the two. Generally, data refer to facts, measurements, characteristics, or traits of an object of interest. For you grammar sticklers out there, note that “data” is the plural form of “datum.” For example, we can collect all kinds of data about all kinds of things, like the length of rainbow trout in a Colorado stream, the number of vegetarians in Alaska, the diameter of mahogany tree trunks in the Brazilian rainforest, student scores on the last GIS midterm, the altitude of mountain peaks in Nepal, the depth of snow in the Austrian Alps, or the number of people who use public transportation to get to work in London.</p>
+<p>Once data are put into context, used to answer questions, situated within analytical frameworks, or used to obtain insights, they become information. For our purposes, information simply refers to the knowledge of value obtained through the collection, interpretation, and/or analysis of data. Though a computer is not necessary to collect, record, manipulate, process, or visualize data, or to process it into information, information technology can be of great help. For instance, computers can automate repetitive tasks, store data efficiently in terms of space and cost, and provide a range of tools for analyzing data from spreadsheets to GISs, of course. What’s more is the fact that the incredible amount of data collected each and every day by satellites, grocery store product scanners, traffic sensors, temperature gauges, and your mobile phone carrier, to name just a few, would not be possible without the aid and innovation of information technology.</p>
+<p>Since this is a text about GISs, it is useful to also define geographic data. Like generic data, <strong>geographic</strong> or <strong>spatial data</strong> refer to geographic facts, measurements, or characteristics of an object that permit us to define its location on the surface of the earth. Such data include but are not restricted to the latitude and longitude coordinates of points of interest, street addresses, postal codes, political boundaries, and even the names of places of interest. It is also important to note and reemphasize the difference between geographic data and <strong>attribute data</strong>, which was discussed in Chapter 2 “Map Anatomy”. Where geographic data are concerned with defining the location of an object of interest, attribute data are concerned with its nongeographic traits and characteristics.</p>
+<p>To illustrate the distinction between geographic and attribute data, think about your home where you grew up or where you currently live. Within the context of this discussion, we can associate both geographic and attribute data to it. For instance, we can define the location of your home many ways, such as with a street address, the street names of the nearest intersection, the postal code where your home is located, or we could use a global positioning system–enabled device to obtain latitude and longitude coordinates. What is important is geographic data permit us to define the location of an object (i.e., your home) on the surface of the earth.</p>
+<p>In addition to the geographic data that define the location of your home are the attribute data that describe the various qualities of your home. Such data include but are not restricted to the number of bedrooms and bathrooms in your home, whether or not your home has central heat, the year when your home was built, the number of occupants, and whether or not there is a swimming pool. These attribute data tell us a lot about your home but relatively little about where it is.</p>
+<p>Not only is it useful to recognize and understand how geographic and attribute data differ and complement each other, but it is also of central importance when learning about and using GISs. Because a GIS requires and integrates these two distinct types of data, being able to differentiate between geographic and attribute data is the first step in organizing your GIS. Furthermore, being able to determine which kinds of data you need will ultimately aid in your implementation and use of a GIS. More often than not, and in the age and context of information technology, the data and information discussed thus far is the stuff of computer files, which are the focus of the next section.</p>
+<div id="of-files-and-formats" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Of Files and Formats…</h3>
+<p>When we collect data about your home, rainforests, or anything, really, we usually need to put them somewhere. Though we may scribble numbers and measures on the back of an envelope or write them down on a pad of paper, if we want to update, share, analyze, or map them in the future, it is often useful to record them in digital form so a computer can read them. Though we won’t bother ourselves with the bits and bytes of computing, it is necessary to discuss some basic elements of computing that are both relevant and required when learning and working with a GIS.</p>
+<p>One of the most common elements of working with computers and computing itself is the file. Files in a computer can contain any number of things from a complex set of instructions (e.g., a computer program) to a list of numbers and letters (e.g., address book). Furthermore, computer files come in all different sizes and types. One of the clues we can use to distinguish one file from another is the file extension. The file extension refers to the letters that follow the period (“.”) after the name of the file. Table 3.1 contains some of the most common file extensions and the types of files with which they are associated.</p>
+<p><i>Table 3.1</i></p>
+<style type="text/css">
+    table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+    }
+    .tableizer-table th {
+        background-color: #104E8B; 
+        color: #FFF;
+        font-weight: bold;
+    }
+</style>
+<table class="tableizer-table">
+<thead>
+<tr class="tableizer-firstrow">
+<th>
+extension
+</th>
+<th>
+File type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+filename.txt
+</td>
+<td>
+Simple text file
+</td>
+</tr>
+<tr>
+<td>
+filename.doc
+</td>
+<td>
+Microsoft Word document
+</td>
+</tr>
+<tr>
+<td>
+filename.pdf
+</td>
+<td>
+Adobe portable document format
+</td>
+</tr>
+<tr>
+<td>
+filename.jpg
+</td>
+<td>
+Compressed image file
+</td>
+</tr>
+<tr>
+<td>
+filename.tif
+</td>
+<td>
+Tagged image format
+</td>
+</tr>
+<tr>
+<td>
+filename.html
+</td>
+<td>
+Hypertext markup language (used to create web pages)
+</td>
+</tr>
+<tr>
+<td>
+filename.xml
+</td>
+<td>
+Extensible markup language
+</td>
+</tr>
+<tr>
+<td>
+filename.zip
+</td>
+<td>
+Zipped/compressed archive
+</td>
+</tr>
+</tbody>
+</table>
+<p>Some computer programs may be able to read or work with only certain file types, while others are more adept at reading multiple file formats. What you will realize as you begin to work more with information technology, and GISs in particular, is that familiarity with different file types is important. Learning how to convert or export one file type to another is also a very useful and valuable skill to obtain. In this regard, being able to recognize and knowing how to identify different and unfamiliar file types will undoubtedly increase your proficiency with computers and GISs.</p>
+<p>Of the numerous file types that exist, one of the most common and widely accessed file is the <strong>simple text, plain text</strong>, or just text file. Simple text files can be read widely by word processing programs, spreadsheet and database programs, and web browsers. Often ending with the extension “.txt” (i.e., filename.txt), text files contain no special formatting (e.g., <strong>bold</strong>, <i>italic</i>, <u>underlining</u>) and contain only alphanumeric characters. In other words, images or complex graphics are not well suited for text files. Text files, however, are ideal for recording, sharing, and exchanging data because most computers and operating systems can recognize and read simple text files with programs called text editors.</p>
+<p>When a text file contains data that are organized or structured in some fashion, it is sometimes called a flat file (but the file extension remains the same, i.e., .txt). Generally, flat files are organized in a tabular format or line by line. In other words, each line or row of the file contains one and only one record. So if we collected height measurements on three people, Tim, Jake, and Harry, the file might look something like this:</p>
+<style type="text/css">
+    table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+
+    }
+    .tableizer-table th {
+        background-color: #104E8B; 
+        color: #FFF;
+        font-weight: bold;
+    }
+</style>
+<table class="tableizer-table" style="width:200px">
+<thead>
+<tr class="tableizer-firstrow">
+<th>
+Name
+</th>
+<th>
+Height
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Tim
+</td>
+<td>
+6’1"
+</td>
+</tr>
+<tr>
+<td>
+Jake
+</td>
+<td>
+5’9"
+</td>
+</tr>
+<tr>
+<td>
+Harry
+</td>
+<td>
+6’2"
+</td>
+</tr>
+</tbody>
+</table>
+<p>Each row corresponds to one and only one record, observation or case. There are two other important elements to know about this file. First, note that the first row does not contain any data; rather, it provides a description of the data contained in each column. When the first row of a file contains such descriptors, it is referred to as a header row or just a <strong>header</strong>. Columns in a flat file are also called fields, <strong>variables</strong>, or <strong>attributes</strong>. “Height” is the attribute, field, or variable that we are interested in, and the observations or cases in our data set are “Tim,” “Jake,” and “Harry.” In short, rows are for records; columns are for fields.</p>
+<p>The second unseen but critical element to the file is the spaces in between each column or field. In the example, it appears as though a space separates the “name” column from the “height” column. Upon closer inspection, however, note how the initial values of the “height” column are aligned. If a single space was being used to separate each column, the height column would not be aligned. In this case a tab is being used to separate the columns of each row. The character that is used to separate columns within a flat file is called the delimiter or separator. Though any character can be used as a delimiter, the most common delimiters are the tab, the comma, and a single space. The following are examples of each.</p>
+<style type="text/css">
+    table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+    }
+    .tableizer-table th {
+        background-color: #104E8B; 
+        color: #FFF;
+        font-weight: bold;
+    }
+</style>
+<table class="tableizer-table" style="width:400px">
+<thead>
+<tr class="tableizer-firstrow">
+<th>
+Tab-Delimited
+</th>
+<th>
+Single-Space-Delimited
+</th>
+<th>
+Comma-Delimited
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Name     Height
+</td>
+<td>
+Name Height
+</td>
+<td>
+Name, Height
+</td>
+</tr>
+<tr>
+<td>
+Tim     6.1
+</td>
+<td>
+Tim 6.1
+</td>
+<td>
+Tim, 6.1
+</td>
+</tr>
+<tr>
+<td>
+Jake     5.9
+</td>
+<td>
+Jake 5.9
+</td>
+<td>
+Jake, 5.9
+</td>
+</tr>
+<tr>
+<td>
+Harry     6.2
+</td>
+<td>
+Harry 6.2
+</td>
+<td>
+Harry, 6.2
+</td>
+</tr>
+</tbody>
+</table>
+<p>Knowing the delimiter to a flat file is important because it enables us to distinguish and separate the columns efficiently and without error. Sometimes such files are referred to by their delimiter, such as a “comma-separated values” file or a “tab-delimited” file.</p>
+<p>When recording and working with geographic data, the same general format is applied. Rows are reserved for records, or in the case of geographic data, locations and columns or fields are used for the attributes or variables associated with each location. For example, the following tab-delimited flat file contains data for three places (i.e., countries) and three attributes or characteristics of each country (i.e., population, language, continent) as noted by the header.</p>
+<style type="text/css">
+    table.tableizer-table {
+        font-size: 12px;
+        border: 1px solid #CCC; 
+        font-family: Arial, Helvetica, sans-serif;
+    } 
+    .tableizer-table td {
+        padding: 4px;
+        margin: 3px;
+        border: 1px solid #CCC;
+    }
+    .tableizer-table th {
+        background-color: #104E8B; 
+        color: #FFF;
+        font-weight: bold;
+    }
+</style>
+<table class="tableizer-table" style="width:400px">
+<thead>
+<tr class="tableizer-firstrow">
+<th>
+Country
+</th>
+<th>
+Population
+</th>
+<th>
+Language
+</th>
+<th>
+Continent
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+France
+</td>
+<td>
+65,000,000
+</td>
+<td>
+French
+</td>
+<td>
+Europe
+</td>
+</tr>
+<tr>
+<td>
+Brazil
+</td>
+<td>
+192,000,000
+</td>
+<td>
+Portuguese
+</td>
+<td>
+South America
+</td>
+</tr>
+<tr>
+<td>
+Australia
+</td>
+<td>
+22,000,000
+</td>
+<td>
+English
+</td>
+<td>
+Australia
+</td>
+</tr>
+</tbody>
+</table>
+<p>Files like those presented here are the building blocks of the various tables, charts, reports, graphs, and other visualizations that we see each and every day online, in print, and on television. They are also key components to the maps and geographic representations created by GISs. Rarely if ever, however, will you work with one and only one file or file type. More often than not, and especially when working with GISs, you will work with multiple files. Such a grouping of multiple files is called a database. Since the files within a <strong>database</strong> may be different sizes, shapes, and even formats, we need to devise some type of system that will allow us to work, update, edit, integrate, share, and display the various data within the database. Such a system is generally referred to as a database management system (DBMS). Databases and DBMSs are so important to GISs that a later chapter is dedicated to them. For now it is enough to remember that file types are like ice cream—they come in all different kinds of flavors. In light of such variety, Section 3.2 “Data about Data” details some of the key issues that need to be considered when acquiring and working with data and information for GISs.</p>
+<!-- Might Change This -->
+</div>
+<div id="exercise-introduction-to-spatial-data" class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Exercise: Introduction to Spatial Data</h3>
+<p>The foundation of GIS is spatial data—data that includes location information. People use spatial data daily, often without consciously recognizing it as spatial data. In GIS, there are two models that are used to map spatial data: vector features and rasters. In this course, you will learn some of the foundational concepts of spatial data.</p>
+<p><a href="https://www.esri.com/training/catalog/5dd4485b6cd66f196fbeddad/introduction-to-spatial-data/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational account. The data for your projects in ArcGIS Pro have been pre-loaded on your computer at C: &gt; Users &gt; Public &gt; Public Documents &gt; GIS_Files.</i></p>
+<blockquote>
+<p><strong>Submission Requirements</strong></p>
+<p>After completing the training course online check to see that you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Work through all of the course content on the training site.</li>
+<li>Complete the two exercises titled, “Investigate Vector Features” and “Investigate Raster Data” (For step 2b in the second exercise, DO NOT close the first map) and save the ArcGIS Pro project.</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a></li>
+<li>Earn a passing score of at least 80% on the quiz at the end of the course. You will have a certificate of completion in <a href="https://my.esri.com/#/" target ="_blank">My Esri</a> once you are done with the course.</li>
+</ol>
+</blockquote>
+<p><i>Always use the same version of ArcGIS Pro as the one you select at the beginning of the course (2.7 or most recent version possible).</i></p>
+</div>
+</div>
+<div id="data-about-data" class="section level2">
+<h2><span class="header-section-number">3.2</span> Data about Data</h2>
+<blockquote>
+<p>The objective of this section is to highlight the difference between primary and secondary data sources and to understand the importance of metadata and data standards.</p>
+</blockquote>
+<p>Consider the following comma-delimited file:</p>
+<p>city, sun, temp, precip</p>
+<p>Los Angeles, 300, 70, 10</p>
+<p>London, 50, 55, 40</p>
+<p>Singapore, 330, 80, 60</p>
+<p>Looking at the contents of the file, we can see that it contains data about the cities of Los Angeles, London, and Singapore. As noted, each field or attribute is separated by a comma, and the file also contains a header row that tells us about the data contained in each column. Or does it? What does the column “sun” refer to? Is it the number of sunny days this year, last year, annually, or when? What about “temp”? Does this refer to the average daytime, evening, or annual temperature? For that matter, how is temperature measured? In Celsius? Fahrenheit? Kelvin? The column “precip” probably refers to precipitation, but again, what are the units or time frame for such measures and data? Finally, where did these data come from? Who collected them, when were they collected and for what purpose?</p>
+<p>It is amazing to think that such a small text file can lead to so many questions. Now let’s extend the example to a file with one hundred records on ten variables, one thousand records on one hundred variables or better yet, ten thousand records on one thousand variables. Through this rather simple example, a number of general but central issues that are related to data emerge. Such issues range from the relatively mundane naming conventions that are used to identify individual records (i.e., rows) and distinguish one field (i.e., column) from another, to the issue of providing documentation about what data are included in a given file; when the data were collected; for what purpose are the data to be used; who collected them; and, of course, where did the data come from?</p>
+<p>The previous simple text file illustrates how we cannot and should not take data and information for granted. It also highlights two important concepts with regard to the source of data and to the contents of data files. With regard to data sources, data can be put into one of two distinct categories. The first category is called <strong>primary data</strong>. Primary data refer to data that are collected directly or on a firsthand basis. For example, if you wanted to examine the variability of local temperatures in the month of May, and you recorded the temperature at noon every day in May, you would be constructing a primary data set. Conversely, <strong>secondary data</strong> refer to data collected by someone else or some other party. For instance, when we work with census or economic data collected and distributed by the government, we are using secondary data.</p>
+<p>Several factors influence the decision behind the construction and use of primary data sets versus secondary data sets. Among the most important factors are the costs associated with data acquisition in terms of money, availability, and time. In fact, the data acquisition and integration phase of most geographic information system (GIS) projects is often the most time consuming. In other words, locating, obtaining, and putting together the data to be used for a GIS project, whether you collect the data yourself or use secondary data, may indeed take up most of your time. Of course, depending on the purpose, availability, and need, it may not be necessary to construct an entirely new data set (i.e., primary data set). In light of the vast amounts of data and information that are publicly available, for example, via the Internet, the cost and time savings of using secondary data often offset any benefits that are associated with primary data collection.</p>
+<p>Now that we have a basic understanding of the difference between primary and secondary data, as well as the rationale behind each, how do we go about finding the data and information that we need? As noted earlier, there is an incredibly vast and growing amount of data and information available to us, and performing an online search for “deforestation data” will return hundreds—if not thousands—of results. To overcome this data and information overload we need to turn to…even more data. In particular, we are looking for a special kind of data called <strong>metadata</strong>. Simply defined, metadata are data about data. At one level, a header row in a simple text file like those discussed in the previous section is analogous to metadata. The header row provides data (e.g., names and labels) about the subsequent rows of data.</p>
+<p>Header rows themselves, however, may need additional explanation as previously illustrated. Furthermore, when working with or searching through several data sets, it can be quite tedious at best or impossible at worst to open each and every file in order to determine its contents and usability. Enter metadata. Today many files, and in particular secondary data sets, come with a metadata file. These metadata files contain items such as general descriptions about the contents of the file, definitions for the various terms used to identify records (rows) and fields (fields), the range of values for fields, the quality or reliability of the data and measurements, how the data were collected, when the data were collected, and who collected the data. Though not all data are accompanied by metadata, it is easy to see and understand why metadata are important and valuable when searching for secondary data, as well as when constructing primary data that may be shared in the future.</p>
+<p>Just as simple files come in all shapes, sizes, and formats, so too do metadata. As the amount and availability of data and information increase each and every day, metadata play a critical role in making sense of it all. The class of metadata that we are most concerned with when working with a GIS is called <strong>geospatial metadata</strong>. As the name suggests, geospatial metadata are data about geographical and spatial data. According to the Federal Geographic Data Committee (FGDC) in the United States (see <a href="http://www.fgdc.gov" class="uri">http://www.fgdc.gov</a>), “Geospatial metadata are used to document geographic digital resources such as GIS files, geospatial databases, and earth imagery. A geospatial metadata record includes core library catalog elements such as Title, Abstract, and Publication Data; geographic elements such as Geographic Extent and Projection Information; and database elements such as Attribute Label Definitions and Attribute Domain Values.” The definition of geospatial metadata is about improving transparency when it comes to data, as well as promoting standards. Take a few moments to explore and examine the contents of a geospatial metadata file that conforms to the FGDC here.</p>
+<p>Generally, standards refer to widely promoted, accepted, and followed rules and practices. Given the range and variability of data and data sources, identifying a common thread to locate and understand the contents of any given file can be a challenge. Just as the rules of grammar and mathematics provide the foundations for communication and numeric calculations, respectively, metadata provide similar frameworks for working with and sharing data and information from various sources.</p>
+<p>The central point behind metadata is that it facilitates data and information sharing. Within the context of large organizations such as governments, data and information sharing can eliminate redundancies and increase efficiencies. Moreover, access to data and information promotes the integration of different data that can improve analyses, inform decisions, and shape policy. The role that metadata—and in particular geospatial metadata—play in the world of GISs is critical and offers enormous benefits in terms of cost and time savings. It is precisely the sharing, widespread distribution and integration of various geographic and nongeographic data and information, enabled by metadata, that drive some of the most interesting and compelling innovations in GISs and the broader geospatial information technology community. More important, widespread access, distribution, and sharing of geographic data and information have important social costs and benefits and yield better analyses and more informed decisions.</p>
+<div id="exercise-mapping-addresses-and-places" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Exercise: Mapping Addresses and Places</h3>
+<p>To place locations on a map, you can use not only spatial data but also nonspatial data that contains location description. For example, street addresses are used all over the world to denote locations. This course will demonstrate how address information can help you geocode data to place it on a map and answer spatial questions.</p>
+<p><a href="https://www.esri.com/training/catalog/5db86f75e5aa0452315ddfa6/mapping-addresses-and-places/" target ="_blank">Go to ESRI course</a></p>
+<p><i>Be sure to log in using your WHS Organizational account. The data for your projects in ArcGIS Pro have been pre-loaded on your computer at C: &gt; Users &gt; Public &gt; Public Documents &gt; GIS_Files.</i></p>
+<blockquote>
+<p><strong>Submission Requirements</strong></p>
+<p>After completing the training course online check to see that you have done the following:</p>
+<ol style="list-style-type: decimal">
+<li>Work through all of the course content on the training site.</li>
+<li>Complete the three exercise titled, “Create an address locator”, “Create a locator for place-names” and “Filter locator results using a query” and save the ArcGIS Pro project.</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a></li>
+<li>Earn a passing score of at least 80% on the quiz at the end of the course. You will have a certificate of completion in <a href="https://my.esri.com/#/" target ="_blank">My Esri</a> once you are done with the course.</li>
+</ol>
+</blockquote>
+<p><i>Always use the same version of ArcGIS Pro as the one you select at the beginning of the course (2.7 or most recent version possible).</i></p>
+</div>
+</div>
+<div id="finding-data" class="section level2">
+<h2><span class="header-section-number">3.3</span> Finding Data</h2>
+<blockquote>
+<p>The objective of this section is to identify and evaluate key considerations when searching for data.</p>
+</blockquote>
+<p>Now that we have a basic understanding of data and information, where can we find such data and information? Though an Internet search will certainly come up with myriad sources and types of data, the hunt for relevant and useful data is often a challenging and iterative process. Therefore, prior to hopping online and downloading the first thing that appears from a web search, it is useful to frame our search for data with the following questions and considerations:</p>
+<ol style="list-style-type: decimal">
+<li>What <i>exactly</i> is the purpose of the data? Given the fact the world is swimming in vast amounts of data, articulating why we need (or why we don’t need) a given set of data will streamline the search for useful and relevant data. To this end, the more specific we can be about the purpose of the needed data, the more efficient our search for data will be. For example, if we are interested in understanding and studying economic growth, it is useful to determine both temporal and geographic scales. In other words, for what time periods (e.g., 1850–1900) and intervals (e.g., quarterly, annually) are we interested, and at what level of analysis (e.g., national, regional, state)? Oftentimes, data availability, or more specifically, the lack of relevant data, will force us to change the purpose or scope of our original question. A clear purpose will yield a more efficient search for data and enables us to accept or discard quickly the various data sets that we may come across.</li>
+<li>The second question we need to ask ourselves is what data already exist and to what data do we have access already? Prior to searching for new data, it is always a good idea to take an inventory of the data that we already have. Such data may be from previous projects or analyses, or from colleagues and classmates, but the key point here is that we can save a lot of time and effort by using data that we already possess. Furthermore, by identifying what we have, we get a better understanding of what we need. For instance, though we may already have census data (i.e., attribute data), we may need updated geographic data that contains the boundaries of US states or counties.</li>
+<li>Next, we need to assess and evaluate the costs associated with data acquisition. Data acquisition costs go beyond financial costs. Just as important as the financial costs to data are those that involve your time. After all, time is money. The time and energy you spend on collecting, finding, cleaning, and formatting data are time and energy taken away from data analysis. Depending on deadlines, time constraints, and deliverables, it is critical to learn how to manage your time when looking for data.</li>
+<li>Finally, the format of the data that is needed is of critical importance. Though many programs can read many formats of data, there are some data types that can only be read by some programs and some programs that require particular data formats. Understanding what data formats you can use and those that you cannot will aid in your search for data. For instance, one of the most common forms of geographic information system (GIS) data is called the <strong>shapefile</strong>. Not all GIS programs can read or use shapefiles, but it may be necessary to convert to or from a shapefile or some other format. Hence, as noted earlier, the more data formats with which we are familiar, the better off we will be in our search for data because we will have an understanding of not only what we can use but also what format conversions will need to be made if necessary.</li>
+</ol>
+<p>All these questions are of equal importance and being able to answer them will assist in a more efficient and effective search for data. Obviously, there are several other considerations behind the search for data, and in particular GIS data, but those listed here provide an initial pathway to a successful search for data.</p>
+<p>As information technology evolves, and as more and more data are collected and distributed, the various forms of data that can be used with a GIS increases. Generally, and as discussed previously, a GIS uses and integrates two types of data: geographic data and attribute data. Sometimes the source of both geographic and attribute data are one in the same. For instance, the US Bureau of Census (<a href="http://www.census.gov" class="uri">http://www.census.gov</a>) distributes geographic boundary files (e.g., census tract level, county level, state level) as well as the associated attribute data (e.g., population, race/ethnicity, income). What’s more is that such data are freely available at no charge. In many respects, US census data are exceptional: they are free and comprehensive. If only all data were free and comprehensive!</p>
+<p>Obviously, each and every search for data will vary according to purpose, but data from governments tend to have good coverage and provide a point of reference from which other data can be added, compared, and evaluated. Whether you need satellite imagery data from the National Aeronautics and Space Administration (<a href="http://www.nasa.gov" class="uri">http://www.nasa.gov</a>) or land use data from the United States Geological Survey (<a href="http://www.usgs.gov" class="uri">http://www.usgs.gov</a>), such government sources tend to be reliable, reputable, and consistent. Another key element of most government data is that they are freely accessible to the public. In other words, there is no charge to use or to acquire the data. Data that are free to use are generally called <strong>public data</strong>.</p>
+<p>Unlike publicly available data, there are numerous sources of <strong>private</strong> or <strong>proprietary data</strong>. The main difference between public and private data is that the former tend to be free, and the latter must be acquired at a cost. Furthermore, there are often restrictions on the redistribution and dissemination of proprietary data sets (i.e., sharing the purchased data is not allowed). Again, depending on the subject matter, proprietary data may be the only option. Another reason for using proprietary data is that the data may be formatted and cleaned according to your needs. The trade-off between financial cost and time saved is one that must be seriously considered and evaluated when working with deadlines.</p>
+<p>The search for data, and in particular the data that you need, is often the most time consuming aspect of any GIS-related project. Therefore, it is critical to try to define and clarify your data requirements and needs—from the temporal and geographic scales of data to the formats required—as clearly as possible and as early as possible. Such definition and clarity will pay dividends in your search for the right data, which in turn will yield better analyses and well-informed decisions.</p>
+<div id="exercise-mapping-census-data" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Exercise: Mapping Census Data</h3>
+<p>For this activity you will not use the ESRI virtual Training site. Instead, all of the instructions are found here. You will use the following websites for this activity:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html" target ="_blank">US Census Bureau - TIGER/Line Shapefiles</a></li>
+<li><a href="https://data.census.gov/cedsci/advanced" target = "_blank">US Census Bureau American Fact Finder Advanced Search</a>
+<br>
+You will also need to use Microsoft Excel which is installed on your PC.</li>
+</ol>
+<p><u>Part One - Setting Up the Data</u></p>
+<ul>
+<li>Create a new project in ArcGIS Pro named, “Census Data”.</li>
+<li>Using the TIGER/Line website listed above, find the most recent county level shapefile for the United States. Extract the shapefile into the project folder you just created.</li>
+<li>Open the shapefile from the catalog in ArcGIS Pro to make sure everything worked.</li>
+<li>Pick any state you wish and dowload the county level geography from the American FactFinder website above. Pick any topic you like but make sure it meets these requirements:
+<ul>
+<li>The data are quantitative in nature.</li>
+<li>The most recent 5-year estimates are used.</li>
+<li>The data geography matches the shapefile geography.</li>
+<li>Columns and rows are transposed so that the each row is a county and each column is an attribute.</li>
+<li>There are metadata included in the download.</li>
+</ul></li>
+<li>Extract the zipped folder with these data into the project folder you created above.</li>
+<li>Open the data in Excel to be sure that it is what you wanted. If not, delete are retry.</li>
+<li>Check to be sure that data are visible in the catalog pane of ArcGIS Pro.</li>
+</ul>
+<p><u>Part Two - Merging geometry with information</u></p>
+<ul>
+<li>Open the file explorer location for the project you created above so that we can modify the CSV file that contains the data you are using for this project.</li>
+<li>Open the file that contains the data from AFF in Microsoft Excel.</li>
+<li>Spend some time deciding which data you would like to keep. You may use the second row as a simple metadata indicator of that attribute. If that description is difficult to read, refer to the CSV file with “metadata” in the title for an easier to read description.</li>
+<li>Once you have decided which attributes you are keeping, delete all other columns except the “NAME” and “GEO_ID” columns. Feel free to keep as many columns as you would like.
+<ul>
+<li>In order to delete a column, it is not enough to just press the delete button.<br />
+</li>
+<li>Right click on the column, or columns and select “delete” from the menu.</li>
+</ul></li>
+<li>Now we need to split the “NAME” column to make it more useable in ArcGIS Pro.</li>
+<li>Right-Click the letter of the column to the right of the “NAME” column and select insert. This will insert an empty column to the left of it and to the right of the “NAME” column.</li>
+<li>Click the letter of the column above the top row where it says “NAME” (Probably letter B).</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/column.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click the “Data” ribbon and select “Text to Columns”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/text2col.PNG?raw=true" width="900"></p>
+<ul>
+<li>Be sure “Delimited” is selected in the first window of the wizard.</li>
+<li>Click “Next”.</li>
+<li>Select “Comma” as the delimiter.</li>
+<li>Click “Finish”</li>
+<li>At this point we can delete the column to the right of the “NAME” column.</li>
+<li>Finally, let’s clean up the header rows since there can be only one. We will keep the top row which contains the codes, not the descriptive metadata. Right click the second row and delete.</li>
+<li>Click the “File” ribbon and choose “Save As”. Change the name of the file so that it is descriptive and you can remember it later. Be sure to save it as a CSV file and IN THE PROJECT FOLDER OF THE ARCGIS PROJECT WE ARE WORKING ON.</li>
+<li>Go to the Catalog pane in your project and make sure that the new table appears. You will need to “Refresh” your project folder first. If so, close the CSV file in Excel and add it to your map.</li>
+<li>If you have not already, add the county shapefile to the map.</li>
+<li>Now we will join the shapefile to the CSV data. Right-click the shapefile in the table of contents and select “Join” and then “Add Join”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/join.PNG?raw=true" width="600"></p>
+<ul>
+<li>In the window be sure to set it up like this:</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/join_wizard.PNG?raw=true" width="600"></p>
+<ul>
+<li>For the last part of this process we need to export only those features (counties) from the shapefile that are also in the table. There are many ways to do this but in this example we will select only the features that have the correct FIPS state code. This is a two digit number assigned to each state. Find your state in this <a href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code" target = "_blank">Wikipedia Article</a> and note the numeric code.</li>
+<li>In ArcGIS Pro in the “Map” ribbon, click “Select by Attributes” in the “Selection” group.</li>
+<li>Configure the selection wizard as below but change the value in the right pulldown to your state.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/select_by.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click OK. Now all of the counties in your state should be selected.</li>
+<li>Right-click the shapefile. Choose “Data” and “Export Features”.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/export.PNG?raw=true" width="600"></p>
+<ul>
+<li>In the Export Window make sure that the shapefile is the input features and that the output location is your project geodatabase. Give the output a descriptive name so you can find it easily.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/export_wizard.PNG?raw=true" width="600"></p>
+<ul>
+<li>Click OK.<br />
+</li>
+<li>Turn off the original shapefile containing all US counties. Add the new layer if it is not already in the table of contents. Check the attribute table to make sure the attributes from the AFF file are there.</li>
+</ul>
+<p><img src="https://github.com/DigitalEarthWHS/DigitalEarthWHS.github.io/blob/main/state.PNG?raw=true" width="600"></p>
+<ul>
+<li>Use your skills in symbolizing the map to create a map that shows quantitative variation along one attribute by county in your state. Make sure you also do the following:
+<ul>
+<li>Remove the original shapefile and CSV file used to create the join.</li>
+<li>Choose an appropriate color scheme for the data you are using.</li>
+<li>Modify the names of the layer and the attribute you are showing in the table of contents so that the names are more readible.</li>
+<li>Choose a good basemap for the color scheme and type of data you are using. (Topographic is not really appropriate for Census data)</li>
+<li>Share the project according to the instruction found here: <a href="appendix.html#submitting-map-packages">6.3</a> Name it Census Data <your last name>.</li>
+</ul></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="map-anatomy.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-models-for-gis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
